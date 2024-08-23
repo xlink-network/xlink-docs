@@ -1,17 +1,49 @@
 ---
-description: From the Co-Founders
+description: XLink is not a typical cross-chain bridge
 ---
 
-# 😀 What is ALEX?
+# What is XLink
 
-The DeFi landscape is teeming with possibilities, and at the heart of it all, Bitcoin DeFi is set to take center stage. In the coming years, we expect a surge in growth revolving around Ordinals, BRC20 tokens, Bitcoin L2 in particular Stacks.
+## Key to providing the "native-like" Bitcoin DeFi experience
 
-A quick retrospect shows how Ordinals have brilliantly showcased the potential of the Bitcoin blockchain. This revolutionary platform has turned the table, illustrating that Bitcoin’s ledger is more than just a settlement layer. Yet, to build a truly meaningful DeFi ecosystem on Bitcoin, transactions are only one piece of the puzzle. We need a competent smart contract and computing layer to complete the picture. That’s where Stacks steps in. The domino effect triggered by Ordinals has kindled an era where we expect Bitcoin’s Layer 1 (L1) asset issuance to skyrocket. Coupled with Stacks’ prowess in handling DeFi and other economic activities, we see a flourishing ecosystem set for the years ahead.&#x20;
+XLink is a key component of any projects building on Bitcoin that abstracts the difference between L1 and L2 from the user experience, i.e. providing the "native-like” Bitcoin DeFi experience on L1, whereby users can use native BTC or L1 assets issued on Bitcoin to interact with L2 smart contracts.
 
-At ALEX, we’re not mere spectators. We’re an integral part of this vibrant, multi-year growth story. Our aim? To deliver a top-notch DeFi platform that caters to the next-gen Bitcoin users, innovators, and the broader ecosystem.
+XLink is bi-directional or “two-way” bridge, meaning you can freely transfer assets between Bitcoin and its L2s and vice versa.
 
-So, in essence, ALEX is a concentrated bet on this view of Bitcoin Finance.&#x20;
+On Bitcoin, users interact with [Multisigs](./#multisigs) (operated by XLink DAO Foundation) to lock assets to be bridged ("source asset"), and on L2s to receive the L2 asset ("destination asset").
 
-Presently, a good number of BRC-20s may appear to be meme coins, but we foresee a significant shift. We are witnessing more established projects considering BRC20 issuance. Moreover, numerous other projects we are in discussion with are considering issuing BRC20 tokens to augment their existing tokenomics and tap into a new audience. Some may argue that Bitcoin began its journey as a “meme” coin, with its initial purpose being to buy pizza amongst friends. However, the essential query is whether the technology enabling the creation of such meme coins can transcend that purpose. We are confident that BRC20 and Ordinals hold a greater potential than just being meme coins.&#x20;
+Additionally, users on Bitcoin may provide additional data (`OP_RETURN`) to trigger certain smart contract interaction on their behalf automatically by Bitcoin Bridge.
 
-Our vision at ALEX is to dissolve the barrier between Bitcoin L1 and L2 to create a seamless Bitcoin DeFi experience. The relationship between Bitcoin and Stacks is fundamentally different from that of Ethereum and e.g. Arbitrum. In the Bitcoin-Stacks pair, L2 equips L1 with smart contract capabilities, while in the Ethereum-Arbitrum duo, both L1 and L2 possess their independent smart contract functionalities. Therefore, a true Bitcoin DeFi experience isn’t about users having to choose between L1 and L2. Instead, it’s about Bitcoin asset holders experiencing DeFi on L1 with L2 running smart contracts unobtrusively in the background. ALEX is not simply adapting to the emerging Bitcoin DeFi landscape — we’re actively shaping it. We’re steadfast in our belief that our efforts will continue to herald an exciting new epoch for Bitcoin DeFi, introducing the benefits of decentralized trading to an even wider audience. And by doing so, we’re facilitating the next generation of Bitcoin users to flourish within this rapidly evolving ecosystem.
+On L2s or non-Bitcoin chains, users interact with "[Endpoints](./#endpoints)" on the source blockchain to lock assets to be bridged ("source asset"), and on the destination blockchain to receive the bridged asset ("destination asset").
+
+Asset transfers from users to Endpoints are monitored by a group of "[validators](./#validators)", who produce cryptographic proofs that say "X amount of source asset are sent by address A on the source blockchain for address B on the destination blockchain to receive Y amount of destination asset."
+
+There is a minimum threshold of such proofs that must be provided and verified before the assets received into Endpoint can be sent to the relevant address.
+
+Upon meeting such minimum threshold, a "[relayer](./#relayers)" calls into Endpoint with the proofs to trigger the transfer of the received destination assets to the relevant address.
+
+## Multisigs
+
+Multisigs are Bitcoin wallets that are operated by multiple signers. In contrast to a typicall wallet requiring just one party to sign a transaction, a multisig requires multiple parties or signers to sign a transaction.
+
+## Endpoints
+
+Endpoints are the smart contracts that handle the asset transfers. They are owned by multisig contracts (for example, [Gnosis Safe](https://safe.global/) on Ethereum and [Executor DAO](https://explorer.stacks.co/txid/0xf4bd95ea0486e6a50ae632c613f1d72b2a5bbbc4211b494cd0f1d3443658544d?chain=mainnet) on Stacks) operated by XLink DAO Foundation.
+
+Users use Endpoints to trigger transfer of source assets. The destination assets are then sent by a relayer by producing cryptographic proofs.
+
+That the assets are held by contracts owned by multisig contracts is important because this minimises the risk of a malicious actor stealing the private key and assets sent by users.
+
+## Validators
+
+Validators are responsible for producing cryptographic proofs, which must be verified by the Endpoints before transferring the destination assets to an address.
+
+Bitcoin Oracle runs the validator network for and secures the Bitcoin Bridge.
+
+Validators are important because this set-up minimises the risk of a malicious actor taking over the system (for example, a relayer).
+
+## Relayers
+
+Relayers are responsible for triggering the destination asset transfer upon gathering a minimum threshold of cryptographic proofs produced by the validators.
+
+Relayers, however, cannot move the assets at will and their role is limited only to delivering messages from/to multisigs and Bridge endpoint.

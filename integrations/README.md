@@ -26,11 +26,11 @@ The configuration parameters include, among others,:
 
 ## Integration with Bitcoin Oracle (> 1 week)
 
-Bitcoin Bridge scales by partnering with [Bitcoin Oracle](broken-reference) which runs the validation network.&#x20;
+Bitcoin Bridge scales by partnering with [Bitcoin Oracle](../bitcoin-bridge/integrations/broken-reference/) which runs the validation network.
 
 Bitcoin Oracle observes every endpoint on the Bitcoin Bridge and produces a set of cryptographic proofs for the relevant destination chain to process.
 
-Bitcoin Oracle produces the [consensus data](../../bitcoin-oracle/on-demand-consensus-data.md) based on the computation from the off-chain engines and provides a [consensus model framework](../../bitcoin-oracle/threshold-based-consensus/) that allows the end consumer to customise their consensus model by optimising across the trust and the security budget.
+Bitcoin Oracle produces the [consensus data](broken-reference) based on the computation from the off-chain engines and provides a [consensus model framework](broken-reference) that allows the end consumer to customise their consensus model by optimising across the trust and the security budget.
 
 Bitcoin Bridge uses a mixture of required and optional validators (with 51% threshold) to secure its bridge, which brings the following benefits:
 
