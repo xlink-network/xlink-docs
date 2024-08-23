@@ -1,10 +1,10 @@
 # Reserves
 
-Users can monitor the reserves real-time at [https://app.alexlab.co/bridge-reserve](https://app.alexlab.co/bridge-reserve).
+Users can monitor the reserves real-time at [https://app.xlink.network/bridge-reserve](https://app.xlink.network/bridge-reserve).
 
 ## Latest circulating supply of aBTC
 
-For more details on aBTC, please visit [aBTC, a.k.a. ALEX BTC](abtc-a.k.a-alex-btc.md).
+For more details on aBTC, please visit [here](abtc-a.k.a-alex-btc.md).
 
 You can check the latest circulating supply of aBTC or other L2 BRC20 tokens by calling `get-total-supply` function of the relevant contract (please note the number is in 8-digit fixed notation, i.e. the last 8 digits represent the decimals).
 
