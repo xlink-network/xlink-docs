@@ -10,7 +10,7 @@ XLink is a key component of any projects building on Bitcoin that abstracts the 
 
 XLink is bi-directional or “two-way” bridge, meaning you can freely transfer assets between Bitcoin and its L2s and vice versa.
 
-On Bitcoin, users interact with [Multisigs](./#multisigs) (operated by XLink DAO Foundation) to lock assets to be bridged ("source asset"), and on L2s to receive the L2 asset ("destination asset").
+On Bitcoin, users interact with [Multisigs](./#multisigs) (operated by a decentralised network of validators and verifiers) to lock assets to be bridged ("source asset"), and on L2s to receive the L2 asset ("destination asset").
 
 Additionally, users on Bitcoin may provide additional data (`OP_RETURN`) to trigger certain smart contract interaction on their behalf automatically by Bitcoin Bridge.
 
@@ -28,7 +28,7 @@ Multisigs are Bitcoin wallets that are operated by multiple signers. In contrast
 
 ## Endpoints
 
-Endpoints are the smart contracts that handle the asset transfers. They are owned by multisig contracts (for example, [Gnosis Safe](https://safe.global/) on Ethereum and [Executor DAO](https://explorer.stacks.co/txid/0xf4bd95ea0486e6a50ae632c613f1d72b2a5bbbc4211b494cd0f1d3443658544d?chain=mainnet) on Stacks) operated by XLink DAO Foundation.
+Endpoints are the smart contracts that handle the asset transfers. They are owned by multisig contracts (for example, [Gnosis Safe](https://safe.global/) on Ethereum and [Executor DAO](https://explorer.stacks.co/txid/0xf4bd95ea0486e6a50ae632c613f1d72b2a5bbbc4211b494cd0f1d3443658544d?chain=mainnet) on Stacks) operated by a decentralised network of validators and verifiers.
 
 Users use Endpoints to trigger transfer of source assets. The destination assets are then sent by a relayer by producing cryptographic proofs.
 
@@ -38,9 +38,15 @@ That the assets are held by contracts owned by multisig contracts is important b
 
 Validators are responsible for producing cryptographic proofs, which must be verified by the Endpoints before transferring the destination assets to an address.
 
-Bitcoin Oracle runs the validator network for and secures the Bitcoin Bridge.
+[Bitcoin Oracle](https://docs.alexgo.io/bitcoin-oracle/what-is-the-bitcoin-oracle) runs the validator network for XLink.
 
 Validators are important because this set-up minimises the risk of a malicious actor taking over the system (for example, a relayer).
+
+## Verifiers
+
+Verifiers provide an additional level of protection by verifying those asset transfers requested by Relayers are good and not tempered. Verifiers thus complement the Endpoints verification by incorporating additional off-chain information which may not be available to the Endpoints.
+
+[Bitcoin Orable](https://docs.alexgo.io/bitcoin-oracle/what-is-the-bitcoin-oracle) runs the verifier network for XLink.
 
 ## Relayers
 
