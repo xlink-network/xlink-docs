@@ -1,13 +1,17 @@
-### Introduction
-- **What is XLink**
+# Introduction
+
+## What is XLink
+
 XLink is a bi-directional or 'two-way' bridge, meaning you can freely transfer assets between Bitcoin and its L2s and vice versa.
 XLink is not a typical cross-chain bridge. It's a key component of any project building on Bitcoin that abstracts the difference between L1 and L2 from the user experience, providing a 'native-like' Bitcoin DeFi experience. This allows users to use native BTC or L1 assets issued on Bitcoin to interact with L2 smart contracts.
 
 
-- **What is a blockchain bridge?**
+## What is a blockchain bridge?
+
 A blockchain bridge is a system that enables the transfer of assets or data between two different blockchain networks. Since most blockchains are designed to operate independently, they typically cannot communicate or transfer assets directly to one another. A bridge addresses this limitation by creating a connection between separate blockchains, allowing users to move their tokens or information from one blockchain to another. Blockchain bridges are particularly crucial in decentralized finance (DeFi), allowing users to utilize their assets across different platforms.
 
-- **Its importance in decentralized ecosystems**
+## Its importance in decentralized ecosystems
+
 In the decentralized ecosystem, multiple blockchains often coexist, each with its own strengths and purposes. Some excel in security, others in transaction speed, or in providing robust smart contract solutions for builders. However, if assets are confined to a single blockchain, it limits their utility. That’s where bridges come in. They unlock significant potential by enabling users to move assets between chains, offering greater flexibility. For instance, you can use Bitcoin on Ethereum-based DeFi platforms or leverage different blockchain features without leaving your assets behind. This creates a more connected and fluid ecosystem, which is crucial for enhancing the usefulness of decentralized applications (dApps) and services.
 
 - **Types of blockchain bridges**
