@@ -1,8 +1,10 @@
-### Supported Blockchains and Tokens 
+# Supported Blockchains and Tokens 
 
 We list below the different bridgable tokens with XLink. 
 
-Note: Users can only transfer tokens to their equivalent versions on other blockchains. For example, BTC can be swapped for WBTC when moving from Bitcoin to an EVM network, as they represent the same asset on different chains.
+{% hint style="info" %}
+**Note** Users can only transfer tokens to their equivalent versions on other blockchains. For example, BTC can be swapped for WBTC when moving from Bitcoin to an EVM network, as they represent the same asset on different chains.
+{% endhint %}
 
 | **Blockchain**   | **Tokens**                                                                |
 |------------------|---------------------------------------------------------------------------|
