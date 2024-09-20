@@ -4,7 +4,7 @@
 
 * [Introduction](overview/introduction.md)
 * [How XLink Bridge Works?](overview/how-xlink-works.md)
-* [Supported Blockchains and Tokens](getting-started/supported-chains-and-tokens.md)
+* [Supported Blockchains and Tokens](overview/supported-blockchains-and-tokens.md)
 
 ## Getting Started
 
