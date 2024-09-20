@@ -1,4 +1,4 @@
-### How XLink Bridge Works?
+# How XLink Bridge Works?
 
 The XLink Bridge is a hybrid bi-directional bridge that acts as a 'connector' between Bitcoin and other blockchains. When you want to move assets (like Bitcoin) from one network to another, XLink handles the process, making sure everything happens securely.
 
