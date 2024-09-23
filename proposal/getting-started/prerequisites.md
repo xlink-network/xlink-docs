@@ -24,7 +24,7 @@ Make sure your wallet is properly set up and funded before proceeding with asset
 
 {% tabs %}
 {% tab title="Leather" %}
-![Leather Wallet](<../../path/to/leather-image.png>)
+![Leather Wallet](../.gitbook/assets/banner-leather.png)
 
 Leather is a non-custodial wallet for managing Bitcoin-backed assets on Stacks and other Bitcoin layers, supporting tokens and collectibles.
 
