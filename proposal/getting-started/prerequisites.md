@@ -20,7 +20,7 @@ XLink supports several wallets depending on the blockchain you are using. Below 
 
 ## Wallet Setup
 
-Make sure your wallet is properly set up and funded before proceeding with asset transfers on XLink. For more information, refer to the download links for each wallet below.
+For more information on how to set up each wallet, refer to each wallet's documentation and download links below.
 
 {% tabs %}
 {% tab title="Leather" %}
