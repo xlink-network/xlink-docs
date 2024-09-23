@@ -37,7 +37,7 @@ Leather is a non-custodial wallet for managing Bitcoin-backed assets on Stacks a
 {% endtab %}
 
 {% tab title="Xverse" %}
-![Xverse Wallet](<../../path/to/xverse-image.png>)
+![Xverse Wallet](../.gitbook/assets/banner-xverse.png)
 
 Xverse is a multi-chain wallet designed for Bitcoin and Stacks, supporting Bitcoin Ordinals and BRC-20 tokens.
 
