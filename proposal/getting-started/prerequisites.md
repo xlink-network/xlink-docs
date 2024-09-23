@@ -4,27 +4,20 @@ Before using XLink to bridge your assets across blockchains, you need to ensure 
 
 ## Supported Wallets
 
-XLink supports several wallets depending on the blockchain you are using. Below are the wallets available for each supported chain:
+XLink supports several wallets depending on the blockchain you are using. Below are the wallets available for each supported chain.
 
-### Stacks Chain
-- Leather
-- Xverse
-- Xverse Mobile
-- OKX
-- Asigna
+| Wallet	    | Stacks  | Bitcoin  | EVM   |
+|-----------|----------|----------|-------|
+| Leather   | ✅        | ✅        | ❌    |
+| Xverse    | ✅        | ✅        | ❌    |
+| OKX       | ❌        | ✅        | ✅    |
+| Asigna    | ✅        | ❌        | ❌    |
+| UniSat    | ❌        | ✅        | ❌    |
+| Bitget    | ❌        | ✅        | ❌    |
+| Phantom   | ❌        | ❌        | ✅    |
+| MetaMask  | ❌        | ❌        | ✅    |
+| BTC Connect | ❌      | ❌        | ✅    |
 
-### Bitcoin Chain
-> **Note:** Please avoid using an address with ARC-20 tokens to prevent them from being spent.
-
-- Leather
-- Xverse
-- UniSat
-- OKX
-- Bitget
-
-### EVM Chain
-- Phantom
-- MetaMask
-- BTC Connect
+## Download
 
 Make sure your wallet is properly set up and funded before proceeding with asset transfers on XLink. For more information, refer to the [wallet setup guide](wallet-setup-guide.md).
