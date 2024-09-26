@@ -1,44 +1,14 @@
 # Using the Bridge
 
-## Connecting your Wallet
-
-Follow these steps to connect your wallet to XLink.
-
-### Step 1: Open the Wallet Manager
-
-First, navigate to the **Wallet Manager** located in the top right corner of the XLink app. This is where you’ll manage all your wallet connections.
-
-![Select Wallet Manager](../.gitbook/assets/0-select-wallet-manager.png)
-
-### Step 2: Choose the Blockchain and Wallet
-
-In the Wallet Manager, select the blockchain you are using (e.g., **Stacks Chain** or **Bitcoin Chain**), then choose the wallet that you want to connect. Supported wallets include Leather, Xverse, and others as shown.
-
-![Select Wallet](../.gitbook/assets/1-select-wallet.png)
-
-### Step 3: Enter Your Password
-
-After selecting your wallet, you will be prompted to enter your wallet’s password.
-
-![Enter Password](../.gitbook/assets/2-introduce-password.png)
-
-### Step 4: Select Your Account
-
-Once the password is entered, choose the specific account you want to connect. This account will be used for executing transactions on the bridge.
-
-![Select Account](../.gitbook/assets/3-select-your-account.png)
-
-### Step 5: Confirm Your Connection
-
-Once the wallet is successfully connected, you will notice the blockchain icon in the top right corner of the screen, confirming that your wallet has been successfully linked.
-
-![Check Wallet Connection](../.gitbook/assets/4-check-connected-wallet.png)
-
-{% hint style="info" %} You can connect wallets for different blockchains simultaneously (e.g., Stacks, Bitcoin, and EVM). Once connected, you will see the respective blockchain icons in the top right corner of the app. {% endhint %}
-
-## Using the Bridge
-
 Follow these steps to bridge your assets between chains using XLink.
+
+### Step 0: Connecting your Wallet
+
+Before using the bridge you have to connect to XLink a wallet for the blockchain you will be bridging from and also for the blockchain you will be briding to (e.g., **Stacks Chain**, **Bitcoin Chain** or **EVM Chain**).
+
+For some cases, you can use the same wallet for both blockchains, but you still need to connect it separately for both blockchains in order to specify the source and destination accounts.
+
+For a detailed explanation on how to connect your wallet, check our guide: [**How to Connect your Wallet**](./guides/how-to-connect-your-wallet.md).
 
 ### Step 1: Select the Source Blockchain and Token
 
