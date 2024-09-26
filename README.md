@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/xlink_cover.png
+cover: .gitbook/assets/DocCoverXlink.png
 coverY: 0
 ---
 
