@@ -24,7 +24,7 @@ For more information on how to set up each wallet, refer to each wallet's docume
 
 {% tabs %}
 {% tab title="Leather" %}
-![Leather Wallet](../.gitbook/assets/banner-leather.png)
+![Leather Wallet](../.gitbook/assets/supported-wallets/banner-leather.png)
 
 Leather is a non-custodial wallet for managing Bitcoin-backed assets on Stacks and other Bitcoin layers, supporting tokens and collectibles.
 
@@ -37,7 +37,7 @@ Leather is a non-custodial wallet for managing Bitcoin-backed assets on Stacks a
 {% endtab %}
 
 {% tab title="Xverse" %}
-![Xverse Wallet](../.gitbook/assets/banner-xverse.png)
+![Xverse Wallet](../.gitbook/assets/supported-wallets/banner-xverse.png)
 
 Xverse is a multi-chain wallet designed for Bitcoin and Stacks, supporting Bitcoin Ordinals and BRC-20 tokens.
 
@@ -50,7 +50,7 @@ Xverse is a multi-chain wallet designed for Bitcoin and Stacks, supporting Bitco
 {% endtab %}
 
 {% tab title="OKX" %}
-![OKX Wallet](../.gitbook/assets/banner-okx.png)
+![OKX Wallet](../.gitbook/assets/supported-wallets/banner-okx.png)
 
 OKX Wallet offers multi-chain support across over 100 blockchains. It provides easy access to NFTs, DeFi, and trading tools.
 
@@ -63,7 +63,7 @@ OKX Wallet offers multi-chain support across over 100 blockchains. It provides e
 {% endtab %}
 
 {% tab title="Asigna" %}
-![Asigna Wallet](../.gitbook/assets/banner-asigna.png)
+![Asigna Wallet](../.gitbook/assets/supported-wallets/banner-asigna.png)
 
 Asigna is a multisig wallet designed for Bitcoin and Stacks, supporting Ordinals, BRC-20 tokens, and batch transactions.
 
@@ -76,7 +76,7 @@ Asigna is a multisig wallet designed for Bitcoin and Stacks, supporting Ordinals
 {% endtab %}
 
 {% tab title="UniSat" %}
-![UniSat Wallet](../.gitbook/assets/banner-unisat.png)
+![UniSat Wallet](../.gitbook/assets/supported-wallets/banner-unisat.png)
 
 UniSat is a wallet designed to manage Bitcoin Ordinals and interact with decentralized applications on the Bitcoin blockchain.
 
@@ -89,7 +89,7 @@ UniSat is a wallet designed to manage Bitcoin Ordinals and interact with decentr
 {% endtab %}
 
 {% tab title="Bitget" %}
-![Bitget Wallet](../.gitbook/assets/banner-bitget.png)
+![Bitget Wallet](../.gitbook/assets/supported-wallets/banner-bitget.png)
 
 Bitget Wallet offers a multi-chain experience with support for Bitcoin and other blockchains, accessible through both browser extensions and mobile apps.
 
@@ -102,7 +102,7 @@ Bitget Wallet offers a multi-chain experience with support for Bitcoin and other
 {% endtab %}
 
 {% tab title="Phantom" %}
-![Phantom Wallet](../.gitbook/assets/banner-phantom.png)
+![Phantom Wallet](../.gitbook/assets/supported-wallets/banner-phantom.png)
 
 Phantom is a wallet that supports Solana and Ethereum-based blockchains, offering easy-to-use browser extensions and mobile apps.
 
@@ -115,7 +115,7 @@ Phantom is a wallet that supports Solana and Ethereum-based blockchains, offerin
 {% endtab %}
 
 {% tab title="MetaMask" %}
-![MetaMask Wallet](../.gitbook/assets/banner-metamask.png)
+![MetaMask Wallet](../.gitbook/assets/supported-wallets/banner-metamask.png)
 
 MetaMask is one of the most popular Ethereum-based wallets, offering support for Ethereum and other EVM-compatible blockchains.
 
@@ -128,7 +128,7 @@ MetaMask is one of the most popular Ethereum-based wallets, offering support for
 {% endtab %}
 
 {% tab title="BTC Connect" %}
-![BTC Connect Wallet](../.gitbook/assets/banner-btcconnect.png)
+![BTC Connect Wallet](../.gitbook/assets/supported-wallets/banner-btcconnect.png)
 
 BTC Connect is a wallet that integrates Bitcoin with Ethereum ecosystems, enabling secure multisig transactions and interaction with decentralized applications.
 
