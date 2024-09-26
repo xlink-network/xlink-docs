@@ -36,6 +36,8 @@ To start, choose the blockchain from which you want to bridge your assets (e.g.,
 
 ![Select Source Blockchain and Token](../.gitbook/assets/using-the-bridge/3-1-select-blockchain-and-token-from.png)
 
+{% hint style="info" %} Bridgable tokens for a specific blockchain are identified by the double arrow icon ⮂. {% endhint %}
+
 ### Step 2: Select the Destination Blockchain and Token
 
 Next, select the destination blockchain where you wish to send the assets (e.g., **BNB Chain**). Then, choose the corresponding token on this chain (e.g., **sUSDT ERC-20**).
