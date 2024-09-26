@@ -30,7 +30,7 @@ Leather is a non-custodial wallet for managing Bitcoin-backed assets on Stacks a
 
 **Supported Browser Extensions:** Chrome, Brave, Edge, and Opera  
 **Supported Mobile Apps:** None  
-**Supported Blockchains:** Stacks and Bitcoin
+**Supported Blockchains on XLink:** Stacks and Bitcoin
 
 [**Visit Site**](https://leather.io)  
 [**Download Leather**](https://leather.io/install-extension)
@@ -43,7 +43,7 @@ Xverse is a multi-chain wallet designed for Bitcoin and Stacks, supporting Bitco
 
 **Supported Browser Extensions:** Chrome  
 **Supported Mobile Apps:** Android and iOS  
-**Supported Blockchains:** Stacks and Bitcoin
+**Supported Blockchains on XLink:** Stacks and Bitcoin
 
 [**Visit Site**](https://www.xverse.app)  
 [**Download Xverse**](https://www.xverse.app/download)
@@ -56,7 +56,7 @@ OKX Wallet offers multi-chain support across over 100 blockchains. It provides e
 
 **Supported Browser Extensions:** Chrome  
 **Supported Mobile Apps:** Android and iOS  
-**Supported Blockchains:** Stacks and Bitcoin
+**Supported Blockchains on XLink:** Stacks and Bitcoin
 
 [**Visit Site**](https://www.okx.com/web3)  
 [**Download OKX**](https://www.okx.com/web3)
@@ -69,7 +69,7 @@ Asigna is a multisig wallet designed for Bitcoin and Stacks, supporting Ordinals
 
 **Supported Browser Extensions:** Chrome  
 **Supported Mobile Apps:** None  
-**Supported Blockchains:** Stacks
+**Supported Blockchains on XLink:** Stacks
 
 [**Visit Site**](https://www.asigna.io)  
 [**Download Asigna**](https://asigna.gitbook.io/asigna/stacks-multisig/quickstart/connecting-to-asigna)
@@ -82,7 +82,7 @@ UniSat is a wallet designed to manage Bitcoin Ordinals and interact with decentr
 
 **Supported Browser Extensions:** Chrome  
 **Supported Mobile Apps:** Android and iOS  
-**Supported Blockchains:** Bitcoin
+**Supported Blockchains on XLink:** Bitcoin
 
 [**Visit Site**](https://unisat.io)  
 [**Download UniSat**](https://unisat.io/download)
@@ -95,7 +95,7 @@ Bitget Wallet offers a multi-chain experience with support for Bitcoin and other
 
 **Supported Browser Extensions:** Chrome  
 **Supported Mobile Apps:** Android and iOS  
-**Supported Blockchains:** Bitcoin
+**Supported Blockchains on XLink:** Bitcoin
 
 [**Visit Site**](https://web3.bitget.com)  
 [**Download Bitget**](https://web3.bitget.com/en/wallet-download)
@@ -108,7 +108,7 @@ Phantom is a wallet that supports Solana and Ethereum-based blockchains, offerin
 
 **Supported Browser Extensions:** Chrome, Firefox, Brave, and Edge  
 **Supported Mobile Apps:** Android and iOS  
-**Supported Blockchains:** EVM
+**Supported Blockchains on XLink:** EVM
 
 [**Visit Site**](https://phantom.app)  
 [**Download Phantom**](https://phantom.app/download)
@@ -121,7 +121,7 @@ MetaMask is one of the most popular Ethereum-based wallets, offering support for
 
 **Supported Browser Extensions:** Chrome, Firefox, Brave, Edge, and Opera  
 **Supported Mobile Apps:** Android and iOS  
-**Supported Blockchains:** EVM
+**Supported Blockchains on XLink:** EVM
 
 [**Visit Site**](https://metamask.io)  
 [**Download MetaMask**](https://metamask.io/download)
@@ -134,7 +134,7 @@ BTC Connect is a wallet that integrates Bitcoin with Ethereum ecosystems, enabli
 
 **Supported Browser Extensions:** None  
 **Supported Mobile Apps:** None  
-**Supported Blockchains:** EVM
+**Supported Blockchains on XLink:** EVM
 
 [**Visit Site**](https://particle.network/btc-connect.html)  
 [**Download BTC Connect**](https://particle.network/btc-connect.html)
