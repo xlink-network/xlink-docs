@@ -26,9 +26,9 @@ XLink is a cross-chain bridge enabling seamless asset transfers across multiple 
 
 ## Explore
 
-- [Introduction](overview/introduction.md)
-- [How It Works](overview/how-xlink-works.md)
-- [Supported Blockchains & Tokens](overview/supported-blockchains-and-tokens.md)
+- [Introduction](introduction.md)
+- [How It Works](how-xlink-works.md)
+- [Supported Blockchains & Tokens](supported-blockchains-and-tokens.md)
 
 ## Support
 
