@@ -13,7 +13,7 @@ First, click on the **Wallet Manager** located in the top right corner of the XL
 In the Wallet Manager, select the blockchain you are using (e.g., **Stacks Chain**, **Bitcoin Chain** or **EVM Chain**), then choose the wallet that you want to connect. Supported wallets include Leather, Xverse, and others. 
 
 {% hint style="info" %}
-See the [Prerequisites](./prerequisites) section for the list of **Supported Wallets** and their installation guides.
+See the [Prerequisites](../prerequisites) section for the list of **Supported Wallets** and their installation guides.
 {% endhint %}
 
 For this example we will choose **Stacks Chain** and **Leather** wallet.
