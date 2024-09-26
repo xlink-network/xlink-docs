@@ -44,13 +44,13 @@ Follow these steps to bridge your assets between chains using XLink.
 
 To start, choose the blockchain from which you want to bridge your assets (e.g., **Stacks Chain**). Then, select the token you would like to bridge (e.g., **sUSDT**).
 
-![Select Token](../.gitbook/assets/using-the-bridge/3-0-select-token-from.png)
+![Select Source Token](../.gitbook/assets/using-the-bridge/3-0-select-token-from.png)
 
-![Select Blockchain and Token](../.gitbook/assets/using-the-bridge/3-1-select-blockchain-and-token-from.png)
+![Select Source Blockchain and Token](../.gitbook/assets/using-the-bridge/3-1-select-blockchain-and-token-from.png)
 
 ### Step 2: Select the Destination Blockchain and Token
 
-Next, select the destination blockchain where you wish to send the assets (e.g., **Bison Testnet**). Then, choose the corresponding token on this chain (e.g., **sUSDT ERC-20**).
+Next, select the destination blockchain where you wish to send the assets (e.g., **BNB Chain**). Then, choose the corresponding token on this chain (e.g., **sUSDT ERC-20**).
 
 ![Select Destination Token](../.gitbook/assets/using-the-bridge/3-2-select-token-to.png)
 
@@ -76,7 +76,7 @@ You will now be prompted to confirm the bridging transaction. Review the details
 
 ### Step 6: Complete Transfer (Unwrap)
 
-Once the bridge process begins, scroll down to the **Transfer-to-Unwrap** section and confirm the additional unwrap transaction. This step is required for your tokens to be fully processed on the destination chain.
+Once the bridge process begins, scroll down in the **Transfer-to-Unwrap** pop-up and confirm the additional unwrap transaction. This step is required for your tokens to be fully processed on the destination chain.
 
 ![Scroll Down to Transfer to Unwrap](../.gitbook/assets/using-the-bridge/3-7-scroll-down-transfer-to-unwrap.png)
 
@@ -84,10 +84,14 @@ Once the bridge process begins, scroll down to the **Transfer-to-Unwrap** sectio
 
 ### Step 7: Wait for Confirmation
 
-Finally, wait for the transaction to be confirmed on the blockchain. The confirmation time can take anywhere from 10 to 30 minutes, depending on network conditions. Once the transaction is broadcasted, you can check the status in the explorer.
+Finally, wait for the transaction to be confirmed on the blockchain. The confirmation time can take anywhere from 10 to 30 minutes, depending on network conditions. Once the transaction is broadcasted, you should see the bridged tokens deposited in your destination wallet.
 
 ![Wait for Transaction Confirmation](../.gitbook/assets/using-the-bridge/3-9-done-wait-for-transaction.png)
 
 {% hint style="info" %}
 You can monitor your transaction in real-time by clicking the **View in explorer** link or turning on **Telegram notifications**.
 {% endhint %}
+
+## Support
+
+For assistance, please reach out to our Community Managers on [Discord](https://discord.com/invite/xlink) and [Telegram](https://x.com/XLinkbtc).
