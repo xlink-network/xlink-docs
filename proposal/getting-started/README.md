@@ -13,13 +13,30 @@ layout:
     visible: false
 ---
 
-# :rocket: Getting Started with XLink
+# 🚀 Getting Started with XLink
 
 XLink enables seamless transfers of digital assets across multiple blockchains, offering users an easy way to move tokens while maintaining control of their assets. Learn how to set up, connect your wallet, and start using XLink to bridge your assets across different blockchains.
 
 ## Choose where to start
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Prerequisites</td><td><a href="prerequisites.md">prerequisites.md</a></td><td><a href="../../.gitbook/assets/cards/prerequisites.png">cards/prerequisites.png</a></td></tr><tr><td>Using the Bridge</td><td><a href="using-the-bridge.md">using-the-bridge.md</a></td><td><a href="../../.gitbook/assets/cards/using-the-bridge.png">cards/using-the-bridge.png</a></td></tr><tr><td>Guides</td><td><a href="guides.md">guides.md</a></td><td><a href="../../.gitbook/assets/cards/guides.png">cards/guides.png</a></td></tr></tbody></table>
+<div class="card-container">
+
+### Prerequisites
+Learn about the requirements and supported wallets to begin using XLink.
+- [Prerequisites](getting-started/prerequisites.md)
+![Prerequisites](../.gitbook/assets/cards/prerequisites.png)
+
+### Using the Bridge
+A step-by-step guide to using XLink to bridge your assets across chains.
+- [Using the Bridge](getting-started/using-the-bridge.md)
+![Using the Bridge](../.gitbook/assets/cards/using-the-bridge.png)
+
+### Guides
+Detailed tutorials on connecting your wallet, managing assets, and using XLink features.
+- [Guides](getting-started/guides/README.md)
+![Guides](../.gitbook/assets/cards/guides.png)
+
+</div>
 
 ## Support
 
