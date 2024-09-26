@@ -7,6 +7,8 @@ coverY: 0
 
 XLink is a cutting-edge, bi-directional cross-chain bridge that enables seamless asset transfers between Bitcoin and its Layer 2 networks (L2s) as well as other blockchain ecosystems. By abstracting the complexity of blockchain layers from the user experience, XLink allows users to move assets like Bitcoin effortlessly between different chains while maintaining security and full asset control.
 
+[**🌁 Connect to XLink and Start Bridging Now!**](https://app.xlink.network)
+
 ## Key Features
 
 - **Bi-Directional Asset Transfers**: Easily transfer assets between Bitcoin and L2s, as well as non-Bitcoin chains.
