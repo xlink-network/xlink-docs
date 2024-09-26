@@ -19,13 +19,6 @@ XLink is a cross-chain bridge enabling seamless asset transfers across multiple 
 
 [**🌁 Connect to XLink and Start Bridging Now!**](https://app.xlink.network)
 
-## Features
-
-- **Multi-Chain Support**: Bridge assets across ecosystems like Stacks, Bitcoin, EVM and more.
-- **Seamless Transfers**: Securely move tokens between chains without compromising control.
-- **User-Friendly**: Intuitive interface for all experience levels.
-- **Secure Transactions**: Robust security for safe cross-chain transfers.
-
 ## Explore
 
   - [Introduction](overview/introduction.md): Learn the basics of how XLink operates and its role in cross-chain transfers.
