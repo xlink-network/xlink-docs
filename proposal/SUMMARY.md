@@ -1,10 +1,10 @@
 # Table of contents
 
-## Overview
+<!-- ## Overview
 *[Overview](overview/README.md)
     * [Introduction](overview/introduction.md)
     * [How XLink Bridge Works?](overview/how-xlink-works.md)
-    * [Supported Blockchains and Tokens](overview/supported-blockchains-and-tokens.md)
+    * [Supported Blockchains and Tokens](overview/supported-blockchains-and-tokens.md) -->
 
 ## Getting Started
 
