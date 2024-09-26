@@ -7,7 +7,7 @@
 
 * [Getting Started](getting-started/README.md)
     * [Prerequisites](getting-started/prerequisites.md)
-    * [Using the Bridge](getting-started/using-the-brige.md)
+    * [Using the Bridge](getting-started/using-the-bridge.md)
     * [Guides](getting-started/guides/README.md)
         * [How to Connect your Wallet](getting-started/guides/how-to-connect-your-wallet.md)
 
