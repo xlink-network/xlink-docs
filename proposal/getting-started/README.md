@@ -21,7 +21,7 @@ XLink enables seamless asset transfers across blockchains, keeping you in contro
 
 - [Prerequisites](prerequisites.md)
 - [Using the Bridge](using-the-bridge.md)
-- [Guides](./guides/README.md)
+- [Guides](guides/)
 
 ## Support
 
