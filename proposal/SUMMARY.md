@@ -1,18 +1,18 @@
 # Table of contents
 
 ## Overview
-
-* [Introduction](overview/introduction.md)
-* [How XLink Bridge Works?](overview/how-xlink-works.md)
-* [Supported Blockchains and Tokens](overview/supported-blockchains-and-tokens.md)
+*[Overview](overview/README.md)
+    * [Introduction](overview/introduction.md)
+    * [How XLink Bridge Works?](overview/how-xlink-works.md)
+    * [Supported Blockchains and Tokens](overview/supported-blockchains-and-tokens.md)
 
 ## Getting Started
 
-* [Prerequisites](getting-started/prerequisites.md)
-* [Using the Bridge](getting-started/using-the-brige.md)
-* [Guides](getting-started/guides.md)
-    * [BRC-20 Bridge](getting-started/brc-20-guide.md)
-    * [Cross-Chain Bridge](getting-started/cross-chain-bridge.md)
+*[Getting Started](getting-started/README.md)
+    * [Prerequisites](getting-started/prerequisites.md)
+    * [Using the Bridge](getting-started/using-the-brige.md)
+    * [Guides](getting-started/guides/README.md)
+        * [How to Connect your Wallet](getting-started/guides/how-to-connect-your-wallet.md)
 
 ## Special Features
 
