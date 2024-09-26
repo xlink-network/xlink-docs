@@ -7,7 +7,7 @@ Follow these steps to bridge your assets between chains using XLink!
 Before using the bridge you have to connect to XLink a wallet for the blockchain you will be bridging from and also one for the blockchain you will be briding to (e.g., **Stacks Chain**, **Bitcoin Chain** or **EVM Chain**).
 
 {% hint style="info" %}
-See the [Prerequisites](./prerequisites) section for the list of **Supported Wallets** and their installation guides.
+See the [Prerequisites](./prerequisites.md) section for the list of **Supported Wallets** and their installation guides.
 {% endhint %}
 
 You can connect your wallet by clicking click on the **Wallet Manager** located in the top right corner of the XLink app. This is where you’ll manage all your wallet connections.
