@@ -1,6 +1,8 @@
 # How to Connect your Wallet
 
-Follow these steps to connect your wallet to XLink.
+Follow these steps to connect your wallet to XLink App.
+
+[**🌁 Connect to XLink and Start Bridging Now!**](https://app.xlink.network)
 
 ### Step 1: Open the Wallet Manager
 
