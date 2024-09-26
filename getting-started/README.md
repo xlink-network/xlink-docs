@@ -1,5 +1,5 @@
 ---
-description: Seamless asset transfers with the XLink cross-chain bridge.
+description: Get started with asset transfers using the XLink cross-chain bridge!
 layout:
   title:
     visible: true
