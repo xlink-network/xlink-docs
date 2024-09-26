@@ -1,4 +1,4 @@
-# Using the Bridge
+# Quickstart: Using the Bridge
 
 Follow these steps to bridge your assets between chains using XLink!
 
