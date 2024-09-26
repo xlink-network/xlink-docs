@@ -3,7 +3,7 @@
 We list below the different bridgable tokens with XLink. 
 
 {% hint style="info" %}
-**Note** Users can only transfer tokens to their equivalent versions on other blockchains. For example, BTC can be swapped for WBTC when moving from Bitcoin to an EVM network, as they represent the same asset on different chains.
+**Important:** Users can only bridge tokens that represent the **same asset** across different blockchains. For example, BTC can be transferred to its equivalent, WBTC, when moving from Bitcoin to an EVM network, as both represent the same asset on different chains.
 {% endhint %}
 
 | **Blockchain**   | **Tokens**                                                                |

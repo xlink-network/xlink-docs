@@ -2,6 +2,10 @@
 
 Follow these steps to bridge your assets between chains using XLink!
 
+{% hint style="info" %}
+**Important:** Users can only bridge tokens that represent the **same asset** across different blockchains. For example, BTC can be transferred to its equivalent, WBTC, when moving from Bitcoin to an EVM network, as both represent the same asset on different chains.
+{% endhint %}
+
 ### Step 0: Connecting your Wallet
 
 Before using the bridge, you need to connect a wallet for the blockchain you are bridging from, as well as one for the blockchain you are bridging to (e.g., **Stacks Chain**, **Bitcoin Chain**, or **EVM Chain**).
