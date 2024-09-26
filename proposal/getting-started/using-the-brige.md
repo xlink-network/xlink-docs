@@ -17,7 +17,7 @@ You can connect your wallet by clicking click on the **Wallet Manager** located 
 For some cases, you can use the same wallet for both blockchains, but you still need to connect it separately for both blockchains in order to specify the source and destination accounts.
 
 {% hint style="info" %}
-For a detailed explanation on how to connect your wallet, check our guide: [**How to Connect your Wallet**](./guides/how-to-connect-your-wallet).
+For a detailed explanation on how to connect your wallet, check our guide: [**How to Connect your Wallet**](./guides/how-to-connect-your-wallet.md).
 {% endhint %}
 
 Once you have connected both corresponding wallets, you will se them active on the **Wallet Manager**.
