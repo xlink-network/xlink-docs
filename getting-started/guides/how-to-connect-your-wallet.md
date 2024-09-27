@@ -40,6 +40,5 @@ Once the wallet is successfully connected, you will notice the blockchain icon i
 
 ![Check Wallet Connection](../../.gitbook/assets/connecting-your-wallet/4-check-connected-wallet.png)
 
-Here's a proofread version based on your comment:
 
 {% hint style="info" %} Keep in mind that, for bridging, you will need to connect wallets for both the source and destination blockchains (e.g., Stacks, Bitcoin, and EVM). Once connected, you will see the respective blockchain icons in the top right corner of the app. {% endhint %}
