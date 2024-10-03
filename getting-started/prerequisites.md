@@ -6,18 +6,19 @@ Before using XLink to bridge your assets across blockchains, you need to ensure 
 
 XLink supports various wallets depending on the blockchain, browser, or device you are using. Below is a list of the available wallets for each supported chain, along with information on compatible browsers and mobile devices.
 
-| Wallet        | Stacks  | Bitcoin  | EVM   | Browser                                                                                                                | Mobile   |
-|---------------|---------|----------|-------|------------------------------------------------------------------------------------------------------------------------|----------|
-| Asigna        | ✅      | ❌       | ❌    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                                                                      | ❌       |
-| Bitget        | ❌      | ✅       | ❌    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                                                                      | ✅       |
-| BTC Connect   | ❌      | ❌       | ✅    | ❌                                                                                                                     | ❌       |
-| Leather       | ✅      | ✅       | ❌    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_16x16.png" height="16px"> | ❌       |
-| MetaMask      | ❌      | ❌       | ✅    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_16x16.png" height="16px"> | ✅       |
-| OKX           | ✅      | ✅       | ❌    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                                                                      | ✅       |
-| Phantom       | ❌      | ❌       | ✅    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"> | ✅       |
-| UniSat        | ❌      | ✅       | ❌    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                                                                      | ✅       |
-| Xverse        | ✅      | ✅       | ❌    | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                                                                      | ✅       |
+| Wallet        | Stacks | Bitcoin | EVM  | Browser                                                                                                                | Mobile |
+|---------------|--------|---------|------|------------------------------------------------------------------------------------------------------------------------|--------|
+| Asigna        | ✅     | ❌      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ❌     |
+| Bitget        | ❌     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
+| BTC Connect   | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">¹                                           | ✅¹    |
+| Leather       | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_16x16.png" height="16px"> | ❌     |
+| MetaMask      | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_16x16.png" height="16px"> | ✅     |
+| OKX           | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
+| Phantom       | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"> | ✅     |
+| UniSat        | ❌     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
+| Xverse        | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
 
+¹ BTC Connect enables connection through Bitget, OKX, UniSat, and Xverse wallets.
 
 ## Wallet Setup
 
@@ -55,12 +56,14 @@ Bitget Wallet offers a multi-chain experience with support for Bitcoin and other
 
 BTC Connect is a wallet that integrates Bitcoin with Ethereum ecosystems, enabling secure multisig transactions and interaction with decentralized applications.
 
-**Supported Browser Extensions:** None  
-**Supported Mobile Apps:** None  
+**Supported Browser Extensions:** Chrome¹  
+**Supported Mobile Apps:** Android and iOS¹  
 **Supported Blockchains on XLink:** EVM
 
 [**Visit Site**](https://particle.network/btc-connect.html)  
 [**Download BTC Connect**](https://particle.network/btc-connect.html)
+
+¹ BTC Connect enables connection through Bitget, OKX, UniSat, and Xverse wallets.
 {% endtab %}
 
 {% tab title="Leather" %}
