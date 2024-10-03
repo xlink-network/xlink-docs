@@ -8,15 +8,15 @@ XLink supports various wallets depending on the blockchain, browser, or device y
 
 | Wallet        | Stacks | Bitcoin | EVM  | Browser                                                                                                                | Mobile |
 |---------------|--------|---------|------|------------------------------------------------------------------------------------------------------------------------|--------|
-| Asigna        | ✅     | ❌      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ❌     |
-| Bitget        | ❌     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
-| BTC Connect   | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">¹                                           | ✅¹    |
-| Leather       | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_16x16.png" height="16px"> | ❌     |
-| MetaMask      | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_16x16.png" height="16px"> | ✅     |
-| OKX           | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
-| Phantom       | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_16x16.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_16x16.png" height="16px"> | ✅     |
-| UniSat        | ❌     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
-| Xverse        | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_16x16.png" height="16px">                                            | ✅     |
+| Asigna        | ✅     | ❌      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px">                                            | ❌     |
+| Bitget        | ❌     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px">                                            | ✅     |
+| BTC Connect   | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px">¹                                           | ✅¹    |
+| Leather       | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_24x24.png" height="16px"> | ❌     |
+| MetaMask      | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/opera_24x24.png" height="16px"> | ✅     |
+| OKX           | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px">                                            | ✅     |
+| Phantom       | ❌     | ❌      | ✅   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/firefox_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/brave_24x24.png" height="16px"><img src="../.gitbook/assets/browser-logos/edge_24x24.png" height="16px"> | ✅     |
+| UniSat        | ❌     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px">                                            | ✅     |
+| Xverse        | ✅     | ✅      | ❌   | <img src="../.gitbook/assets/browser-logos/chrome_24x24.png" height="16px">                                            | ✅     |
 
 ¹ BTC Connect enables connection through Bitget, OKX, UniSat, and Xverse wallets.
 
