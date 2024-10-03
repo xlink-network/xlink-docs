@@ -6,17 +6,18 @@ Before using XLink to bridge your assets across blockchains, you need to ensure 
 
 XLink supports several wallets depending on the blockchain you are using. Below are the wallets available for each supported chain.
 
-| Wallet	    | Stacks  | Bitcoin  | EVM   |
-|-----------|----------|----------|-------|
-| Leather   | ✅        | ✅        | ❌    |
-| Xverse    | ✅        | ✅        | ❌    |
-| OKX       | ✅         | ✅        | ❌    |
-| Asigna    | ✅        | ❌        | ❌    |
-| UniSat    | ❌        | ✅        | ❌    |
-| Bitget    | ❌        | ✅        | ❌    |
-| Phantom   | ❌        | ❌        | ✅    |
-| MetaMask  | ❌        | ❌        | ✅    |
-| BTC Connect | ❌      | ❌        | ✅    |
+| Wallet        | Stacks  | Bitcoin  | EVM   | Browser                              | Mobile   |
+|---------------|---------|----------|-------|--------------------------------------|----------|
+| Leather       | ✅      | ✅       | ❌    | Chrome, Brave, Edge, Opera           | ❌       |
+| Xverse        | ✅      | ✅       | ❌    | Chrome                               | ✅       |
+| OKX           | ✅      | ✅       | ❌    | Chrome                               | ✅       |
+| Asigna        | ✅      | ❌       | ❌    | Chrome                               | ❌       |
+| UniSat        | ❌      | ✅       | ❌    | Chrome                               | ✅       |
+| Bitget        | ❌      | ✅       | ❌    | Chrome                               | ✅       |
+| Phantom       | ❌      | ❌       | ✅    | Chrome, Firefox, Brave, Edge         | ✅       |
+| MetaMask      | ❌      | ❌       | ✅    | Chrome, Firefox, Brave, Edge, Opera  | ✅       |
+| BTC Connect   | ❌      | ❌       | ✅    | None                                 | ❌       |
+
 
 ## Wallet Setup
 
