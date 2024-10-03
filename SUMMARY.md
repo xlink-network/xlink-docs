@@ -12,6 +12,9 @@
   - [Quickstart: Using the Bridge](getting-started/using-the-bridge.md)
   - [Guides](getting-started/guides/README.md)
     - [How to Connect your Wallet](getting-started/guides/how-to-connect-your-wallet.md)
+   
+- [Special Features](special-features/README.md)
+  - [Campaigns Guide](special-features/campaigns.md)
 
 - [Reserves](reserves.md)
 
