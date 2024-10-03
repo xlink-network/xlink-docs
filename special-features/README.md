@@ -18,7 +18,7 @@ XLink doesn't just help you transfer assets between blockchains securely, it als
 
 ## Explore
 
-- [Campaign Guide](campaign-guide.md): A detailed guide on how to participate in XLink campaigns.
+- [Campaigns Guide](campaigns-guide.md): A detailed guide on how to participate in XLink campaigns.
 - [Points](points.md): Discover how the XLink points system works and how you can earn rewards for your activity.
 
 ## Support
