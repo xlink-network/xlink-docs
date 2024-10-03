@@ -14,7 +14,7 @@
     - [How to Connect your Wallet](getting-started/guides/how-to-connect-your-wallet.md)
    
 - [Special Features](special-features/README.md)
-  - [Campaigns Guide](special-features/campaigns.md)
+  - [Campaigns Guide](special-features/campaigns-guide.md)
 
 - [Reserves](reserves.md)
 
