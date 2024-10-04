@@ -1,55 +1,45 @@
 ---
-description: XLink is not a typical cross-chain bridge
+cover: .gitbook/assets/DocCoverXlink.png
+coverY: 0
 ---
 
 # What is XLink
 
-## Key to providing the "native-like" Bitcoin DeFi experience
+XLink is a cutting-edge, bi-directional cross-chain bridge that enables seamless asset transfers between Bitcoin and its Layer 2 networks (L2s) as well as other blockchain ecosystems. By abstracting the complexity of blockchain layers from the user experience, XLink allows users to move assets like Bitcoin effortlessly between different chains while maintaining security and full asset control.
 
-XLink is a key component of any projects building on Bitcoin that abstracts the difference between L1 and L2 from the user experience, i.e. providing the "native-like” Bitcoin DeFi experience on L1, whereby users can use native BTC or L1 assets issued on Bitcoin to interact with L2 smart contracts.
+[**🌁 Connect to XLink and Start Bridging Now!**](https://app.xlink.network)
 
-XLink is bi-directional or “two-way” bridge, meaning you can freely transfer assets between Bitcoin and its L2s and vice versa.
+## Key Features
 
-On Bitcoin, users interact with [Multisigs](./#multisigs) (operated by a decentralised network of validators and verifiers) to lock assets to be bridged ("source asset"), and on L2s to receive the L2 asset ("destination asset").
+- **Bi-Directional Asset Transfers**: Easily transfer assets between Bitcoin and L2s, as well as non-Bitcoin chains.
+- **Secure and Decentralized**: Utilizes multisigs and decentralized validators to secure all transfers.
+- **User-Friendly Interface**: Designed to provide a smooth experience for both novice and experienced users.
+- **Cross-Chain Interoperability**: Supports multiple blockchains including Bitcoin, Stacks, and EVM-compatible chains.
 
-Additionally, users on Bitcoin may provide additional data (`OP_RETURN`) to trigger certain smart contract interaction on their behalf automatically by Bitcoin Bridge.
+XLink plays a crucial role in projects building on Bitcoin, offering a 'native-like' DeFi experience by enabling users to interact with smart contracts on L2s using native BTC or other Bitcoin L1 assets.
 
-On L2s or non-Bitcoin chains, users interact with "[Endpoints](./#endpoints)" on the source blockchain to lock assets to be bridged ("source asset"), and on the destination blockchain to receive the bridged asset ("destination asset").
+## Documentation
 
-Asset transfers from users to Endpoints are monitored by a group of "[validators](./#validators)", who produce cryptographic proofs that say "X amount of source asset are sent by address A on the source blockchain for address B on the destination blockchain to receive Y amount of destination asset."
+XLink's functionality is detailed across various sections in our documentation. Here's an overview of the key files and structure:
 
-There is a minimum threshold of such proofs that must be provided and verified before the assets received into Endpoint can be sent to the relevant address.
+- **Overview**
+  - [Introduction](overview/introduction.md): Learn the basics of how XLink operates and its role in cross-chain transfers.
+  - [How XLink Works](overview/how-xlink-works.md): Overview of the mechanics behind the XLink bridge.
+  - [Supported Blockchains & Tokens](overview/supported-blockchains-and-tokens.md): Explore the ecosystems XLink integrates with.
+  
+- **Getting Started**
+  - [Prerequisites](getting-started/prerequisites.md): Essential requirements to begin using the XLink bridge.
+  - [Quickstart: Using the Bridge](getting-started/using-the-bridge.md): Step-by-step guide to initiate asset transfers.
+  - [Guides](getting-started/guides/README.md): Practical walkthroughs, including [How to Connect Your Wallet](getting-started/guides/how-to-connect-your-wallet.md).
 
-Upon meeting such minimum threshold, a "[relayer](./#relayers)" calls into Endpoint with the proofs to trigger the transfer of the received destination assets to the relevant address.
+- **Integrations**
+  - [Bitcoin](integrations/understanding-the-bitcoin-bridge.md): Delve into how XLink integrates with Bitcoin.
+  - [Bitcoin L2s](integrations/bitcoin-l2s.md): Understand how XLink works with various L2 solutions.
+  - [Non-Bitcoin Chains](integrations/non-bitcoin-chains.md): Overview of support for non-Bitcoin blockchains.
 
-## Multisigs
+- **Security**
+  - [Security Audits](security-audits.md): Learn about XLink’s robust security measures and audit reports.
 
-Multisigs are Bitcoin wallets that are operated by multiple signers. In contrast to a typicall wallet requiring just one party to sign a transaction, a multisig requires multiple parties or signers to sign a transaction.
+## Support
 
-## Endpoints
-
-Endpoints are the smart contracts that handle the asset transfers. They are owned by multisig contracts (for example, [Gnosis Safe](https://safe.global/) on Ethereum and [Executor DAO](https://explorer.stacks.co/txid/0xf4bd95ea0486e6a50ae632c613f1d72b2a5bbbc4211b494cd0f1d3443658544d?chain=mainnet) on Stacks) operated by a decentralised network of validators and verifiers.
-
-Users use Endpoints to trigger transfer of source assets. The destination assets are then sent by a relayer by producing cryptographic proofs.
-
-That the assets are held by contracts owned by multisig contracts is important because this minimises the risk of a malicious actor stealing the private key and assets sent by users.
-
-## Validators
-
-Validators are responsible for producing cryptographic proofs, which must be verified by the Endpoints before transferring the destination assets to an address.
-
-[Bitcoin Oracle](https://docs.alexgo.io/bitcoin-oracle/what-is-the-bitcoin-oracle) runs the validator network for XLink.
-
-Validators are important because this set-up minimises the risk of a malicious actor taking over the system (for example, a relayer).
-
-## Verifiers
-
-Verifiers provide an additional level of protection by verifying those asset transfers requested by Relayers are good and not tempered. Verifiers thus complement the Endpoints verification by incorporating additional off-chain information which may not be available to the Endpoints.
-
-[Bitcoin Orable](https://docs.alexgo.io/bitcoin-oracle/what-is-the-bitcoin-oracle) runs the verifier network for XLink.
-
-## Relayers
-
-Relayers are responsible for triggering the destination asset transfer upon gathering a minimum threshold of cryptographic proofs produced by the validators.
-
-Relayers, however, cannot move the assets at will and their role is limited only to delivering messages from/to multisigs and Bridge endpoint.
+For assistance, feel free to join our community on [Discord](https://discord.com/invite/xlink) or [Telegram](https://x.com/XLinkbtc).
