@@ -13,14 +13,19 @@ layout:
     visible: false
 ---
 
-# Special Features
+# ✨ Special Features
+
 XLink doesn't just help you transfer assets between blockchains securely, it also comes with extra features. These special features are here to give you more options to interact with the XLink bridge.
 
-## Explore
+## 🔍 Explore
 
-- [Campaigns Guide](campaigns-guide.md): A detailed guide on how to participate in XLink campaigns.
-- [Points](points.md): Discover how the XLink points system works and how you can earn rewards for your activity.
+- **📖 [Campaign Guide](./special-features/campaigns-guide.md):** A detailed guide on how to participate in XLink campaigns and earn rewards.
 
-## Support
+## 🚀 What's Coming?
 
-For more information, join our community on [Discord](https://discord.com/invite/xlink) or follow us on [Telegram](https://x.com/XLinkbtc).
+XLink is always evolving, and we have more exciting features on the way! Stay tuned as we continue to add new ways for you to engage with the platform.
+
+## 💬 Need Help?
+
+If you have any questions or need support, our community is here to help!  
+Join us on [**Discord**](https://discord.com/invite/xlink) or follow us on [**Telegram**](https://x.com/XLinkbtc).
