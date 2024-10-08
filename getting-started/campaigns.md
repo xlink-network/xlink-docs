@@ -68,4 +68,4 @@ To view and join active campaigns, visit the [**XLink Campaigns Page**](https://
 
 ## 📞 Need Help?
 
-If you have any questions or need help with a campaign, join our community on [**Discord**](https://discord.com/invite/xlink) or follow us on [**Telegram**](https://x.com/XLinkbtc).
+If you have any questions or need help with a campaign, join our community on [**Discord**](https://discord.com/invite/xlink) or follow us on [**X**](https://x.com/XLinkbtc).

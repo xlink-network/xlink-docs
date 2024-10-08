@@ -28,4 +28,4 @@ XLink is always evolving, and we have more exciting features on the way! Stay tu
 ## 💬 Need Help?
 
 If you have any questions or need support, our community is here to help!  
-Join us on [**Discord**](https://discord.com/invite/xlink) or follow us on [**Telegram**](https://x.com/XLinkbtc).
+Join us on [**Discord**](https://discord.com/invite/xlink).

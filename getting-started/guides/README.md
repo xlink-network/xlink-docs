@@ -25,4 +25,4 @@ More guides coming soon to assist with managing assets, bridging tokens, and mor
 
 ## Support
 
-For assistance, join our community on [Discord](https://discord.com/invite/xlink) or [Telegram](https://x.com/XLinkbtc).
+For assistance, join our community on [Discord](https://discord.com/invite/xlink).

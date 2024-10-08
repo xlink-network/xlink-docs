@@ -27,4 +27,4 @@ XLink enables seamless asset transfers across blockchains, keeping you in contro
 
 ## Support
 
-For help, join us on [Discord](https://discord.com/invite/xlink) or [Telegram](https://x.com/XLinkbtc).
+For help, join us on [Discord](https://discord.com/invite/xlink).
