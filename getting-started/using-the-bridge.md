@@ -30,9 +30,11 @@ Once you have connected both wallets, you will see them active in the **Wallet M
 
 ### Step 1: Select the Source Blockchain and Token
 
-To start, choose the **source blockchain** from which you want to bridge your assets (e.g., **Stacks Chain**). Then, select the **source token** you would like to bridge (e.g., **sUSDT**).
+To start, click on the << From Token Selector >>.
 
-![Select Source Token](../.gitbook/assets/using-the-bridge/3-0-select-token-from.png)
+![To Token Selector](../.gitbook/assets/using-the-bridge/3-0-select-token-from.png)
+
+Next, choose the **source blockchain** from which you want to bridge your assets (e.g., **Stacks Chain**). Then, select the **source token** you would like to bridge (e.g., **sUSDT**).
 
 ![Select Source Blockchain and Token](../.gitbook/assets/using-the-bridge/3-1-select-blockchain-and-token-from.png)
 
@@ -40,9 +42,12 @@ To start, choose the **source blockchain** from which you want to bridge your as
 
 ### Step 2: Select the Destination Blockchain and Token
 
-Next, select the **destination blockchain** where you wish to send the assets (e.g., **BNB Chain**). Then, choose the corresponding **destination token** on this chain (e.g., **sUSDT ERC-20**).
+First, click on the << To Token Selector >>.
 
 ![Select Destination Token](../.gitbook/assets/using-the-bridge/3-2-select-token-to.png)
+
+Next, select the **destination blockchain** where you wish to send the assets (e.g., **BNB Chain**). Then, choose the corresponding **destination token** on this chain (e.g., **sUSDT ERC-20**).
+
 
 ![Select Blockchain and Token Destination](../.gitbook/assets/using-the-bridge/3-3-select-blockchain-and-token-to.png)
 
