@@ -30,7 +30,7 @@ XLink's functionality is detailed across various sections in our documentation. 
 - **Getting Started**
   - [Prerequisites](getting-started/prerequisites.md): Essential requirements to begin using the XLink bridge.
   - [Quickstart: The Bridge](getting-started/the-bridge.md): Step-by-step guide to initiate asset transfers.
-  - [Quickstart: Campaigns](getting-started/campaigns.md): Step-by-step guide to initiate asset transfers.
+  - [Quickstart: Campaigns](getting-started/campaigns.md): A detailed guide on how to participate in XLink campaigns and earn rewards.
   - [Guides](getting-started/guides/README.md): Practical walkthroughs, including [How to Connect Your Wallet](getting-started/guides/how-to-connect-your-wallet.md).
 
 - **Integrations**

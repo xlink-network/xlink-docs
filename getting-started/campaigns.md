@@ -23,16 +23,16 @@ Participating in campaigns is easy and rewarding. Although each campaign might b
 
 ### 1. **📝 Register on the Platform**
    - First, you’ll need to register on the platform where the campaign is hosted (e.g., CORE, Mode, or Stacks).
-   - *screenshot here showing the registration page on a specific campaign.*
    
-   ![Campaign Registration](../.gitbook/assets/special-features/campaign-registration.png)
+   <!-- *screenshot here showing the registration page on a specific campaign.*
+   ![Campaign Registration](../.gitbook/assets/special-features/campaign-registration.png) -->
    
 ### 2. **🌉 Bridge Your Assets**
    - Next, you’ll typically bridge assets from one blockchain to another. This could include tokens like aBTC, WBTC, or other supported assets.
    - Make sure to check the campaign’s instructions on which assets to bridge and to which chain.
-   - *screenshot here showing the bridge interface and how to select assets for bridging.*
    
-   ![Bridge Assets](../.gitbook/assets/special-features/bridge-assets.png)
+   <!-- *screenshot here showing the bridge interface and how to select assets for bridging.*
+   ![Bridge Assets](../.gitbook/assets/special-features/bridge-assets.png) -->
 
 ### 3. **⚙️ Complete the Required Action**
    - Once your assets are bridged, you may need to perform additional actions like:
@@ -40,15 +40,15 @@ Participating in campaigns is easy and rewarding. Although each campaign might b
      - Adding liquidity to a pool.
      - Borrowing or supplying tokens on a DeFi platform.
    - These actions unlock the campaign rewards!
-   - *screenshot here showing an example of completing an action like staking or adding liquidity.*
-   
-   ![Staking and Liquidity](../.gitbook/assets/special-features/staking-liquidity.png)
+  
+  <!-- *screenshot here showing an example of completing an action like staking or adding liquidity.* 
+  ![Staking and Liquidity](../.gitbook/assets/special-features/staking-liquidity.png) -->
 
 ### 4. **🏆 Earn Rewards**
    - After completing the necessary steps, you'll start earning rewards like SPARKS, XLink Points, or tokens specific to the blockchain.
-   - *screenshot here showing how rewards are tracked or where users can see their earned rewards.*
    
-   ![Earn Rewards](../.gitbook/assets/special-features/earn-rewards.png)
+  <!-- *screenshot here showing how rewards are tracked or where users can see their earned rewards.*
+  ![Earn Rewards](../.gitbook/assets/special-features/earn-rewards.png) -->
 
 ## 🎁 Typical Rewards in XLink Campaigns
 
@@ -68,4 +68,4 @@ To view and join active campaigns, visit the [**XLink Campaigns Page**](https://
 
 ## 📞 Need Help?
 
-If you have any questions or need help with a campaign, join our community on [**Discord**](https://discord.com/invite/xlink) or follow us on [**X**](https://x.com/XLinkbtc).
+If you have any questions or need help with a campaign, join our community on [**Discord**](https://discord.com/invite/xlink).
