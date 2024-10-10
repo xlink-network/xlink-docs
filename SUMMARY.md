@@ -9,10 +9,11 @@
 
 - [Getting Started](getting-started/README.md)
   - [Prerequisites](getting-started/prerequisites.md)
-  - [Quickstart: Using the Bridge](getting-started/using-the-bridge.md)
+  - [Quickstart: The Bridge](getting-started/the-bridge.md)
+  - [Quickstart: Campaigns](getting-started/campaigns.md)
   - [Guides](getting-started/guides/README.md)
     - [How to Connect your Wallet](getting-started/guides/how-to-connect-your-wallet.md)
-
+   
 - [Reserves](reserves.md)
 
 - [Integrations](integrations/README.md)

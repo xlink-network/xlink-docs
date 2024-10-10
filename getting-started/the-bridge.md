@@ -89,4 +89,4 @@ You can monitor your transaction in real-time by clicking the **View in explorer
 
 ## Support
 
-For assistance, please reach out to our Community Managers on [Discord](https://discord.com/invite/xlink) and [Telegram](https://x.com/XLinkbtc).
+For assistance, please reach out to our Community Managers on [Discord](https://discord.com/invite/xlink).

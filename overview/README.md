@@ -27,4 +27,4 @@ XLink is a cross-chain bridge enabling seamless asset transfers across multiple 
 
 ## Support
 
-For help, join us on [Discord](https://discord.com/invite/xlink) or [Telegram](https://x.com/XLinkbtc).
+For help, join us on [Discord](https://discord.com/invite/xlink).
