@@ -20,6 +20,7 @@ This section provides tutorials to help you use XLink effectively.
 ## Available Guides
 
 - [How to Connect your Wallet](how-to-connect-your-wallet.md)
+- [How to Swap non-bridgeable Tokens](how-to-swap-non-bridgeable-tokens.md)
 
 More guides coming soon to assist with managing assets, bridging tokens, and more.
 
