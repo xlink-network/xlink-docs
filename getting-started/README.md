@@ -24,7 +24,7 @@ XLink enables seamless asset transfers across blockchains, keeping you in contro
  - [Prerequisites](prerequisites.md): Essential requirements to begin using the XLink bridge.
   - [Quickstart: The Bridge](the-bridge.md): Step-by-step guide to initiate asset transfers.
   - [Quickstart: Campaigns](campaigns.md): A detailed guide on how to participate in XLink campaigns and earn rewards.
-  - [Guides](./guides/README.md): Practical walkthroughs, including [How to Connect Your Wallet](./guides/how-to-connect-your-wallet.md).
+  - [Guides](./guides/README.md): Practical walkthroughs, including [How to Connect Your Wallet](./guides/how-to-connect-your-wallet.md) and [How to Swap non-bridgeable Tokens](./guides/how-to-swap-non-bridgeable-tokens.md).
 
 ## Support
 
