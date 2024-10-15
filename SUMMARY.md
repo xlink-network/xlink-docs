@@ -13,6 +13,7 @@
   - [Quickstart: Campaigns](getting-started/campaigns.md)
   - [Guides](getting-started/guides/README.md)
     - [How to Connect your Wallet](getting-started/guides/how-to-connect-your-wallet.md)
+    - [How to Swap non-bridgeable Tokens](getting-started/guides/how-to-swap-non-bridgeable-tokens.md)
    
 - [Reserves](reserves.md)
 
