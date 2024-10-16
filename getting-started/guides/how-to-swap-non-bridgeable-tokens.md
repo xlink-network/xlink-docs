@@ -2,7 +2,7 @@
 
 In some cases, certain tokens may not be supported by the XLink bridge due to compatibility limitations. If you are attempting to bridge a token that is not compatible with the XLink bridge, it is recommended to use **ALEX Swap** to exchange it for a bridgeable token. This ensures that you can proceed with your cross-chain activities without interruption.
 
-### [**🔄 Swap your tokens now on ALEX Swap!**](https://app.alexlab.co/swap)
+[**🔄 Swap your tokens now on ALEX Swap!**](https://app.alexlab.co/swap)
 
 ## Supported Tokens
 
