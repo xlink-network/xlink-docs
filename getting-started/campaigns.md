@@ -1,5 +1,5 @@
 ---
-description: Learn how to participate in XLink campaigns and earn rewards.
+description: Learn what are and how to participate in XLink campaigns and earn rewards.
 layout:
   title:
     visible: true
@@ -17,9 +17,9 @@ layout:
 
 ## What are XLink Campaigns
 
-Welcome to the **Campaigns**! XLink campaigns are special events where users can participate in various actions on supported blockchains to earn rewards. These actions typically involve interacting with the XLink bridge, such as staking tokens, adding liquidity, or bridging assets between chains. Campaigns offer great opportunities to earn **ALEX**, **LiSTX**, **XLink Points**, and other project-specific tokens as rewards.
+Welcome to the **Campaigns**! XLink campaigns are special events where users can participate in various actions on supported blockchains to earn rewards. These actions typically involve interacting with many different actors in the STACKS ecosystem, like the XLink bridge, and use them to accomplish different challenges. Campaigns offer great opportunities to earn **ALEX**, **LiSTX**, **XLink Points**, and other project-specific tokens as rewards.
 
-Each campaign may have different requirements and actions to complete, but they all aim to incentivize user participation and enhance Bitcoin DeFi ecosystems. Below, we'll explore the rewards you can earn and some tips on how to maximize your participation.
+Each campaign involves different requirements and actions, and all aim to incentivize user participation and strengthen user confidence in the Bitcoin DeFi ecosystem. Below, we'll explore the rewards you can earn and some tips on how to maximize your participation.
 
 ## How do XLink Campaigns work
 
@@ -57,7 +57,7 @@ First, visit the **XLink App** and navigate to the **Campaigns** tab. This is wh
 
 Look for the **See Details** button next to the campaign you're interested in. Clicking it will provide more details on how to participate, including specific steps and links to register.
 
-![Campaign Registration](../.gitbook/assets/campaigns/campaigns-menu.png)
+![Campaign Browsing](../.gitbook/assets/campaigns/campaigns-menu.png)
 
 Once you've selected a campaign, you'll need to register for it by following the instructions provided under the **How to Participate** section. You might be directed to specific platforms like **CORE**, **Mode**, or **Stacks**, depending on the campaign.
 
@@ -65,7 +65,7 @@ For example, in the **ALEX Staking Campaign**, you'll be directed to stake your 
 
 ![ALEX Staking Campaign Example](../.gitbook/assets/campaigns/alex-staking-example.png)
 
-For example, in the **ALEX Liquidity Campaign**, you’ll be directed to add liquidity on a supported DeFi platform. Be sure to follow the specific steps outlined in each campaign.
+Similarly, in the **ALEX Liquidity Campaign**, you’ll be directed to add liquidity on a supported DeFi platform. Be sure to follow the specific steps outlined in each campaign.
    
 ### Step 2: **Bridge Your Assets** (If Required)
 Next, you’ll typically bridge assets from one blockchain to another, depending on the campaign. This could include tokens like **aBTC**, **WBTC**, or other supported assets. Make sure to check the campaign’s instructions on which assets to bridge and to which chain.
