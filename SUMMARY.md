@@ -24,6 +24,9 @@
 
 - [Security Audits](security-audits.md)
 
+- [Developers](developers/contracts/README.md)
+  - [meta-peg-in-endpoint-v2-02](developers/contracts/meta-peg-in-endpoint-v2-02.md)
+
 <!-- 
 
 Future work:
