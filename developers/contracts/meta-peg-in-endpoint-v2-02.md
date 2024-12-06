@@ -13,7 +13,7 @@ This technical document provides a comprehensive overview of the contract respon
 | -------- | ------ |
 | Variable | `bool` |
 
-This data variable serves as a flag to control the operational status of the contract within the system. When set to 'paused,' it blocks all meta peg-in transactions. By default, the contract is deployed in 'paused' mode. Refer to the [`pause`](meta-peg-in-endpoint-v2-02.md#pause) governance feature to change this status.
+This data variable serves as a flag to control the operational status of the contract within the system. When set to 'paused,' it blocks all meta peg-in transactions. By default, the contract is deployed in 'paused' mode. Refer to the [pause](meta-peg-in-endpoint-v2-02.md#pause) governance feature to change this status.
 
 ### `fee-to-address`
 
@@ -134,7 +134,7 @@ As this peg-in feature is designed for Bitcoin metaprotocol tokens (e.g., BRC-20
 
 #### `finalize-peg-in-cross-swap-on-index`
 
-Similar to the peg-in-cross, the peg-in-cross-swap involves a cross-blockchain operation with an additional asset swapping capability. This feature is useful when the desired target token requires intermediate swap operations. The function achieves this by receiving a list of token traits involved in the operation up to the target token. Refer to the [AMM Pool documentation]() for more details. In addition to the "from" and "to" addresses, the order details in the reveal transaction include information about the swap route. This swap route is validated against the `amm-pool-v2-01` contract through the `cross-router-v2-02` contract to check pool parameters. Additionally, this function includes a refund mechanism to handle errors during cross-swap transaction validation.
+Similar to the peg-in-cross, the peg-in-cross-swap involves a cross-blockchain operation with an additional asset swapping capability. This feature is useful when the desired target token requires intermediate swap operations. The function achieves this by receiving a list of token traits involved in the operation up to the target token. Refer to the [AMM Pool documentation](https://docs.alexgo.io/developers/protocol-contracts#amm-trading-pool) for more details. In addition to the "from" and "to" addresses, the order details in the reveal transaction include information about the swap route. This swap route is validated against the `amm-pool-v2-01` contract through the `cross-router-v2-02` contract to check pool parameters. Additionally, this function includes a refund mechanism to handle errors during cross-swap transaction validation.
 
 ##### Parameters
 
