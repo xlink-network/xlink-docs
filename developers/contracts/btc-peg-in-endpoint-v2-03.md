@@ -1,6 +1,7 @@
 # btc-peg-in-endpoint-v2-03.clar
 
 - Location: `xlink/packages/contracts/bridge-stacks/contracts/btc-peg-in-endpoint-v2-03.clar`
+- [Deployed contract]()
 
 This technical document provides a detailed overview of the contract responsible for managing the peg-in process, enabling the transfer of BTC from the Bitcoin network to the Stacks network. In this process, BTC is represented as bridged tokens on Stacks (aBTC). The contract's primary functionality is implemented through a series of public functions. Let's review this core operation.
 
@@ -78,7 +79,7 @@ This function builds on `finalize-peg-in-cross` by adding token swapping capabil
 #### `finalize-peg-in-launchpad`
 This function is tailored for peg-ins associated with launchpad projects on Stacks. It uses `.btc-bridge-registry-v2-02` to validate and register transaction details while ensuring compatibility with the project’s parameters. These parameters include fields such as `user`, `launch-id`, and `payment-token-trait`, which define the specifics of the launchpad operation. 
 The function first mints bridged BTC tokens for the user and then registers the operation in the `.alex-launchpad-v2-01` contract. This registration involves transferring the minted bridged tokens assets to the launchpad contract on behalf of the user, where they are associated with the launchpad project. 
-In case of any error, it invokes the internal [refund]() function and logs the issue.
+In case of any error, it invokes the internal [refund](btc-peg-in-endpoint-v2-03.md#relevant-internal-functions) function and logs the issue.
 
 ##### Parameters
 ```lisp
