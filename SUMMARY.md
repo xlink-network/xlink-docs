@@ -27,6 +27,7 @@
 ## 🎮 Developers
 * [Smart Contracts](developers/contracts/README.md)
   * [btc peg-in endpoint v2-03](developers/contracts/btc-peg-in-endpoint-v2-03.md)
+  * [btc-peg-out-endpoint-v2-01](developers/contracts/btc-peg-out-endpoint-v2-01.md)
   * [meta peg-in endpoint v2-02](developers/contracts/meta-peg-in-endpoint-v2-02.md)
   * [meta peg-out endpoint v2-03](developers/contracts/meta-peg-out-endpoint-v2-03.md)
 
