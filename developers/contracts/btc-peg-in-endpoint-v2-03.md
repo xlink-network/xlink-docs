@@ -25,7 +25,7 @@ A flag that indicates whether the peg-in process is active. If set to true, all 
 | -------- | ------ |
 | Variable | `uint` |
 
-The percentage fee charged for peg-in transactions. By default, this value is u0.
+The percentage fee charged for peg-in transactions. By default, this value is `u0`.
 
 ### `peg-in-min-fee`
 | Data     | Type   |
