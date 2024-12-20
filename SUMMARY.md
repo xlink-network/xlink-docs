@@ -24,6 +24,11 @@
 
 - [Security Audits](security-audits.md)
 
+## 🎮 Developers
+* [Smart Contracts](developers/contracts/README.md)
+  * [btc peg-in endpoint v2-03](developers/contracts/btc-peg-in-endpoint-v2-03.md)
+  * [meta peg-in endpoint v2-02](developers/contracts/meta-peg-in-endpoint-v2-02.md)
+
 <!-- 
 
 Future work:
