@@ -10,4 +10,6 @@
 
 ## [cross-peg-in-endpoint-v2-03](cross-peg-in-endpoint-v2-03.md)
 
+## [cross-peg-out-endpoint-v2-01](cross-peg-out-endpoint-v2-01.md)
+
 ## [xlink-staking](xlink-staking.md)

@@ -31,6 +31,7 @@
   * [meta peg-in endpoint v2-02](developers/contracts/meta-peg-in-endpoint-v2-02.md)
   * [meta peg-out endpoint v2-03](developers/contracts/meta-peg-out-endpoint-v2-03.md)
   * [cross-peg-in-endpoint-v2-03](developers/contracts/cross-peg-in-endpoint-v2-03.md)
+  * [cross-peg-out-endpoint-v2-01](developers/contracts/cross-peg-out-endpoint-v2-01.md)
   * [xlink-staking](developers/contracts/xlink-staking.md)
 
 <!-- 
