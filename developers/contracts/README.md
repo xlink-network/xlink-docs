@@ -8,4 +8,6 @@
 
 ## [meta-peg-out-endpoint-v2-03](meta-peg-out-endpoint-v2-03.md)
 
+## [cross-peg-in-endpoint-v2-03](cross-peg-in-endpoint-v2-03.md)
+
 ## [xlink-staking](xlink-staking.md)
