@@ -89,7 +89,7 @@ Key validations include:
 - The request must exist.
 - The token pair must be approved and operational (not paused for peg-out).
 - The transaction cannot be indexed to a time before the contract deployment.
-- The transaction's metaprotocol token (BRC-20) must match the requested details (`tick` and `amount`). Additionally, the `from` address must correspond to the `fulfilled-by address`, and the `to` address must match the `peg-out-address`.
+- The transaction's metaprotocol token (BRC-20) must match the requested details (`tick` and `amount`). Additionally, the `from` address must correspond to the `fulfilled-by` address, and the `to` address must match the `peg-out-address`.
 - The request must not be revoked or already finalized.
 
 The procedure is as follows, based on who finalizes it:
