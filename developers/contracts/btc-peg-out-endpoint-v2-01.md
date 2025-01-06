@@ -3,7 +3,7 @@
 - Location: `xlink/packages/contracts/bridge-stacks/contracts/btc-peg-out-endpoint-v2-01.clar`
 - [Deployed contract]()
 
-This technical document provides a detailed overview of the contract responsible for managing the peg-out process, enabling the transfer of bridged BTC from the Stacks network back to the Bitcoin network. In this process, aBTC (Bridged BTC tokens on Stacks) is burned or transferred, and BTC is released to a specified Bitcoin address. The contract's primary functionality is implemented through a series of public functions. Let's review this core operation.
+This technical document provides a detailed overview of the contract responsible for managing the peg-out process, enabling the transfer of bridged BTC from the Stacks network back to the Bitcoin network. In this process, aBTC (Bridged BTC tokens on Stacks) is burned or transferred, depending on the context, and BTC is released to a specified Bitcoin address. The contract's primary functionality is implemented through a series of public functions. Let's review this core operation.
 
 
 ## Storage
@@ -12,7 +12,7 @@ This technical document provides a detailed overview of the contract responsible
 | -------- | ------ |
 | Variable | `principal` |
 
-The address where the fees collected from peg-out operations are transferred. By default, this address is the `tx-sender` (the original deployer of the contract).
+The address where the fees collected from peg-out operations are transferred. By default, the address assigned to receive these fees is the `tx-sender` address of the contract deployer.
 
 ### `peg-out-paused`
 | Data     | Type   |
@@ -26,7 +26,7 @@ A flag that indicates whether the peg-out process is active. If set to true, all
 | -------- | ------ |
 | Variable | `uint` |
 
-The percentage fee charged for peg-out transactions. By default, this value is `u0`.
+The percentage fee charged for peg-out transactions. The fee is represented in a fixed-point format with 6 decimal places. This means that 100% is represented as `u100000000`and 1% is represented as `u1000000`. By default, this value is `u0`.
 
 ### `peg-out-min-fee`
 | Data     | Type   |
