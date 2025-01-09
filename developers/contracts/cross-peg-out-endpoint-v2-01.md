@@ -23,9 +23,9 @@ A flag that determines whether a whitelist is enforced for peg-out operations. I
 ### `whitelisted-users`
 | Data     | Type   |
 | -------- | ------ |
-| Variable | `principal` `bool` |
+| Map | `principal → bool` |
 
-This map stores the whitelist status of users. Each entry associates a `principal` with a boolean value indicating whether they are authorized to perform peg-out transactions. If `true`, the user is whitelisted; otherwise, they are not permitted to participate in the process.
+This map stores the whitelist status of users. Each entry associates a `principal` with a boolean value indicating whether they are authorized to perform peg-out transactions. When `use-whitelist` is set to `true`, users with a value of `true` in this map are whitelisted and permitted to participate in the process; otherwise, the whitelist is not enforced.
 
 ## Features
 
