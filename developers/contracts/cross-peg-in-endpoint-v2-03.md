@@ -51,14 +51,7 @@ A map that keeps track of the whitelist status of specific users. Each entry ass
 ### Peg-in features
 
 #### `transfer-to-cross`
-This function enables peg-in operations to transfer tokens from an external EVM-like blockchain to Stacks. It validates the provided order by checking its hash and verifying signatures to meet a threshold of validators defined in `cross-bridge-registry-v2-01`. If the order is valid, it mints or transfers the bridged tokens and updates the token reserve for the source EVM chain. It then utilizes `cross-router-v2-02` to route the tokens based on the destination chain. The logic for chain identification is as follows:
-
-```
-chain-id < 1000 // the tokens are routed to an EVM-compatible blockchain.
-chain-id == None // the tokens are sent to the recipient on the Stacks network.
-```
-
-In the event of validation failure, the function initiates a refund process.
+This function enables peg-in operations to transfer tokens from an external EVM-like blockchain to Stacks. It validates the provided order by checking its hash and verifying signatures to meet a threshold of validators defined in `cross-bridge-registry-v2-01`. If the order is valid, it mints or transfers the bridged tokens and updates the token reserve for the source EVM chain. It then utilizes `cross-router-v2-02` to route the tokens based on the destination chain. In the event of validation failure, the function initiates a refund process.
 
 ##### Parameters
 ```lisp
