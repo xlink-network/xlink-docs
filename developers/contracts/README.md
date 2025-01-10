@@ -14,7 +14,7 @@ The XLink ecosystem offers three main features that are implemented along differ
 <br>
 
 
-![image](https://hackmd.io/_uploads/SJ_1JNTL1l.png)
+![image](../.gitbook/assets/glue-docs/btc-bridge.png)
 
 
 <small> This is a simplified representation on the BTC Bridge main goal. </small> 
@@ -36,7 +36,7 @@ This endpoint is the responsible for managing the bridging of Stacks' aBTC back 
 
 <br>
 
-![image](https://hackmd.io/_uploads/B1J9S7pUke.png)
+![image](../../.gitbook/assets/glue-docs/meta-bridge.png)
 
 <small> This is a simplified representation on the Meta Bridge main goal. </small> 
 <small> * To see more information on these contracts see the [auxiliary contracts section](#Auxiliary-Contracts).</small>
@@ -59,7 +59,7 @@ This endpoint is responsible for managing the bridging of different tokens from 
 
 ### Cross Bridge (EVM Chains' Tokens <span style="font-size: 40px;">&harr;</span> Stacks' SIP-010)
 
-![image](https://hackmd.io/_uploads/ryD8ZE6U1x.png)
+![image](../.gitbook/assets/glue-docs/cross-bridge.png)
 
 <small> This is a simplified representation on the Cross Bridge main goal. </small> 
 <small> * To see more information on these contracts see the [auxiliary contracts section](#Auxiliary-Contracts).</small>
@@ -101,7 +101,7 @@ XLink also offers users the possibility to stake their tokens. To see detailed i
 ## Governance 
 <br>
 
-![image](https://hackmd.io/_uploads/rJaHf4p8ke.png)
+![image](../.gitbook/assets/glue-docs/governance.png)
 
 
 At the top of the on-chain architecture is the XLink DAO, accounting for XLink's governance in a rule-based, modular and flexible manner. Built upon Marvin Janssen's ExecutorDAO project, it operates based on the following core principles:
