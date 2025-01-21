@@ -14,7 +14,7 @@ The XLink ecosystem offers three main features that are implemented along differ
 
 ![This is a simplified representation on the BTC Bridge main goal.](../../.gitbook/assets/glue-docs/btc-bridge.png)
 
-\*To see more information on this contract see the [auxiliary contracts section](#Auxiliary-Contracts).
+\*To see more information on this contract see the [auxiliary contracts section](#auxiliary-contracts).
 
 #### BTC Peg-In Endpoint
 
@@ -34,7 +34,7 @@ This endpoint is responsible for managing the bridging of Stacks' aBTC back to t
 
 ![This is a simplified representation on the Meta Bridge main goal. ](../../.gitbook/assets/glue-docs/meta-bridge.png)
 
-\*To see more information on these contracts see the [auxiliary contracts section](#Auxiliary-Contracts).</small>
+\*To see more information on these contracts see the [auxiliary contracts section](#auxiliary-contracts).</small>
 
 #### Meta Peg-In Endpoint
 
@@ -56,7 +56,7 @@ This endpoint manages the bridging of tokens from the Stacks chain back to the B
 
 ![This is a simplified representation on the Cross Bridge main goal.](../../.gitbook/assets/glue-docs/cross-bridge.png)
 
-\*To see more information on these contracts see the [auxiliary contracts section](#Auxiliary-Contracts).</small>
+\*To see more information on these contracts see the [auxiliary contracts section](#auxiliary-contracts).</small>
 
 #### Cross Peg-In Endpoint
 
