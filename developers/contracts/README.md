@@ -1,6 +1,8 @@
 # XLink Contracts Technical Documentation
 
-XLink core functionalities are contained in contracts deployed within the Stacks blockchain network. Its main goal is to provide a bridging mechanism, allowing the transfer of different tokens between Bitcoin or EVM-like chains and Stacks network. XLink also offers the user the possibility to add swaps to their bridging process. The purpose of this document is to give the reader a high-level overview of the different modules that constitute the XLink ecosystem and how some of the contracts interact.
+XLink core functionalities are contained in contracts deployed within the Stacks blockchain network. Its main goal is to provide a bridging mechanism, allowing the transfer of different tokens between Bitcoin or EVM-like chains and Stacks network. The possibility to add token swaps to the bridging processes are offered to the users as well.
+It is also worth mentioning that XLink has a staking feature available for the users and a Governance System that allows certain ecosystem decisions to be made together. 
+The purpose of this document is to give the reader a high-level overview of the different modules that constitute the XLink ecosystem and how some of the contracts interact.
 
 ## Main Features
 
