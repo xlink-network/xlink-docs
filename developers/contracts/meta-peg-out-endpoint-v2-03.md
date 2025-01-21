@@ -23,7 +23,7 @@ This data variable serves as a flag to control the operational status of the con
 | -------- | ------ |
 | Variable | `principal` |
 
-This variable represents the address to which fees are paid. In this contract, there are two categories of fees: peg-out fees and gas fees. Peg-out fees are transactioned with the relevant token, while gas fees are handled using the Bridged BTC token (`token-abtc`). For more details on these transactions, refer to the [finalize peg-out feature](meta-peg-out-endpoint-v2-03.md#finalize-peg-out-on-index). By default, the address assigned to receive these fees is the `tx-sender` (the original deployer of the contract).
+This variable represents the address to which fees are paid. In this contract, there are two categories of fees: peg-out fees and gas fees. Peg-out fees are transactioned with the relevant token, while gas fees are handled using the Bridged BTC token (`token-abtc`). For more details on these transactions, refer to the [finalize peg-out feature](meta-peg-out-endpoint-v2-03.md#finalize-peg-out-on-index). By default, the address assigned to receive these fees is the `tx-sender` address of the contract deployer.
 
 ### Relevant constants
 
@@ -64,7 +64,7 @@ Once these validations are met, the operation is registered in the meta registry
 
 #### `claim-peg-out`
 
-Following the peg-out request, the next potential step is for the `tx-sender` (claimer) to claim the request. This step is critical, as it marks the request as ready for finalization. This action is executed by calling the function with the `request-id`, along with the `fulfilled-by` parameter, which designates the address responsible for executing the burn blockchain operation.
+Following the peg-out request, a next potential step is to claim the request. This step is critical, as it marks the request as ready for finalization. This action is executed by calling the function with the `request-id` of the previously created request, along with the `fulfilled-by` parameter, which designates the address responsible for executing the burn blockchain operation.
 
 The claim must satisfy the following validations:
 
@@ -89,10 +89,10 @@ Key validations include:
 - The request must exist.
 - The token pair must be approved and operational (not paused for peg-out).
 - The transaction cannot be indexed to a time before the contract deployment.
-- The transaction's metaprotocol token (BRC-20) must match the requested details (`tick`, `amount`), with `from` and `to` addresses aligning with the fulfilled-by (registered by the claimer) and the peg-out-address (initiated by the requester) respectively.
+- The transaction's metaprotocol token (BRC-20) must match the requested details (`tick` and `amount`). Additionally, the `from` address must correspond to the `fulfilled-by` address, and the `to` address must match the `peg-out-address`.
 - The request must not be revoked or already finalized.
 
-The procedure proceeds as follows based on who finalizes it:
+The procedure is as follows, based on who finalizes it:
 
 1) Peg-In Address
     - The net amount of the peg-in token requested is burned from the contract balance, affecting the overall total supply.

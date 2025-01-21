@@ -38,7 +38,7 @@ A temporary variable used to store the source chain ID of the order currently be
 ### `whitelisted-users`
 | Data     | Type   |
 | -------- | ------ |
-| Map | `principal bool`|
+| Map | `principal → bool`|
 
 A map that keeps track of the whitelist status of specific users. Each entry associates a user's principal with a boolean value indicating whether they are authorized to interact with the contract under a whitelist-enabled configuration. If `true`, the user is allowed to perform actions that are otherwise restricted.
 
@@ -51,14 +51,7 @@ A map that keeps track of the whitelist status of specific users. Each entry ass
 ### Peg-in features
 
 #### `transfer-to-cross`
-This function enables peg-in operations to transfer tokens from an external EVM-like blockchain to Stacks. It validates the provided order by checking its hash and verifying signatures to meet a threshold of validators defined in `cross-bridge-registry-v2-01`. If the order is valid, it mints or transfers the bridged tokens and updates the token reserve for the source EVM chain. It then utilizes `cross-router-v2-02` to route the tokens to the recipient on Stacks or another destination chain. The logic for chain identification is as follows:
-
-```
-chain-id < 1000 // EVM networks
-chain-id == None // Stacks
-```
-
-In the event of validation failure, the function initiates a refund process.
+This function enables peg-in operations to transfer tokens from an external EVM-like blockchain to Stacks. It validates the provided order by checking its hash and verifying signatures to meet a threshold of validators defined in `cross-bridge-registry-v2-01`. If the order is valid, it mints or transfers the bridged tokens and updates the token reserve for the source EVM chain. It then utilizes `cross-router-v2-02` to route the tokens based on the destination chain. In the event of validation failure, the function initiates a refund process.
 
 ##### Parameters
 ```lisp
