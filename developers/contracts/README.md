@@ -20,8 +20,8 @@ The XLink ecosystem offers three main features that are implemented along differ
 
 #### BTC Peg-In Endpoint
 
-- Contract name: `btc-peg-in-endpoint-v2-03`
-- [Complete technical documentation](btc-peg-in-endpoint-v2-03.md)
+- Contract name: `btc-peg-in-endpoint`
+- [Complete technical documentation](btc-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the bridging of BTC from Bitcoin chain into Stacks chain as bridged BTC (aBTC).
 
