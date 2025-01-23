@@ -50,7 +50,7 @@ This endpoint's main responsibility the bridging of assets in the Bitcoin chain 
 #### Meta Peg-Out Endpoint
 
 - Contract name: `meta-peg-out-endpoint-v2-03`
-- [Complete technical documentation](meta-peg-out-endpoint-v2-03.md)
+- [Complete technical documentation](meta-peg-out-endpoint.md)
 
 This endpoint manages the bridging of tokens from the Stacks chain back to the Bitcoin blockchain, where they are converted into BRC-20 assets.
 
