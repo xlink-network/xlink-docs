@@ -31,7 +31,7 @@ This variable represents the address to which fees are paid. In this contract, t
 
 | Type   | Value |
 | ------ | ----- |
-| `constant` | `burn-block-height` |
+| `uint` | [`burn-block-height`](https://docs.stacks.co/reference/keywords#burn-block-height) |
 
 This constant specifies the block height of the underlying burn blockchain at the time the contract was deployed. It is utilized to ensure that operations within the `finalize-peg-out` function are limited to transactions minted from this block onward.
 
@@ -101,7 +101,7 @@ The procedure is as follows, based on who finalizes it:
     - The peg-out fee and gas fees  are paid to the [configured address](meta-peg-out-endpoint.md#fee-to-address).
 
 2) Third-Party Address
-    - The net amount of tokens requested for the peg-out operation and the gas fee are transferred from the contract to the claimer, so the overall involved token balance remains unaffected.
+    - The net amount of tokens requested for the peg-out operation and the gas fee are transferred from the contract to the claimer, so the overall involved token supply remains unaffected.
     - The peg-out fee is transferred from the contract to the [configured address](meta-peg-out-endpoint.md#fee-to-address).
 
 This operation involves indexing the specified transaction through the `oracle-v2-01` contract and marking the request as "finalized" in the `meta-bridge-registry-v2-03` contract.
