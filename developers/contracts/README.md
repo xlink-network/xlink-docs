@@ -62,8 +62,8 @@ This endpoint manages the bridging of tokens from the Stacks chain back to the B
 
 #### Cross Peg-In Endpoint
 
-- Contract name: `cross-peg-in-endpoint-v2-03`
-- [Complete technical documentation](cross-peg-in-endpoint-v2-03.md)
+- Contract name: `cross-peg-in-endpoint`
+- [Complete technical documentation](cross-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the transfer of assets from other EVM-like blockchains into the Stacks chain, where they are represented as `SIP-010` tokens. Sometimes, it also involves swapping to other tokens as part of the peg-in process.
 
