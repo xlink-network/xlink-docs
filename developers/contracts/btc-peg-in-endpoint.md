@@ -6,9 +6,11 @@ This technical document provides a detailed overview of the contract responsible
 
 This functionality is implemented and distributed across the following contracts:
 
-- `btc-peg-in-endpoint-v2-05`: responsible for the `finalize-peg-in-cross` function.
-- `btc-peg-in-endpoint-v2-05-lisa`: responsible for the `finalize-peg-in-mint-liabtc` function.
-- `btc-peg-in-v2-07-swap`: responsible for the `finalize-peg-in-cross-swap` function.
+- `btc-peg-in-endpoint-v2-05`: handles bridging BTC into the Stacks network, leveraging cross-router to manage the routing of BTC to the appropriate destination.
+- `btc-peg-in-endpoint-v2-05-lisa`: extends Bitcoin peg-in operations by converting BTC into LiaBTC through intermediate bridging steps, ultimately enabling the issuance of BRC-20 tokens on Bitcoin.
+- `btc-peg-in-v2-05-launchpad`: facilitates BTC peg-ins specifically for participation in launchpad projects on Stacks by minting bridged tokens and transferring them to the launchpad contract for project-related activities.
+- `btc-peg-in-v2-07-swap`: enables the bridging of BTC into the Stacks network while enabling token swaps to convert BTC into other predefined assets during the process.
+
 
 ## Storage
 ### `fee-to-address`
@@ -118,6 +120,21 @@ It also registers the peg-in transaction in the `.btc-bridge-registry-v2-01` con
                         }))
 ```
 
+### `finalize-peg-in-launchpad`
+###### _(in contract btc-peg-in-v2-05-launchpad)_
+This function is tailored for peg-ins associated with launchpad projects on Stacks. It uses `.btc-bridge-registry-v2-01` to validate and register transaction details while ensuring compatibility with the project’s parameters. These parameters include fields such as `user`, `launch-id`, and `payment-token-trait`, which define the specifics of the launchpad operation. 
+The function first mints bridged BTC tokens for the user and then registers the operation in the `.alex-launchpad-v2-03` contract. This registration involves transferring the minted bridged tokens assets to the launchpad contract on behalf of the user, where they are associated with the launchpad project. 
+In case of any error, it invokes the internal [refund](btc-peg-in-endpoint.md#relevant-internal-functions) function and logs the issue.
+
+##### Parameters
+```lisp
+(tx (buff 32768))
+(block { header: (buff 80), height: uint })
+(proof { tx-index: uint, hashes: (list 14 (buff 32)), tree-depth: uint })
+(output-idx uint)
+(order-idx uint)
+```
+
 ### Governance features
 #### `is-dao-or-extension`
 This standard protocol function checks whether a caller (`tx-sender`) is the DAO executor or an authorized extension, delegating the extensions check to the `executor-dao` contract.
@@ -178,7 +195,7 @@ This feature establishes the minimum fee required for BTC peg-out operations.
 ### Supporting features
 The following functions are tools to assist the off-chain activities.
 1. Construct and destruct helpers (`destruct-principal`, `construct-principal`).
-2. Order creation helpers (`create-order-cross-or-fail`, `create-order-cross-swap-or-fail`, `create-order-mint-liabtc-or-fail`).
+2. Order creation helpers (`create-order-cross-or-fail`, `create-order-cross-swap-or-fail`, `create-order-mint-liabtc-or-fail`, `create-order-launchpad-or-fail`).
 3. Decoding helpers (`decode-order-cross-from-reveal-tx-or-fail`, `decode-order-cross-swap-from-reveal-tx-or-fail`).
 
 
@@ -211,6 +228,7 @@ The following functions are tools to assist the off-chain activities.
 - `bridge-common-v2-02`: this contract is called to extract and validate Bitcoin transaction details, decode routing and order information during peg-in operations.
 - `token-abtc`: this contract handles the management of aBTC (Bridged BTC) tokens, representing BTC on the Stacks network. It is called to mint and transfer aBTC during peg-in operations.
 - `cross-router-v2-03`: this contract is called to route tokens and execute cross-chain transfers during advanced peg-in operations, such as cross and cross-swap transactions.
+- `alex-launchpad-v2-03`: this contract is called to register and validate peg-in operations associated with launchpad projects on the Stacks network.
 - `clarity-bitcoin-v1-07`: this contract is called to retrieve the transaction ID of native SegWit Bitcoin transactions by excluding witness data.
 - `btc-peg-out-endpoint-v2-01`: this contract is called to manage refunds during peg-in failures to transfer BTC back to users.
 - `liabtc-mint-endpoint`: this contract is called to validate and mint liabtc during peg-in operations.
