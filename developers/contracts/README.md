@@ -40,8 +40,8 @@ This endpoint is responsible for managing the bridging of Stacks' aBTC back to t
 
 #### Meta Peg-In Endpoint
 
-- Contract name: `meta-peg-in-endpoint-v2-02`
-- [Complete technical documentation](meta-peg-in-endpoint-v2-02.md)
+- Contract name: `meta-peg-in-endpoint`
+- [Complete technical documentation](meta-peg-in-endpoint.md)
 
 This endpoint's main responsibility the bridging of assets in the Bitcoin chain that follow the BRC-20 standard into the Stacks chain as a specific token that complies with the `SIP-010` standard.
 

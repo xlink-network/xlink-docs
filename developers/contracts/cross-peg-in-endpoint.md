@@ -1,4 +1,4 @@
-# cross-peg-in-endpoint-v2-03.clar
+# cross-peg-in-endpoint
 - Location: `xlink/packages/contracts/bridge-stacks/contracts`
 - [Deployed contract]()
 
