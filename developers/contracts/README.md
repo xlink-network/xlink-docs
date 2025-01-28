@@ -20,8 +20,8 @@ The XLink ecosystem offers three main features that are implemented along differ
 
 #### BTC Peg-In Endpoint
 
-- Contract name: `btc-peg-in-endpoint-v2-03`
-- [Complete technical documentation](btc-peg-in-endpoint-v2-03.md)
+- Contract name: `btc-peg-in-endpoint`
+- [Complete technical documentation](btc-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the bridging of BTC from Bitcoin chain into Stacks chain as bridged BTC (aBTC).
 
@@ -40,8 +40,8 @@ This endpoint is responsible for managing the bridging of Stacks' aBTC back to t
 
 #### Meta Peg-In Endpoint
 
-- Contract name: `meta-peg-in-endpoint-v2-02`
-- [Complete technical documentation](meta-peg-in-endpoint-v2-02.md)
+- Contract name: `meta-peg-in-endpoint`
+- [Complete technical documentation](meta-peg-in-endpoint.md)
 
 This endpoint's main responsibility the bridging of assets in the Bitcoin chain that follow the BRC-20 standard into the Stacks chain as a specific token that complies with the `SIP-010` standard.
 
@@ -50,7 +50,7 @@ This endpoint's main responsibility the bridging of assets in the Bitcoin chain 
 #### Meta Peg-Out Endpoint
 
 - Contract name: `meta-peg-out-endpoint-v2-03`
-- [Complete technical documentation](meta-peg-out-endpoint-v2-03.md)
+- [Complete technical documentation](meta-peg-out-endpoint.md)
 
 This endpoint manages the bridging of tokens from the Stacks chain back to the Bitcoin blockchain, where they are converted into BRC-20 assets.
 
@@ -62,8 +62,8 @@ This endpoint manages the bridging of tokens from the Stacks chain back to the B
 
 #### Cross Peg-In Endpoint
 
-- Contract name: `cross-peg-in-endpoint-v2-03`
-- [Complete technical documentation](cross-peg-in-endpoint-v2-03.md)
+- Contract name: `cross-peg-in-endpoint`
+- [Complete technical documentation](cross-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the transfer of assets from other EVM-like blockchains into the Stacks chain, where they are represented as `SIP-010` tokens. Sometimes, it also involves swapping to other tokens as part of the peg-in process.
 
