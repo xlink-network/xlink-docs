@@ -1,7 +1,7 @@
 # meta-peg-out-endpoint
 
 - Location: `xlink/packages/contracts/bridge-stacks/contracts`
-- [Deployed contract]()
+- [Deployed contract](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.meta-peg-out-endpoint-v2-04?chain=mainnet)
 
 This technical document provides a detailed overview of the contract responsible for facilitating the peg-out process of tokens from the Stacks network to the burn chain. The target token standard is BRC-20, a protocol on Bitcoin's metaprotocol layer that supports fungible assets, inspired by Ethereum's ERC-20 standard.
 
@@ -23,7 +23,7 @@ This data variable serves as a flag to control the operational status of the con
 | -------- | ------ |
 | Variable | `principal` |
 
-This variable represents the address to which fees are paid. In this contract, there are two categories of fees: peg-out fees and gas fees. The first ones are charged in the same token being bridged, while gas fees are handled using the Bridged BTC token (token-abtc) within the Stacks network, the actual transaction on the burn-chain (Bitcoin) still requires BTC to cover mining fees. For more details on these transactions, refer to the [finalize peg-out feature](meta-peg-out-endpoint.md#finalize-peg-out-on-index). By default, the address assigned to receive these fees is the one used to deployed the contract.
+This variable represents the address to which fees are paid. In this contract, there are two categories of fees: peg-out fees and gas fees. The first ones are charged in the same token being bridged, while gas fees are handled using the Bridged BTC token. For more details on these transactions, refer to the [finalize peg-out feature](meta-peg-out-endpoint.md#finalize-peg-out-on-index). By default, the address assigned to receive these fees is the one used to deployed the contract.
 
 ### Relevant constants
 

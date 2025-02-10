@@ -1,18 +1,18 @@
 # btc-peg-in-endpoint
 - Location: `xlink/packages/contracts/bridge-stacks/contracts`
-- [Deployed contract]()
+- Deployed contracts: [btc-peg-in-endpoint-v2-05](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.btc-peg-in-endpoint-v2-05?chain=mainnet), [btc-peg-in-endpoint-v2-05-lisa](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.btc-peg-in-endpoint-v2-05-lisa?chain=mainnet), [btc-peg-in-v2-05-launchpad](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.btc-peg-in-v2-05-launchpad?chain=mainnet), [btc-peg-in-v2-07-swap](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.btc-peg-in-v2-07-swap?chain=mainnet).
 
-This technical document provides a detailed overview of the contract responsible for managing the peg-in process, enabling the transfer of BTC from the Bitcoin network to the Stacks network. In this process, BTC is represented as bridged tokens on Stacks (aBTC). The module's core functionality is implemented through a series of public functions distributed across three specialized contracts. Each contract addresses specific aspects of the BTC peg-in process.
+This technical document provides a detailed overview of the contracts responsible for managing the peg-in process, enabling the transfer of BTC from the Bitcoin network to the Stacks network. In this process, BTC is represented as bridged tokens on Stacks (aBTC). The module's core functionality is implemented through a series of public functions distributed across three specialized contracts. Each contract addresses specific aspects of the BTC peg-in process.
 
 This functionality is implemented and distributed across the following contracts:
 
 - `btc-peg-in-endpoint-v2-05`: handles bridging BTC into the Stacks network, leveraging cross-router to manage the routing of BTC to the appropriate destination.
 - `btc-peg-in-endpoint-v2-05-lisa`: extends Bitcoin peg-in operations by converting BTC into LiaBTC through intermediate bridging steps, ultimately enabling the issuance of BRC-20 tokens on Bitcoin.
-- `btc-peg-in-v2-05-launchpad`: facilitates BTC peg-ins specifically for participation in launchpad projects on Stacks by minting bridged tokens and transferring them to the launchpad contract for project-related activities.
+- `btc-peg-in-v2-05-launchpad`: facilitates BTC peg-ins specifically for participation in launchpad projects on Stacks.
 - `btc-peg-in-v2-07-swap`: enables the bridging of BTC into the Stacks network while enabling token swaps to convert BTC into other predefined assets during the process.
 
-
 ## Storage
+###### _(all contracts include the following variables unless otherwise specified)_
 ### `fee-to-address`
 
 | Data     | Type   |
