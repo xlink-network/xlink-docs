@@ -20,8 +20,8 @@ The XLink ecosystem offers three main features that are implemented along differ
 
 #### BTC Peg-In Endpoint
 
-- Contract name: `btc-peg-in-endpoint-v2-03`
-- [Complete technical documentation](btc-peg-in-endpoint-v2-03.md)
+- Contract name: `btc-peg-in-endpoint`
+- [Complete technical documentation](btc-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the bridging of BTC from Bitcoin chain into Stacks chain as bridged BTC (aBTC).
 
@@ -49,8 +49,8 @@ This endpoint's main responsibility the bridging of assets in the Bitcoin chain 
 
 #### Meta Peg-Out Endpoint
 
-- Contract name: `meta-peg-out-endpoint-v2-03`
-- [Complete technical documentation](meta-peg-out-endpoint-v2-03.md)
+- Contract name: `meta-peg-out-endpoint`
+- [Complete technical documentation](meta-peg-out-endpoint.md)
 
 This endpoint manages the bridging of tokens from the Stacks chain back to the Bitcoin blockchain, where they are converted into BRC-20 assets.
 
