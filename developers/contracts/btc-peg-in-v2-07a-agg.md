@@ -3,7 +3,7 @@
 - Location: `xlink/packages/contracts/bridge-stacks/contracts/btc-peg-in-v2-07a-agg.clar`
 - [Deployed contract]()
 
-This technical document provides a detailed overview of the contract responsible for managing the peg-in process when using non-ALEX liquidity aggregators. This allows users to trade tokens even when the pair isn't available in the ALEX AMM or is lacking liquidity. This contract enables the transfer of BTC from the Bitcoin network to the Stacks network in the form of aBTC. The contract's primary functionality is implemented through a series of public functions. Let's review this core operation.
+This technical document provides a detailed overview of the contract responsible for managing the peg-in process when using non-ALEX liquidity aggregators. This allows users to trade tokens even when the pair isn't available in the ALEX AMM or is lacking liquidity. This contract enables the transfer of BTC from the Bitcoin network to the Stacks network in the form of aBTC. The contract's primary functionality is implemented through the `finalize-peg-in-agg` function and its associated private functions. Let's review this core operation.
 
 ## Storage
 
@@ -51,11 +51,11 @@ The minimum fee required for a peg-out transaction, regardless of the transactio
 
 ## Features
 
-### Aggregator Peg-In Features
+### Aggregator Peg-In Feature
 
 #### `finalize-peg-in-agg`
 
-This function manages the basic peg-in process for transferring BTC to Stacks. It validates the provided Bitcoin transaction and its reveal transaction by using a proof that confirms it has been mined. It also calculates the appropriate fees for the operation. The function verifies that the transaction meets the necessary conditions, including checking that the peg-in address is approved, before finalizing it by registering it in the `.cross-peg-out-v2-01-agg` contract to handle cross-chain operations. Finally, it mints bridged BTC tokens for the recipient address specified in the Bitcoin transaction, processes fees, and logs the transaction details.
+This function manages the basic aggregator peg-in process. It checks if the provided Bitcoin transaction has been mined. It also calculates the appropriate fees for the peg-in operation. The function verifies that the transaction meets the necessary conditions, including checking that the peg-in address is approved, before finalizing it by registering it in the `.cross-peg-out-v2-01-agg` contract to handle cross-chain operations. Finally, it mints bridged BTC tokens for the recipient address specified in the Bitcoin transaction, processes fees, and logs the transaction details.
 
 ##### Parameters
 ```lisp
@@ -112,7 +112,7 @@ This feature establishes the minimum fee required for a peg-out transaction.
 The following functions are tools to assist the off-chain activities.
 1. Construct and destruct helpers (`destruct-principal`, `construct-principal`).
 2. Order creation helper (`create-order-agg-or-fail`).
-3. Decoding helpers (`decode-order-agg-or-fail`, `decode-order-agg-from-reveal-tx-or-fail`, `decode-order-agg   -swap-from-reveal-tx-or-fail`).
+3. Decoding helpers (`decode-order-agg-or-fail`, `decode-order-agg-from-reveal-tx-or-fail`).
 
 ### Getters
 
@@ -129,12 +129,12 @@ The following functions are tools to assist the off-chain activities.
 
 ## Contract Calls (Interactions)
 
-- `executor-dao` Calls are made to verify whether a certain contract-caller is designated as an extension.
-- `btc-bridge-registry-v2-01` This contract is called to validate peg-in addresses, check and set transaction statuses, and order details during peg-in operations.
-- `bridge-common-v2-02` This contract is called to extract and validate Bitcoin transaction details, decode routing and order information during peg-in operations.
-- `token-abtc` This contract handles the management of aBTC (Bridged BTC) tokens, representing BTC on the Stacks network. It is called to mint and transfer aBTC during peg-in operations.
-- `cross-peg-out-v2-01-agg` This contract is called to finalize the transaction and retrieve the transaction details necessary for the peg-out process.
-- `clarity-bitcoin-v1-07` Calls are made to validate transaction details.
+- `executor-dao`: calls are made to verify whether a certain contract-caller is designated as an extension.
+- `btc-bridge-registry-v2-01`: this contract is called to validate peg-in addresses, check and set transaction statuses, and order details during peg-in operations.
+- `bridge-common-v2-02`: this contract is called to extract and validate Bitcoin transaction details, decode routing and order information during peg-in operations.
+- `token-abtc`: this contract handles the management of aBTC (Bridged BTC) tokens, representing BTC on the Stacks network. It is called to mint and transfer aBTC during peg-in operations.
+- `cross-peg-out-v2-01-agg`: this contract is called to finalize the transaction and retrieve the transaction details necessary for the peg-out process.
+- `clarity-bitcoin-v1-07`: calls are made to validate transaction details.
 
 ## Errors
 
