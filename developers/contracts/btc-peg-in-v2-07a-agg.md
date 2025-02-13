@@ -121,10 +121,17 @@ The following functions are tools to assist the off-chain activities.
 #### `get-btc-peg-out-fee`
 #### `get-btc-peg-out-min-fee`
 #### `get-fee-to-address`
+#### `get-peg-in-sent-or-default`
 ##### Parameters
 ```lisp
 (tx (buff 32768))
 (output uint)
+```
+
+#### `get-txid`
+##### Parameters
+```lisp
+(tx (buff 32768))
 ```
 
 ## Contract Calls (Interactions)

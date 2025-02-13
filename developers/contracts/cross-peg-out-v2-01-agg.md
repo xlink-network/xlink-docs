@@ -3,7 +3,7 @@
 - Location: `xlink/packages/contracts/bridge-stacks/contracts/btc-peg-out-v2-01-agg.clar`
 - [Deployed contract]()
 
-This technical document provides a detailed overview of the contract responsible for managing the peg-out aggregator process. The contract manages the transfer of `SIP-010` tokens from Stacks to EVM-compatible blockchains. It burns aBTC and employs non-ALEX liquidity aggregators to bridge tokens from Stacks to Bitcoin, validates amounts and applies fees. During the process, tokens are either burned or transferred (depending on the token's configuration) to a designated address on the EVM chain. The core functionality of the contract is implemented through the `transfer-to-swap` function. Lets examine the main components of the contract below.
+This technical document provides a detailed overview of the contract responsible for managing the peg-out aggregator process. The contract manages the transfer of tokens from Stacks to other blockchains by burning aBTC, employing non-ALEX liquidity aggregators, validating amounts and applying the necessary fees. The core functionality of the contract is implemented through the `transfer-to-swap` function. Lets examine the main components of the contract below.
 
 ## Storage
 
@@ -19,9 +19,9 @@ A flag that indicates whether the peg-out process is active. If set to `true`, a
 ### Peg-out feature
 
 #### `transfer-to-swap`
-This function manages the peg-out process, enabling users to transfer `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchains. It begins by validating the transfer through the `validate-transfer-to-swap` function, performing checks such as token and chain approval and amount thresholds.
+This function manages the peg-out process, enabling users to transfer bridged tokens from the Stacks network to other blockchains. It begins by validating the transfer through the `validate-transfer-to-swap` function, performing checks such as token and chain approval and amount thresholds.
 Once validated, the function calculates the required fee and determines the net amount to be transferred. It accesses liquidity aggregators if necessary, and depending on the token's properties, the function either burns the net amount directly from the user's balance or transfers the entire amount (including the fee) to the `cross-bridge-registry-v2-01`.
-At the end of the process, the function logs key destination details, including the `settle-address`, which represents the recipient's address on the EVM-compatible blockchain.
+At the end of the process, the function logs key destination details known as `settle-details`, including the `address`, which represents the recipient's address on the target blockchain.
 
 ### Governance Features
 
@@ -46,28 +46,13 @@ A public function, governed through the `is-dao-or-extension`, that can change t
 
 ### Getters
 
-#### `get-use-whitelist`
-##### Parameters
-```lisp
-(tx (buff 32768))
-(output uint)
-```
-
 #### `get-approved-chain-or-fail`
 ##### Parameters
 ```lisp
 (dest-chain-id uint)
 ```
 #### `get-token-reserve-or-default`
-##### Parameters
-```lisp
-(pair { token: principal, chain-id: uint })
-```
 #### `get-min-fee-or-default`
-##### Parameters
-```lisp
-(pair { token: principal, chain-id: uint })
-```
 #### `get-approved-pair-or-fail`
 ##### Parameters
 ```lisp
@@ -77,7 +62,7 @@ A public function, governed through the `is-dao-or-extension`, that can change t
 ## Contract calls (interactions)
 - `executor-dao`: Calls are made to verify whether a certain contract-caller is designated as an extension.
 - `cross-bridge-registry-v2-01`: This contract is called to verify key components of the peg-out process. It validates approved tokens and chain pairings, manages the deduction and queries of token reserves, and records accrued fees. It also handles updates to transaction statuses.
-- `token-trait`: In the cross-peg-out process, this trait is employed to manage token operations such as burning tokens when required or transferring them to the `cross-bridge-registry-v2-01` contract. It is a customized version of Stacks' standard definition for Fungible Tokens (`sip-010`), with support for 8-digit fixed notation.
+- `token-in-trait`: In the cross-peg-out process, this trait is employed to manage token operations such as burning tokens when required or transferring them to the `cross-bridge-registry-v2-01` contract.
 
 ## Errors
 
