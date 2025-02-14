@@ -1,7 +1,7 @@
 # cross-peg-out-endpoint-v2-01.clar
 
 - Location: `xlink/packages/contracts/bridge-stacks/contracts/cross-peg-out-endpoint-v2-01.clar`
-- [Deployed contract]()
+- [Deployed contract](https://explorer.hiro.so/txid/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.cross-peg-out-endpoint-v2-01?chain=mainnet)
 
 This technical document provides a detailed overview of the contract responsible for managing the peg-out process, enabling the transfer of `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchain networks as the EVM-based assets. The contract manages token transfers by validating amounts, applying fees, and maintaining a whitelist for authorized users if enabled. During the process, tokens are either burned or transferred (depending on the token's configuration) to a designated address on the EVM chain. The core functionalities of the contract are implemented through a series of public and governance functions, as described below.
 

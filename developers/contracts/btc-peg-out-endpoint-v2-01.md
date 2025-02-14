@@ -1,7 +1,7 @@
 # btc-peg-out-endpoint-v2-01.clar
 
 - Location: `xlink/packages/contracts/bridge-stacks/contracts/btc-peg-out-endpoint-v2-01.clar`
-- [Deployed contract]()
+- [Deployed contract](https://explorer.hiro.so/txid/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.btc-peg-out-endpoint-v2-01?chain=mainnet)
 
 This technical document provides a detailed overview of the contract responsible for managing the peg-out process, enabling the transfer of bridged BTC from the Stacks network back to the Bitcoin network. In this process, aBTC (Bridged BTC tokens on Stacks) is burned or transferred, depending on the context, and BTC is released to a specified Bitcoin address. The contract's primary functionality is implemented through a series of public functions. Let's review this core operation.
 
