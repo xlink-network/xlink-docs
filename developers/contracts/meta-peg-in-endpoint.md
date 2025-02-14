@@ -1,6 +1,6 @@
 # meta-peg-in-endpoint
 - Location: `xlink/packages/contracts/bridge-stacks/contracts`
-- [Deployed contract]()
+- Deployed contracts: [meta-peg-in-endpoint-v2-04](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.meta-peg-in-endpoint-v2-04?chain=mainnet), [meta-peg-in-endpoint-v2-04-lisa](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.meta-peg-in-endpoint-v2-04-lisa?chain=mainnet), [meta-peg-in-v2-06-swap](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.meta-peg-in-v2-06-swap?chain=mainnet).
 
 This technical document provides a comprehensive overview on the module responsible for the peg-in (bridging) of Bitcoin's BRC-20 assets to the Stacks network. BRC-20 is a token standard on Bitcoin's metaprotocol layer, enabling fungible assets similar to Ethereum's ERC-20. The module's core functionality is implemented through a series of public functions distributed across multiple specialized contracts, each addressing specific aspects of the peg-in process.
 
@@ -11,7 +11,7 @@ This functionality is implemented and distributed across the following contracts
 - `meta-peg-in-v2-06-swap`: facilitates peg-in operations for BRC-20 tokens from Bitcoin to Stacks with integrated asset swapping capabilities.
 
 ## Storage
-
+###### _(all contracts include the following variables unless otherwise specified)_
 ### `paused`
 
 | Data     | Type   |
@@ -222,7 +222,7 @@ This contract feature is designed to transfer its entire balance of a specified 
 ```
 
 #### `set-fee-to-address`
-This contract feature sets the address to which the fee in Bridged BTC tokens will be transferred.
+A public function, governed through the `is-dao-or-extension`, that sets the address to which the fee in Bridged BTC tokens will be transferred.
 
 ##### Parameters
 ```lisp
@@ -230,7 +230,7 @@ This contract feature sets the address to which the fee in Bridged BTC tokens wi
 ```
 
 #### `set-peg-in-fee`
-This feature establishes the fee to be deducted for the peg-in operation.
+A public function, governed through the `is-dao-or-extension`, that establishes the fee to be deducted for the peg-in operation.
 
 ##### Parameters
 ```lisp
@@ -239,7 +239,7 @@ This feature establishes the fee to be deducted for the peg-in operation.
 
 #### `set-btc-peg-out-fee`
 ###### _(only present in meta-peg-in-v2-06-swap)_
-This feature sets the percentage fee applied to BTC peg-out operations.
+A public function, governed through the `is-dao-or-extension`, that sets the percentage fee applied to BTC peg-out operations.
 
 ##### Parameters
 ```lisp
@@ -248,7 +248,7 @@ This feature sets the percentage fee applied to BTC peg-out operations.
 
 #### `set-btc-peg-out-min-fee`
 ###### _(only present in meta-peg-in-v2-06-swap)_
-This feature establishes the minimum fee required for BTC peg-out operations.
+A public function, governed through the `is-dao-or-extension`, that establishes the minimum fee required for BTC peg-out operations.
 
 ##### Parameters
 ```lisp
@@ -280,7 +280,7 @@ This feature establishes the minimum fee required for BTC peg-out operations.
 * `btc-peg-out-endpoint-v2-01`: the `request-peg-out-0` function of this contract is used by the peg-in contract to remove liquidity and refund BTC amounts.
 * `btc-bridge-registry-v2-01`: the peg-in contract calls the `set-peg-in-sent` function of this contract to register a processed Bitcoin transaction.
 * `meta-peg-out-endpoint-v2-04`: the `finalize-peg-in-remove-liquidity` feature and the internal `refund` function call this contract to request a peg-out in their respective contexts.
-* `cross-router-v2-03`: the peg-in cross and peg-in cross swap operations use this contract to validate and route peg-ins involving other blockchains.
+* `cross-router-v2-03`: the peg-in cross and peg-in cross swap operations use this contract to validate-route and route peg-ins involving other blockchains.
 * `oracle-v2-01`: this contract is called to verify that a transaction was mined and to index Bitcoin transactions.
 * `clarity-bitcoin-v1-07`: the peg-in contract uses this contract to obtain legacy transaction IDs from a SegWit native transaction.
 * `amm-pool-v2-01`: this contract manages all liquidity operations, including adding and reducing positions, within the peg-in features. Additionally, it acts as a helper to retrieve pool information and details.

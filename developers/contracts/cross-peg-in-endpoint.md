@@ -1,6 +1,6 @@
 # cross-peg-in-endpoint
 - Location: `xlink/packages/contracts/bridge-stacks/contracts`
-- [Deployed contract]()
+- Deployed contracts: [cross-peg-in-endpoint-v2-04](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.cross-peg-in-endpoint-v2-04?chain=mainnet), [cross-peg-in-v2-04-launchpad](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.cross-peg-in-v2-04-launchpad?chain=mainnet)<!--, [cross-peg-in-v2-04-swap]()-->.
 
 This technical document provides a detailed overview of the module responsible for managing the peg-in process, enabling the transfer of assets from external EVM-like blockchains into the Stacks network. The contract serves as the operational interface for relayers to submit orders, which are validated against a threshold of required validators as determined in the `cross-bridge-registry-v2-01`. The module's primary functionality is implemented through a suite of public functions that are distributed across the following contracts: 
 
@@ -9,6 +9,7 @@ This technical document provides a detailed overview of the module responsible f
 - `cross-peg-in-v2-04-swap`: enables token bridging from EVM-like blockchains to Stacks while performing token swaps through predefined routes.
 
 ## Storage
+###### _(all contracts include the following variables unless otherwise specified)_
 ### `is-paused`
 | Data     | Type   |
 | -------- | ------ |
@@ -140,7 +141,7 @@ A public function, governed through the `is-dao-or-extension`, that can change t
 ```
 
 #### `apply-whitelist`
-A public function that toggles the use of the whitelist in the contract. When enabled, only users who are on the whitelist are authorized to execute restricted actions within the contract.
+A public function, governed through the `is-dao-or-extension`, that toggles the use of the whitelist in the contract. When enabled, only users who are on the whitelist are authorized to execute restricted actions within the contract.
 
 ##### Parameters
 ```lisp
@@ -148,7 +149,7 @@ A public function that toggles the use of the whitelist in the contract. When en
 ```
 
 #### `whitelist`
-A public function that allows authorized extensions, to add or remove a single user from the whitelist. It updates the `whitelisted-users` map, where the user's principal is mapped to a `bool` value (`true` for accepted users and `false` for denied users).
+A public function, governed through the `is-dao-or-extension`, that allows authorized extensions, to add or remove a single user from the whitelist. It updates the `whitelisted-users` map, where the user's principal is mapped to a `bool` value (`true` for accepted users and `false` for denied users).
 
 ##### Parameters
 ```lisp
@@ -157,7 +158,7 @@ A public function that allows authorized extensions, to add or remove a single u
 ```
 
 #### `whitelist-many`
-A public function that allows to batch add or remove multiple users from the whitelist. This function iteratively calls `whitelist`, which handles the mapping of each user's principal to a bool value in the `whitelisted-users` map.
+A public function, governed through the `is-dao-or-extension`, that allows to batch add or remove multiple users from the whitelist. This function iteratively calls `whitelist`, which handles the mapping of each user's principal to a bool value in the `whitelisted-users` map.
 
 ##### Parameters
 ```lisp
