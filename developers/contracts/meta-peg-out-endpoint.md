@@ -1,9 +1,9 @@
 # meta-peg-out-endpoint
 
-- Location: `xlink/packages/contracts/bridge-stacks/contracts/meta-peg-out-endpoint-v2-04`
-- [Deployed contract]()
+- Location: `xlink/packages/contracts/bridge-stacks/contracts`
+- [Deployed contract](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.meta-peg-out-endpoint-v2-04?chain=mainnet)
 
-This technical document provides a detailed overview of the contract responsible for facilitating the peg-out process of tokens from the Stacks network to the burn blockchain. The target token standard is BRC-20, a protocol on Bitcoin's metaprotocol layer that supports fungible assets, inspired by Ethereum's ERC-20 standard.
+This technical document provides a detailed overview of the contract responsible for facilitating the peg-out process of tokens from the Stacks network to the burn chain. The target token standard is BRC-20, a protocol on Bitcoin's metaprotocol layer that supports fungible assets, inspired by Ethereum's ERC-20 standard.
 
 Unlike the meta-peg-in contract, the meta-peg-out feature is specifically designed to support the bridging-out process. This is achieved through a series of public functions, each intended to execute sequentially, while incorporating grace periods between their execution. In the following sections, we will explore these functions in detail.
 
@@ -33,17 +33,17 @@ This variable represents the address to which fees are paid. In this contract, t
 | ------ | ----- |
 | `uint` | [`burn-block-height`](https://docs.stacks.co/reference/keywords#burn-block-height) |
 
-This constant specifies the block height of the underlying burn blockchain at the time the contract was deployed. It is utilized to ensure that operations within the `finalize-peg-out` function are limited to transactions minted from this block onward.
+This constant specifies the block height of the underlying burn chain at the time the contract was deployed. It is utilized to ensure that operations within the `finalize-peg-out` function are limited to transactions minted from this block onward.
 
 ## Features
 
-The peg-out feature is a multi-step process comprising several phases to ensure secure and orderly transactions. The process begins when a peg-out request is issued to initiate the transfer of tokens out of the Stacks network. Following this request, configured grace periods allows users to either revoke their request or claim it. Once a peg-out request is claimed, the final step is to complete the transaction by finalizing the peg-out, which executes the transfer and updates the relevant records as part of the process.
-Below, we will explain in more detail the functions that execute each step of this process.
+The peg-out is a multi-step process comprising several phases to ensure secure and orderly transactions. The process begins with a peg-out request to initiate the transfer of tokens out of the Stacks network. Configured grace periods then allow users to either revoke their request or claim it. Once a peg-out request is claimed, the final step is to finalize the peg-out, executing the transfer and updating the relevant records.
+Each of these steps is implemented through dedicated contract functions, which are explained in detail below.
 
 #### `request-peg-out`
 ###### _(in contract meta-peg-out-endpoint-v2-04)_
 
-In this first step, the `tx-sender` requests to peg-out a specified amount of previously bridged token. Upon initiation, the net amount along with fee costs are escrowed by transferring the token and the gas fee token (`token-abtc`) to the contract, where they remain until the operation is either finalized or revoked.
+In this first step, the `tx-sender` requests a peg-out a specified amount of previously bridged tokens. Upon initiation, the net amount along with fee costs are escrowed by transferring the token and the gas fee token (`token-abtc`) to the contract, where they remain until the operation is either finalized or revoked.
 
 To proceed, several validations must be met:
 
@@ -85,7 +85,7 @@ Once these conditions are met, the final step is to register the claim in the me
 #### `finalize-peg-out-on-index`
 ###### _(in contract meta-peg-out-endpoint-v2-04)_
 
-Finalizing a peg-out is the final step in committing the process. This function takes in the burn blockchain (Bitcoin) transaction  that corresponds to the Stacks layer operation and executes the peg-out request along with all related token transfers and their corresponding fees. The finalization can be performed by either a peg-in address or a third-party address.
+Finalizing a peg-out is the final step in committing the process. This function takes in the burn chain (Bitcoin) transaction  that corresponds to the Stacks layer operation and executes the peg-out request along with all related token transfers and their corresponding fees. The finalization can be performed by either a peg-in address or a third-party address.
 
 Key validations include:
 - The request must exist.
@@ -98,7 +98,7 @@ The procedure is as follows, based on who finalizes it:
 
 1) Peg-In Address
     - The net amount of tokens requested for the peg-out operation is burned from the contract balance, affecting the overall total supply.
-    - The peg-out fee and gas fees  are paid to the [configured address](meta-peg-out-endpoint.md#fee-to-address).
+    - The peg-out fee and gas fees are paid to the [configured address](meta-peg-out-endpoint.md#fee-to-address).
 
 2) Third-Party Address
     - The net amount of tokens requested for the peg-out operation and the gas fee are transferred from the contract to the claimer, so the overall involved token supply remains unaffected.
@@ -134,7 +134,7 @@ In certain scenarios, a requested peg-out may need to be revoked, allowing users
 
 Key validations include:
 
-- The grace period must have elapsed.
+- The request must be revoked within the grace period before it expires.
 - The request must not have been claimed, finalized, or previously revoked.
 
 If these conditions are met, the process continues by returning the tokens initially escrowed for the request, including both the peg-in tokens and the associated fees. These returns are made from the contract directly back to the requester. Finally, the `meta-bridge-registry-v2-03` contract is invoked to mark this request as `revoked`.
@@ -217,7 +217,7 @@ This contract feature allows for specifying the address to which peg-out fees (d
 * `meta-bridge-registry-v2-03`: this interaction is primarily utilized by the peg-out contract to register request operations. Additionally, this contract is responsible for managing approved addresses. It provides functionality through its `is-peg-in-address-approved` and `is-fulfill-address-approved` functions, which verify whether specific addresses are authorized within the system.
 * `oracle-v2-01`: this contract is called to verify that a transaction was mined and to index Bitcoin transactions.
 * Tokens (`token-trait`): during the steps of peg-out operations, this trait is utilized to invoke the relevant tokens and execute the necessary transfers involved in the transaction. It is a customized adaptation of Stacks' standard definition for Fungible Tokens (`sip-010`), with additional support for 8-digit fixed-point notation.
-* `token-abtc`: this is the Bridged BTC token used throughout the peg-out contract to operate with native Stacks' SIP-010 token transactions involving the burn blockchain base-coin (BTC).
+* `token-abtc`: this is the Bridged BTC token used throughout the peg-out contract to operate with native Stacks' SIP-010 token transactions involving the burn chain base-coin (BTC).
 
 ## Errors
 
