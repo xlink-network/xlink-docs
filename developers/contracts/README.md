@@ -20,7 +20,7 @@ The XLink ecosystem offers three main features that are implemented along differ
 
 #### BTC Peg-In Endpoint
 
-- Contract name: `btc-peg-in-endpoint`
+- Contract names: `btc-peg-in-endpoint-v2-05`, `btc-peg-in-endpoint-v2-05-lisa`, `btc-peg-in-v2-05-launchpad`, `btc-peg-in-v2-07-swap`.
 - [Complete technical documentation](btc-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the bridging of BTC from Bitcoin chain into Stacks chain as bridged BTC (aBTC).
@@ -28,7 +28,7 @@ This endpoint is responsible for managing the bridging of BTC from Bitcoin chain
 #### BTC Peg-Out Endpoint
 
 - Contract name: `btc-peg-out-endpoint-v2-01`
-- [Complete technical documentation](btc-peg-out-endpoint-v2-01.md)
+- [Complete technical documentation](btc-peg-out-endpoint.md)
 
 This endpoint is responsible for managing the bridging of Stacks' aBTC back to the Bitcoin blockchain as BTC.
 
@@ -40,8 +40,8 @@ This endpoint is responsible for managing the bridging of Stacks' aBTC back to t
 
 #### Meta Peg-In Endpoint
 
-- Contract name: `meta-peg-in-endpoint-v2-02`
-- [Complete technical documentation](meta-peg-in-endpoint-v2-02.md)
+- Contract names: `meta-peg-in-endpoint-v2-04`, `meta-peg-in-endpoint-v2-04-lisa`, `meta-peg-in-v2-06-swap`.
+- [Complete technical documentation](meta-peg-in-endpoint.md)
 
 This endpoint's main responsibility the bridging of assets in the Bitcoin chain that follow the BRC-20 standard into the Stacks chain as a specific token that complies with the `SIP-010` standard.
 
@@ -49,7 +49,7 @@ This endpoint's main responsibility the bridging of assets in the Bitcoin chain 
 
 #### Meta Peg-Out Endpoint
 
-- Contract name: `meta-peg-out-endpoint`
+- Contract name: `meta-peg-out-endpoint-v2-04`
 - [Complete technical documentation](meta-peg-out-endpoint.md)
 
 This endpoint manages the bridging of tokens from the Stacks chain back to the Bitcoin blockchain, where they are converted into BRC-20 assets.
@@ -62,15 +62,15 @@ This endpoint manages the bridging of tokens from the Stacks chain back to the B
 
 #### Cross Peg-In Endpoint
 
-- Contract name: `cross-peg-in-endpoint-v2-03`
-- [Complete technical documentation](cross-peg-in-endpoint-v2-03.md)
+- Contract names: `cross-peg-in-endpoint-v2-04`, `cross-peg-in-v2-04-launchpad`, `cross-peg-in-v2-04-swap`.
+- [Complete technical documentation](cross-peg-in-endpoint.md)
 
 This endpoint is responsible for managing the transfer of assets from other EVM-like blockchains into the Stacks chain, where they are represented as `SIP-010` tokens. Sometimes, it also involves swapping to other tokens as part of the peg-in process.
 
 #### Cross Peg-Out Endpoint
 
 - Contract name: `cross-peg-out-endpoint-v2-01`
-- [Complete technical documentation](cross-peg-out-endpoint-v2-01.md)
+- [Complete technical documentation](cross-peg-out-endpoint.md)
 
 This endpoint is responsible for managing the transfer of `SIP-010` bridged tokens from the Stacks network to EVM-like blockchains.
 
