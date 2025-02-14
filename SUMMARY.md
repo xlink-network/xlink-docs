@@ -27,11 +27,11 @@
 ## 🎮 Developers
 * [Smart Contracts](developers/contracts/README.md)
   * [btc peg-in endpoint](developers/contracts/btc-peg-in-endpoint.md)
-  * [btc-peg-out-endpoint-v2-01](developers/contracts/btc-peg-out-endpoint-v2-01.md)
+  * [btc-peg-out-endpoint](developers/contracts/btc-peg-out-endpoint.md)
   * [meta peg-in endpoint](developers/contracts/meta-peg-in-endpoint.md)
   * [meta peg-out endpoint](developers/contracts/meta-peg-out-endpoint.md)
   * [cross-peg-in-endpoint](developers/contracts/cross-peg-in-endpoint.md)
-  * [cross-peg-out-endpoint-v2-01](developers/contracts/cross-peg-out-endpoint-v2-01.md)
+  * [cross-peg-out-endpoint](developers/contracts/cross-peg-out-endpoint.md)
   * [xlink-staking](developers/contracts/xlink-staking.md)
 
 <!-- 

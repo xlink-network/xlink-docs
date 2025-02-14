@@ -5,7 +5,6 @@
 
 This technical document provides a detailed overview of the contract responsible for managing the peg-out process, enabling the transfer of bridged BTC from the Stacks network back to the Bitcoin network. In this process, aBTC (Bridged BTC tokens on Stacks) is burned or transferred, depending on the context, and BTC is released to a specified Bitcoin address. The contract's primary functionality is implemented through a series of public functions. Let's review this core operation.
 
-
 ## Storage
 ### `fee-to-address`
 | Data     | Type   |
@@ -37,9 +36,9 @@ The minimum fee required for a peg-out transaction, regardless of the transactio
 
 ## Features
 
-### Peg-out features
-
 #### `request-peg-out-0`
+###### _(in contract btc-peg-out-endpoint-v2-01)_
+
 This function initiates the peg-out process, enabling users to transfer bridged BTC from the Stacks network to a specified Bitcoin address (peg-out-address). First, it validates the requested amount using `validate-peg-out-0` to ensure it meets the minimum requirements (the requested amount must be sufficient to cover both the peg-out fee and the gas fee, leaving a positive net amount available for transfer). The function registers the request by interacting with the `.btc-bridge-registry-v2-01` contract, storing details such as the requesting user, target Bitcoin address, calculated fees, and associated block heights (e.g., `block-height` and `burn-block-height`). A unique request ID is generated for tracking. Finally, the amount of aBTC is escrowed by transferring it from the user to the contract, securing the funds until the request is either completed or revoked.
 
 ##### Parameters
@@ -49,6 +48,8 @@ This function initiates the peg-out process, enabling users to transfer bridged 
 ```
 
 #### `claim-peg-out`
+###### _(in contract btc-peg-out-endpoint-v2-01)_
+
 This function allows a user to claim a specific peg-out request. The function first retrieves the request details and performs several validations to check that the request is active and valid. It checks that the peg-out process is not paused, the request has not been finalized, revoked, or already claimed, and that all conditions for claiming are met. Upon successful validation, the function registers the request as claimed in the `.btc-bridge-registry-v2-01` contract, updating the state with the claimer's identity, the Bitcoin address (`fulfilled-by`) responsible for completing the transaction, and the block height defining the claim's expiration period. Note that the expiration period defines a specific timeframe during which the claimed request must be finalized. And finally, the updated request details are logged, and the claimer is granted the right to proceed with finalizing the peg-out.
 
 ##### Parameters
@@ -58,6 +59,8 @@ This function allows a user to claim a specific peg-out request. The function fi
 ```
 
 #### `finalize-peg-out`
+###### _(in contract btc-peg-out-endpoint-v2-01)_
+
 This function completes the peg-out process. It performs checks to finalize the peg-out, including verifying that the transaction has been mined, and verifies that the included details in the transaction (concerning the amount, recipient address, and fulfiller address) align with the request specifications. The function interacts with the `.btc-bridge-registry-v2-01` contract to mark the request as finalized.
 Additionally, the function processes fees by transferring them to the designated governance address. It then handles the bridged tokens (aBTC) associated with the request in one of two ways:
 1. Approved Peg-in Address:
@@ -78,6 +81,8 @@ Once all operations are completed, the function logs the transaction details and
 ```
 
 #### `revoke-peg-out`
+###### _(in contract btc-peg-out-endpoint-v2-01)_
+
 This function allows the user who created a peg-out request to cancel it, only if certain conditions are met. The function checks that the required `request-revoke-grace-period` has passed since the request was created, and verifies that the request has not already been claimed, finalized, or already revoked. Once these validations are passed, the function updates the request's status to "revoked" in the `.btc-bridge-registry-v2-01` contract. It then processes the refund by transferring the associated fees and the bridged tokens (aBTC) back to the requester.
 
 ##### Parameters

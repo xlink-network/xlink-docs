@@ -32,6 +32,8 @@ This map stores the whitelist status of users. Each entry associates a `principa
 ### Peg-out feature
 
 #### `transfer-to-unwrap`
+###### _(in contract cross-peg-out-endpoint-v2-01)_
+
 This function manages the peg-out process, enabling users to transfer `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchains. It begins by validating the transfer through the `validate-transfer-to-unwrap` function, performing checks such as token and chain approval, whitelist status, amount thresholds, and sufficient reserves for the operation.
 Once validated, the function calculates the required fee and determines the net amount to be transferred. Depending on the token's properties, the function either burns the net amount directly from the user's balance or transfers the entire amount (including the fee) to the `cross-bridge-registry-v2-01`.
 At the end of the process, the function logs key destination details, including the `settle-address`, which represents the recipient's address on the EVM-compatible blockchain.
