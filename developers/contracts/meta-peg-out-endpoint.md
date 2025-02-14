@@ -1,6 +1,6 @@
 # meta-peg-out-endpoint
 
-- Location: `xlink/packages/contracts/bridge-stacks/contracts`
+- Location: `xlink/packages/contracts/bridge-stacks/contracts/meta-peg-out-endpoint-v2-04`
 - [Deployed contract](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.meta-peg-out-endpoint-v2-04?chain=mainnet)
 
 This technical document provides a detailed overview of the contract responsible for facilitating the peg-out process of tokens from the Stacks network to the burn chain. The target token standard is BRC-20, a protocol on Bitcoin's metaprotocol layer that supports fungible assets, inspired by Ethereum's ERC-20 standard.
