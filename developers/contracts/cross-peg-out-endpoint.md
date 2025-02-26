@@ -3,7 +3,7 @@
 - Location: `xlink/packages/contracts/bridge-stacks/contracts`
 - Deployed contracts:[cross-peg-out-endpoint-v2-01](https://explorer.hiro.so/txid/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.cross-peg-out-endpoint-v2-01?chain=mainnet), [cross-peg-out-v2-01-agg](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.cross-peg-out-v2-01-agg?chain=mainnet)
 
-This technical document provides a detailed overview of the contracts responsible for managing the peg-out process, enabling the transfer of `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchain networks as EVM-based assets. The contracts manage token transfers by validating amounts, applying fees, and maintaining a whitelist for authorized users if enabled. During the process, tokens are either burned or transferred (depending on the token's configuration) to a designated address on the EVM chain. 
+This technical document provides a detailed overview of the contracts responsible for managing the peg-out process, enabling the transfer of `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchain networks as EVM-based assets. The contracts manage token transfers by validating amounts and applying fees. During the process, tokens are either burned or transferred (depending on the token's configuration) to a designated address on the EVM chain. 
 
 The core functionalities of the module are implemented through public and governance functions in the following contracts:
 
@@ -58,7 +58,8 @@ At the end of the process, the function logs key destination details, including 
 #### `transfer-to-swap`
 
 ###### _(in contract cross-peg-out-v2-01-agg)_
-This function handles the necessary validations to execute the peg-out process from Stacks to an EVM-compatible blockchain. It begins by validating the transfer through the `validate-transfer-to-swap` function, performing checks such as token and chain approval, amount thresholds, and sufficient reserves for the operation.
+This function handles the necessary validations to execute the peg-out process from Stacks to an EVM-compatible blockchain. It prepares the transaction to be sent to an external liquidity aggregator in the `BridgeEndpointWithSwap.sol` contract. Its core functionality consists of emitting an event with the transaction details.
+The function begins by validating the transfer through the `validate-transfer-to-swap` function, performing checks such as token and chain approval, amount thresholds, and sufficient reserves for the operation.
 Once validated, the function calculates the required fee and determines the net amount to be transferred. Depending on the token's properties, the function either burns or transfers the net amount directly from the user's balance. The transaction is documented in the `cross-bridge-registry-v2-01`, and an event is emitted with the transaction's details. The relayers detect the transaction and perform the necessary operations to route the swap to `BridgeEndpointWithSwap`, which completes the operation through an external liquidity aggregator.
 
 ```lisp
