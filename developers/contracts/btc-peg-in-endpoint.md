@@ -10,7 +10,7 @@ This functionality is implemented and distributed across the following contracts
 - `btc-peg-in-endpoint-v2-05-lisa`: extends Bitcoin peg-in operations by converting BTC into LiaBTC through intermediate bridging steps, ultimately enabling the issuance of BRC-20 tokens on Bitcoin.
 - `btc-peg-in-v2-05-launchpad`: facilitates BTC peg-ins specifically for participation in launchpad projects on Stacks.
 - `btc-peg-in-v2-07-swap`: enables the bridging of BTC into the Stacks network while enabling token swaps to convert BTC into other predefined assets during the process.
-- `btc-peg-in-v2-07a-agg`: extends Bitcoin peg-in operations by routing token swaps to non-ALEX liquidity aggregators, which optimize token exchanges by accessing multiple liquidity sources. This allows ALEX to execute swaps even when there are no ALEX pools for a specific token pair.
+- `btc-peg-in-v2-07a-agg`: facillitates the BTC peg-in process for swaps with non-ALEX liquidity aggregators. Liquidity aggregators optimize token exchanges by accessing multiple liquidity sources. This allows ALEX to execute swaps even when there are no ALEX pools for a specific token pair.
 
 ## Storage
 ###### _(all contracts include the following variables unless otherwise specified)_

@@ -58,9 +58,10 @@ At the end of the process, the function logs key destination details, including 
 #### `transfer-to-swap`
 
 ###### _(in contract cross-peg-out-v2-01-agg)_
-This function handles the necessary validations to execute the peg-out process from Stacks to an EVM-compatible blockchain. It prepares the transaction to be sent to an external liquidity aggregator in the `BridgeEndpointWithSwap.sol` contract. Its core functionality consists of emitting an event with the transaction details.
+This function handles the peg-out process from Stacks to an EVM-compatible blockchain. It prepares the transaction to be sent to an external liquidity aggregator in the `BridgeEndpointWithSwap.sol` contract. Its core functionality consists of validating amounts, deducting fees, transferring tokens and emitting an event with the transaction details.
 The function begins by validating the transfer through the `validate-transfer-to-swap` function, performing checks such as token and chain approval, amount thresholds, and sufficient reserves for the operation.
-Once validated, the function calculates the required fee and determines the net amount to be transferred. Depending on the token's properties, the function either burns or transfers the net amount directly from the user's balance. The transaction is documented in the `cross-bridge-registry-v2-01`, and an event is emitted with the transaction's details. The relayers detect the transaction and perform the necessary operations to route the swap to `BridgeEndpointWithSwap`, which completes the operation through an external liquidity aggregator.
+Once validated, the function calculates the required fee and determines the net amount to be transferred. Depending on the token's properties, the function either burns the tokens or transfers them to the `cross-bridge-registry-v2-01` contract. This action records the transaction and prepares it for further processing.
+At this point, an event is emitted, signaling relayers to detect and forward the transaction to `BridgeEndpointWithSwap`, which completes the operation through an external liquidity aggregator.
 
 ```lisp
 (amount-in-fixed uint)
