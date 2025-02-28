@@ -69,7 +69,7 @@ This variable sets the minimum fee required for BTC peg-out operations during cr
 #### `finalize-peg-in-cross`
 ###### _(in contract btc-peg-in-endpoint-v2-05)_
 This function manages the peg-in process for transferring BTC to Stacks with support for cross-chain routing. It validates the provided Bitcoin transaction (which represents the transfer of BTC to a peg-in address on the Bitcoin network), ensuring it has been mined and meets the necessary conditions including an approved peg-in address. The function also performs additional checks involving a "reveal transaction," which specifies the token and chain-id for the destination chain.
-Once the transaction is validated, the function calculates fees, verifies that the asset being transferred is approved for bridging operations in the `.btc-bridge-registry-v2-01` contract, and registers the transaction status. Once validated, the function mints bridged BTC tokens and sends them to the recipient specified in the transaction details via the `.cross-router-v2-03 contract`. If the validation or routing fails, a refund is executed.
+Once the transaction is validated, the function calculates fees, verifies that the asset being transferred is approved for bridging operations in the `.btc-bridge-registry-v2-01` contract, and registers the transaction status. Once validated, the function mints bridged BTC tokens and sends them to the recipient specified in the transaction details via the `.cross-router-v2-03`. If the validation or routing fails, a refund is executed.
 
 ##### Parameters
 ```lisp
@@ -141,8 +141,8 @@ In case of any error, it invokes the internal [refund](btc-peg-in-endpoint.md#re
 ###### _(in contract btc-peg-in-v2-07a-agg)_
 
 This function facilitates a BTC peg-in operation designed for aggregated cross-chain routing. Unlike standard peg-in processes where users receive aBTC directly on Stacks, this function integrates a routing mechanism that forwards the bridged tokens for immediate cross-chain processing.
-The process begins by verifying that the provided Bitcoin transaction has been mined and meets all peg-in validation criteria. It checks that the peg-in address is approved and calculates the required transaction fees. Once validated, the function mints aBTC for the net amount (after deducting fees) and registers the peg-in transaction in the `.btc-bridge-registry-v2-01 contract`.
-Instead of keeping the minted aBTC within the Stacks ecosystem, this function directly transfers it to the `.cross-peg-out-v2-01-agg contract`. This interaction enables automated routing and potential asset swaps to facilitate seamless movement of assets across blockchains. The function logs transaction details and ensures that any failure in the process triggers a refund mechanism.
+The process begins by verifying that the provided Bitcoin transaction has been mined and meets all peg-in validation criteria. It checks that the peg-in address is approved and calculates the required transaction fees. Once validated, the function mints aBTC for the net amount (after deducting fees) and registers the peg-in transaction in the `.btc-bridge-registry-v2-01` contract.
+Instead of keeping the minted aBTC within the Stacks ecosystem, this function directly transfers it to the `.cross-peg-out-v2-01-agg` contract. This interaction enables automated routing and potential asset swaps to facilitate seamless movement of assets across blockchains. The function logs transaction details and ensures that any failure in the process triggers a refund mechanism.
 
 ##### Parameters
 ```lisp
@@ -195,7 +195,7 @@ This feature allows to set the minimum fee required for a peg-in transaction.
 ```
 
 #### `set-btc-peg-out-fee`
-###### _(only present in btc-peg-in-v2-07-swap)_
+###### _(only present in btc-peg-in-v2-07-swap and btc-peg-in-v2-07a-agg)_
 This feature sets the percentage fee applied to BTC peg-out operations.
 
 ##### Parameters
@@ -204,7 +204,7 @@ This feature sets the percentage fee applied to BTC peg-out operations.
 ```
 
 #### `set-btc-peg-out-min-fee`
-###### _(only present in btc-peg-in-v2-07-swap)_
+###### _(only present in btc-peg-in-v2-07-swap and btc-peg-in-v2-07a-agg)_
 This feature establishes the minimum fee required for BTC peg-out operations.
 
 ##### Parameters
@@ -238,8 +238,8 @@ The following functions are tools to assist the off-chain activities.
 ```lisp
 (tx (buff 32768))
 ```
-#### `get-btc-peg-out-fee` _(only present in btc-peg-in-v2-07-swap)_
-#### `get-btc-peg-out-min-fee` _(only present in btc-peg-in-v2-07-swap)_
+#### `get-btc-peg-out-fee` _(only present in btc-peg-in-v2-07-swap and btc-peg-in-v2-07a-agg)_
+#### `get-btc-peg-out-min-fee` _(only present in btc-peg-in-v2-07-swap and btc-peg-in-v2-07a-agg)_
 #### `get-liabtc-decimals` _(only present in btc-peg-in-endpoint-v2-05-lisa)_
 
 ## Contract calls (interactions)
