@@ -1,9 +1,14 @@
-# cross-peg-out-endpoint-v2-01.clar
+# cross-peg-out-endpoint
 
-- Location: `xlink/packages/contracts/bridge-stacks/contracts/cross-peg-out-endpoint-v2-01.clar`
-- [Deployed contract](https://explorer.hiro.so/txid/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.cross-peg-out-endpoint-v2-01?chain=mainnet)
+- Location: `xlink/packages/contracts/bridge-stacks/contracts`
+- Deployed contracts:[cross-peg-out-endpoint-v2-01](https://explorer.hiro.so/txid/SP2XD7417HGPRTREMKF748VNEQPDRR0RMANB7X1NK.cross-peg-out-endpoint-v2-01?chain=mainnet), [cross-peg-out-v2-01-agg](https://explorer.hiro.so/txid/SP673Z4BPB4R73359K9HE55F2X91V5BJTN5SXZ5T.cross-peg-out-v2-01-agg?chain=mainnet)
 
-This technical document provides a detailed overview of the contract responsible for managing the peg-out process, enabling the transfer of `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchain networks as the EVM-based assets. The contract manages token transfers by validating amounts, applying fees, and maintaining a whitelist for authorized users if enabled. During the process, tokens are either burned or transferred (depending on the token's configuration) to a designated address on the EVM chain. The core functionalities of the contract are implemented through a series of public and governance functions, as described below.
+This technical document provides a detailed overview of the contracts responsible for managing the peg-out process, enabling the transfer of `SIP-010` bridged tokens from the Stacks network to EVM-compatible blockchain networks as EVM-based assets. The contracts manage token transfers by validating amounts and applying fees. During the process, tokens are either burned or transferred (depending on the token's configuration) to a designated address on the EVM chain. 
+
+The core functionalities of the module are implemented through public and governance functions in the following contracts:
+
+- `cross-peg-out-endpoint-v2-01`: handles bridging of aBTC tokens from Stacks to EVM-compatible blockchains. 
+- `cross-peg-out-v2-01-agg`: enables the bridging of tokens from Stacks to an EVM-compatible blockchain to perform a swap on a non-ALEX liquidity aggregator.
 
 ## Storage
 ### `is-paused`
@@ -14,6 +19,8 @@ This technical document provides a detailed overview of the contract responsible
 A flag that indicates whether the peg-out process is active. If set to `true`, all peg-out operations are paused, preventing any new transactions. The contract is deployed in a paused state by default.
 
 ### `use-whitelist`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 | Data     | Type   |
 | -------- | ------ |
 | Variable | `bool` |
@@ -21,6 +28,8 @@ A flag that indicates whether the peg-out process is active. If set to `true`, a
 A flag that determines whether a whitelist is enforced for peg-out operations. If set to `true`, only addresses explicitly whitelisted can execute peg-out transactions. By default, this feature is disabled.
 
 ### `whitelisted-users`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 | Data     | Type   |
 | -------- | ------ |
 | Map | `principal → bool` |
@@ -46,11 +55,30 @@ At the end of the process, the function logs key destination details, including 
 (settle-address (buff 256))
 ```
 
+#### `transfer-to-swap`
+
+###### _(in contract cross-peg-out-v2-01-agg)_
+This function handles the peg-out process from Stacks to an EVM-compatible blockchain. It prepares the transaction to be sent to an external liquidity aggregator in the `BridgeEndpointWithSwap.sol` contract. Its core functionality consists of validating amounts, deducting fees, transferring tokens and emitting an event with the transaction details.
+The function begins by validating the transfer through the `validate-transfer-to-swap` function, performing checks such as token and chain approval, amount thresholds, and sufficient reserves for the operation.
+Once validated, the function calculates the required fee and determines the net amount to be transferred. Depending on the token's properties, the function either burns the tokens or transfers them to the `cross-bridge-registry-v2-01` contract. This action records the transaction and prepares it for further processing.
+At this point, an event is emitted, signaling relayers to detect and forward the transaction to `BridgeEndpointWithSwap`, which completes the operation through an external liquidity aggregator.
+
+```lisp
+(amount-in-fixed uint)
+(token-in-trait <ft-trait>)
+(token-out principal)
+(min-amount-out (optional uint))
+(dest-chain-id uint)
+(settle-details { address: (buff 256), chain-id: (optional uint) })
+```
+
 ### Governance features
 #### `is-dao-or-extension`
 This standard protocol function checks whether a caller (`tx-sender`) is the DAO executor or an authorized extension, delegating the extensions check to the `executor-dao` contract.
 
 #### `is-whitelisted`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 A read-only function that checks whether a specific user is included in the `whitelisted-users` map. It returns `true` if the user is whitelisted; otherwise, it returns `false`.
 
 ##### Parameters
@@ -70,6 +98,8 @@ A public function, governed through the `is-dao-or-extension`, that can change t
 ```
 
 #### `apply-whitelist`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 A public function, governed through the `is-dao-or-extension`, that enables or disables the whitelist mechanism for peg-out transactions. When enabled, only users listed in the `whitelisted-users` map can perform peg-out operations.
 
 ##### Parameters
@@ -78,6 +108,8 @@ A public function, governed through the `is-dao-or-extension`, that enables or d
 ```
 
 #### `whitelist`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 A public function, governed through the `is-dao-or-extension`, that allows the DAO to manage user access to the peg-out feature. It updates the `whitelisted-users` map to either include or remove a specific user. If the `whitelisted` parameter is set to `true`, the user is added to the whitelist; if set to `false`, the user is removed.
 
 ##### Parameters
@@ -87,6 +119,8 @@ A public function, governed through the `is-dao-or-extension`, that allows the D
 ```
 
 #### `whitelist-many`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 A public function, governed through the `is-dao-or-extension`, that allows the DAO to update the whitelist for multiple users in a single call. It works as a batch operation for the `whitelist` function, applying the specified whitelist status (`true` to add or `false` to remove) for each user in the provided list. The `whitelisted-users` map is updated.
 
 ##### Parameters
@@ -98,6 +132,8 @@ A public function, governed through the `is-dao-or-extension`, that allows the D
 ### Getters
 
 #### `get-use-whitelist`
+###### _(only present in cross-peg-out-endpoint-v2-01)_
+
 #### `get-approved-chain-or-fail`
 ##### Parameters
 ```lisp
