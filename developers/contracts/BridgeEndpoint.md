@@ -1,12 +1,12 @@
 # BridgeEndpoint
 - Location: `xlink/packages/contracts/bridge-solidity/contracts`
-- Deployed contracts: [BridgeEndpoint](0x84254dA34abE4678017A5Bf78506B48490ce4547), [BridgeEndpointWithSwap]().
+- Deployed contracts: [BridgeEndpoint](0x84254dA34abE4678017A5Bf78506B48490ce4547), [BridgeEndpointWithSwap](0x84254dA34abE4678017A5Bf78506B48490ce4547).
 
 This technical document provides a detailed overview of the Bridge Endpoint in the Ethereum blockchain. The Bridge Endpoint facilitates communication between two blockchain networks by acting as the entry and exit point for assets moving along the Cross Chain Bridge. It passes messages between chains in the form of events, trigers contract calls, processes token transfers and validates and executes the unwrapping of tokens. The Bridge Endpoint functionalitiy is implemented across two contracts, `BridgeEndpoint` and `BridgeEndpointWithSwap`. `BridgeEndpointWithSwap` extends `BridgeEndpoint` and implements the necessary functionality to source liquidity from external aggregators.
 
 This functionality is implemented and distributed across the following contracts:
 
-- `BridgeEndpoint`: 
+- `BridgeEndpoint`: the base contract that facilitates bridging operations.
 - `BridgeEndpointWithSwap`: extends `BridgeEndpoint` and integrates swaps during a bridge transfer.
 
 ## Storage
@@ -57,6 +57,24 @@ Custom timelock thresholds for different tokens.
 
 Stores information about unwrap transactions.
 
+### `swapExecutor`
+###### _(only present in BridgeEndpointWithSwap)_
+
+| Data     | Type   |
+| -------- | ------ |
+| Variable | `SwapExecutor` |
+
+The contract that executes swaps.
+
+### `swapSent`
+###### _(only present in BridgeEndpointWithSwap)_
+
+| Data     | Type   |
+| -------- | ------ |
+| Variable | `Smapping(bytes32 => SwapOrderPackage)` |
+
+A mapping to track swap orders.
+
 ## Data Types
 
 #### `OrderPackage`
@@ -84,17 +102,35 @@ struct SignaturePackage {
 }
 ```
 
+#### `SwapOrderPackage`
+###### _(only present in BridgeEndpointWithSwap)_
+
+A struct storing swap details.
+
+```lisp
+struct SwapOrderPackage {
+  address target;
+  address tokenIn;
+  address tokenOut;
+  uint256 amountIn;
+  uint256 amountOutMin;
+  bytes bridgePayloadSuccess;
+  bytes bridgePayloadFailure;
+  bool sent;
+}
+```
+
 ## Modifiers
 
-onlyApprovedToken(token): Ensures the token is approved in the registry.
+- `onlyApprovedToken(token)`: Ensures the token is approved in the registry.
 
-onlyApprovedRelayer(): Ensures the caller is an approved relayer.
+- `onlyApprovedRelayer()`: Ensures the caller is an approved relayer.
 
-notWatchlist(recipient): Prevents transactions to watchlisted addresses.
+- `notWatchlist(recipient)`: Prevents transactions to watchlisted addresses.
 
-nonReentrant: Protects against reentrancy attacks.
+- `nonReentrant`: Protects against reentrancy attacks.
 
-onlyAllowlisted: Ensures only allowed addresses can execute certain functions.
+- `onlyAllowlisted`: Ensures only allowed addresses can execute certain functions.
 
 ## Features
 
