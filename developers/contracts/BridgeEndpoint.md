@@ -17,7 +17,7 @@ This functionality is implemented and distributed across the following contracts
 | -------- | ------ |
 | Variable | `BridgeRegistry` |
 
-Holds a reference to the BridgeRegistry contract, which manages approved tokens, relayers, and validators.
+Holds a reference to the `BridgeRegistry` contract, which manages approved tokens, relayers, and validators.
 
 ### `pegInAddress`
 
@@ -50,7 +50,7 @@ The minimum token amount that triggers a timelock. By default, the value is set 
 
 Custom timelock thresholds for different tokens.
 
-### `mapping(bytes32 => OrderPackage) public unwrapSent`
+### `unwrapSent`
 | Data     | Type   |
 | -------- | ------ |
 | Variable | `mapping(bytes32 => OrderPackage)` |
@@ -64,7 +64,7 @@ Stores information about unwrap transactions.
 | -------- | ------ |
 | Variable | `SwapExecutor` |
 
-The contract that executes swaps.
+Holds a reference to SwapExecutor, which is the contract that executes swaps.
 
 ### `swapSent`
 ###### _(only present in BridgeEndpointWithSwap)_
@@ -81,7 +81,7 @@ A mapping to track swap orders.
 
 Holds details of a pending unwrap operation.
 
-```lisp
+```solidity
 struct OrderPackage {
   address recipient;
   address token;
@@ -94,7 +94,7 @@ struct OrderPackage {
 
 Contains signatures from validators to prove a transaction is legitimate. It is used for verifying cross-chain transactions.
 
-```lisp
+```solidity
 struct SignaturePackage {
   bytes32 orderHash;
   address signer;
@@ -107,7 +107,7 @@ struct SignaturePackage {
 
 A struct storing swap details.
 
-```lisp
+```solidity
 struct SwapOrderPackage {
   address target;
   address tokenIn;
@@ -123,13 +123,9 @@ struct SwapOrderPackage {
 ## Modifiers
 
 - `onlyApprovedToken(token)`: Ensures the token is approved in the registry.
-
 - `onlyApprovedRelayer()`: Ensures the caller is an approved relayer.
-
 - `notWatchlist(recipient)`: Prevents transactions to watchlisted addresses.
-
 - `nonReentrant`: Protects against reentrancy attacks.
-
 - `onlyAllowlisted`: Ensures only allowed addresses can execute certain functions.
 
 ## Features
@@ -138,8 +134,8 @@ struct SwapOrderPackage {
 This function transfers a token across chains, deducts a fee, and emits an event. This is the function that is called when the user executes a transaction. The user deposits tokens on the bridge contract in the source chain. The contract checks that the token is approved (since sendMessageWithToken has the onlyApprovedToken modifier). This function calls `_transfer`, which performs validations. Finally, it emits a `SendMessageWithTokenEvent` containing the sender's address, the token and amount sent, the deducted fee and the encoded paylaod (destination details). Afterwards, off-chain validators sign the transaction.
 
 ##### Parameters
-```lisp
-(address token, uint256 amount, bytes calldata payload)
+```solidity
+address token, uint256 amount, bytes calldata payload
 ```
 
 #### `sendMessage`
@@ -147,8 +143,8 @@ This function transfers a token across chains, deducts a fee, and emits an event
 Emits an event with a message and ETH value.
 
 ##### Parameters
-```lisp
-(address token, uint256 amount, bytes calldata payload)
+```solidity
+address token, uint256 amount, bytes calldata payload
 ```
 
 #### `transferToUnwrap`
@@ -156,7 +152,7 @@ Emits an event with a message and ETH value.
 This function is called by a relayer once that `sendMessageWithToken` is called, with the purpose of sending tokens to a recipient. Relayers will listen for the corresponding `SendMessageWithTokenEvent` on the source chain. A relayer calls `transferToUnwrap` providing the token, recipient and amount, a salt (unique transaction identifier, usually the source chain transaction hash), and an array of validator signatures (proofs). The contract validates the transaction and generates a EIP-712 hash.
 
 ##### Parameters
-```lisp
+```solidity
 address token,
 address recipient,
 uint256 amount,
@@ -169,8 +165,8 @@ SignaturePackage[] calldata proofs
 Completes an unwrap transaction and releases tokens to the recipient. If the token transfer was delayed (timelocked), the unwrap is finalized manually. The function loops through each orderHash and calls _finalizeUnwrap(orderHash), which ensures the transaction is not already completed, transfers tokens from unwrapSent mapping to the recipient and marks the order as sent. Finally, it emits `FinalizeUnwrapEvent.`
 
 ##### Parameters
-```lisp
-(bytes32[] calldata orderHash)
+```solidity
+bytes32[] calldata orderHash
 ```
 
 #### `transferToSwap`
@@ -179,7 +175,7 @@ Completes an unwrap transaction and releases tokens to the recipient. If the tok
 This function executes a swap before bridging tokens. If the token is burnable, it mints it before swapping. It validates tokens and relayer permissions and generates a unique order hash for the swap. If the token is burnable, it then mints the token and calls `_executeSwap()` and emits `TransferToSwapEvent`. If it is not burnable, it saves swap details in the `swapSent` mapping and emits `SwapOrderCreated` so the swap can be finalized later.
 
 ##### Parameters
-```lisp
+```solidity
 address target,
 address tokenIn,
 address tokenOut,
@@ -197,7 +193,7 @@ SignaturePackage[] calldata proofs
 This function is used when a token is not burnable, leading transferToSwap to store the swap order instead of executing it immediately. It ensures input arrays are valid, and it loops through each orderHash and calls `_finalizeSwap()`.
 
 ##### Parameters
-```lisp
+```solidity
 bytes32[] calldata orderHashes,
 bytes[] calldata swapPayloads
 ```
@@ -209,7 +205,7 @@ bytes[] calldata swapPayloads
 Updates the contract managing timelocks.
 
 ##### Parameters
-```lisp
+```solidity
 address _timeLock
 ```
 #### `setTimeLockThreshold`
@@ -217,7 +213,7 @@ address _timeLock
 Sets the global timelock threshold
 
 ##### Parameters
-```lisp
+```solidity
 uint256 _timeLockThreshold
 ```
 
@@ -226,8 +222,42 @@ uint256 _timeLockThreshold
 Sets a custom timelock threshold per token.
 
 ##### Parameters
-```lisp
-(address token, uint256 _timeLockThreshold)
+```solidity
+address token, uint256 _timeLockThreshold
+```
+
+#### `addAllowList`
+
+Adds an address to the allowlist, granting it permission to perform specific contract actions.
+
+#### `removeAllowedList`
+
+Removes an address from the allowlist, revoking its access.
+
+##### Parameters
+```solidity
+address account
+```
+
+#### `pause`
+Pauses the contract, preventing token transfers until the contract is unpaused.
+
+#### `unpause`
+Resumes contract operations after a pause, allowing bridging and transfers again.
+
+### Read-Only Functions
+
+#### `onAllowList`
+
+Returns true if the provided address is on the allowlist, which means it has permission to use the contract’s functions.
+
+#### `offAllowList`
+
+Returns true if the provided address is not on the allowlist. 
+
+##### Parameters
+```solidity
+address account
 ```
 
 ### Relevant Internal Functions
@@ -237,8 +267,8 @@ Sets a custom timelock threshold per token.
 Transfers a token from the sender, deducts fees, and sends the remainder to the bridge.
 
 ##### Parameters
-```lisp
-ddress token, uint256 amount
+```solidity
+address token, uint256 amount
 ```
 
 #### `_validateOrder`
@@ -246,8 +276,8 @@ ddress token, uint256 amount
 Verifies if an order is legitimate by checking validator signatures.
 
 ##### Parameters
-```lisp
-(bytes32 orderHash, SignaturePackage[] calldata proofs)
+```solidity
+bytes32 orderHash, SignaturePackage[] calldata proofs
 ```
 
 #### `_finalizeUnwrap`
@@ -255,7 +285,7 @@ Verifies if an order is legitimate by checking validator signatures.
 Completes an unwrap transaction by transferring tokens to the recipient.
 
 ##### Parameters
-```lisp
+```solidity
 (bytes32 orderHash)
 ```
 
@@ -265,7 +295,7 @@ Completes an unwrap transaction by transferring tokens to the recipient.
 This function executes a stored swap order. It is called by `finalizeSwap` to retrieve a stored swap  order and to execute the swap. It checks if the order exists and has not been executed, transfers `amountIn` tokens from the sender to the `BridgeEndpointWithSwap` contract and calls `_executeSwap` to perform the swap. Finally, it marks the order as sent and emits a `SwapOrderFinalized` event.
 
 ##### Parameters
-```lisp
+```solidity
 bytes32 orderHash, bytes memory swapPayload
 ```
 
@@ -275,7 +305,7 @@ bytes32 orderHash, bytes memory swapPayload
 This function uses `swapExecutor` to execute the swap logic. It approves `swapExecutor` to spend `tokenIn`, calls `swapExecutor.executeSwap()` to attempt the swap. If the swap succeeds, it either burns the swapped tokens or prepares them for transfer. To transfer the tokens, `tokenOut` is sent to `pegInAddress` for bridging and a `SendMessageWithTokenEvent` is emitted. If the swap fails, the error is logged via `SwapExecutorError`, approvals are revoked and a `SendMessageWithTokenEvent` with `bridgePayloadFailure` is emitted. In either case, the function will burn `tokenIn` tokens if applicable. 
 
 ##### Parameters
-```lisp
+```solidity
 address tokenIn,
 address tokenOut,
 address target,
@@ -285,3 +315,141 @@ bytes memory swapPayload,
 bytes memory bridgePayloadSuccess,
 bytes memory bridgePayloadFailure
 ```
+
+## Events
+
+#### `SendMessageEvent`
+
+Emitted when a user sends a message without transferring tokens. 
+
+##### Parameters
+```solidity
+address indexed from, uint256 value, bytes payload 
+```
+
+#### `SendMessageWithTokenEvent`
+
+Emitted when a user executes a transaction.
+
+##### Parameters
+```solidity
+address indexed from,
+address indexed token,
+uint256 amount,
+uint256 fee,
+bytes payload
+```
+
+#### `TransferToUnwrapEvent`
+
+Emitted when an order is created to unwrap tokens. This event is emitted when a transaction is validated and tokens have to be transfered to a recipient.
+
+##### Parameters
+```solidity
+bytes32 orderHash,
+bytes32 salt,
+address indexed recipient,
+address indexed token,
+uint256 amount
+```
+
+#### `FinalizeUnwrapEvent`
+
+Emitted when an unwrap order is finalized and tokens are successfully transferred to the recipient.
+
+##### Parameters
+```solidity
+bytes32 indexed orderHash
+```
+
+#### `SetTimelockEvent`
+
+Emitted when `timeLock` is updated by the contract owner.
+
+##### Parameters
+```solidity
+address timeLock
+```
+
+#### `SetTimeLockThresholdEvent`
+
+Emitted when the global time lock threshold is updated.
+
+##### Parameters
+```solidity
+uint256 timeLockThreshold
+```
+
+#### `SetTimeLockThresholdByTokenEvent`
+
+Emitted when the time lock threshold for a specific token is updated.
+
+##### Parameters
+```solidity
+address token,
+uint256 timeLockThreshold
+```
+
+#### `SwapExecutorError`
+###### _(only present in BridgeEndpointWithSwap)_
+
+Emitted when a swap operation fails during the bridge transfer.
+
+##### Parameters
+```solidity
+address indexed target, bytes reason
+```
+
+#### `SwapOrderCreated`
+###### _(only present in BridgeEndpointWithSwap)_
+
+Emitted when a new swap order is created for non-burnable tokens. It logs the creation of swap orders, helping track orders before execution.
+
+##### Paramters
+```solidity
+bytes32 indexed orderHash,
+address indexed target,
+address indexed tokenIn,
+address tokenOut,
+uint256 amountIn,
+uint256 amountOutMin,
+bytes bridgePayloadSuccess,
+bytes bridgePayloadFailure
+```
+
+#### `SwapOrderFinalized`
+###### _(only present in BridgeEndpointWithSwap)_
+
+Emitted when a swap order is executed and finalized, confirming a swap has been processed.
+
+##### Parameters
+```solidity
+bytes32 indexed orderHash,
+address indexed executor,
+uint256 amountOut,
+bool success
+```
+
+#### `TransferToSwapEvent`
+###### _(only present in BridgeEndpointWithSwap)_
+
+Emitted when a token transfer and swap operation is executed.
+
+##### Parameters
+```solidity
+bytes32 orderHash,
+address target,
+bytes swapPayload,
+address tokenIn,
+address tokenOut,
+uint256 amountIn,
+uint256 amountOut,
+bool success
+```
+
+## Contract Calls (Interactions)
+
+- `BridgeRegistry`: The BridgeRegistry acts as the central registry for approved tokens, relayers and validators. This contract is called to process orders and to manage validator roles and fees.
+- `ITimeLock`: Provides the implementation for timelocked transactions. 
+- `IBurnable`: Handles the wrapping/unwrapping process in a bridge by burning tokens on one chain and minting them on another.
+- `SwapExecutor`: This contract is called by `BridgeEndpointWithSwap` to execute swaps with external liquidity aggregators during bridging.
