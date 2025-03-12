@@ -144,7 +144,7 @@ Emits an event with a message and ETH value.
 
 ##### Parameters
 ```solidity
-address token, uint256 amount, bytes calldata payload
+bytes calldata payload
 ```
 
 #### `transferToUnwrap`
