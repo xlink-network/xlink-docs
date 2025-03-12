@@ -6,5 +6,5 @@ The subsections below introduce the purpose, scope and interactions of the XLink
 
 ## Explore
 
-{% content-ref url="stacks/README.md" %} [stacks/README.md](stacks/README.md) {% endcontent-ref %}
 {% content-ref url="ethereum/README.md" %} [ethereum/README.md](ethereum/README.md) {% endcontent-ref %}
+{% content-ref url="stacks/README.md" %} [stacks/README.md](stacks/README.md) {% endcontent-ref %}
