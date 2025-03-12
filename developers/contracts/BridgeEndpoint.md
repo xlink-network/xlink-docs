@@ -71,7 +71,7 @@ Holds a reference to SwapExecutor, which is the contract that executes swaps.
 
 | Data     | Type   |
 | -------- | ------ |
-| Variable | `Smapping(bytes32 => SwapOrderPackage)` |
+| Variable | `mapping(bytes32 => SwapOrderPackage)` |
 
 A mapping to track swap orders.
 
@@ -210,7 +210,7 @@ address _timeLock
 ```
 #### `setTimeLockThreshold`
 
-Sets the global timelock threshold
+Sets the global timelock threshold.
 
 ##### Parameters
 ```solidity
@@ -405,7 +405,7 @@ address indexed target, bytes reason
 
 Emitted when a new swap order is created for non-burnable tokens. It logs the creation of swap orders, helping track orders before execution.
 
-##### Paramters
+##### Parameters
 ```solidity
 bytes32 indexed orderHash,
 address indexed target,
