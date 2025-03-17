@@ -27,15 +27,15 @@
 ## 🎮 Developers
 * [Smart Contracts](developers/contracts/README.md)
   * [Stacks](developers/contracts/stacks/README.md)
-    * [btc peg-in endpoint](developers/contracts/stacks/btc-peg-in-endpoint.md)
-    * [btc-peg-out-endpoint](developers/contracts/stacks/btc-peg-out-endpoint.md)
-    * [meta peg-in endpoint](developers/contracts/stacks/meta-peg-in-endpoint.md)
-    * [meta peg-out endpoint](developers/contracts/stacks/meta-peg-out-endpoint.md)
-    * [cross-peg-in-endpoint](developers/contracts/stacks/cross-peg-in-endpoint.md)
-    * [cross-peg-out-endpoint](developers/contracts/stacks/cross-peg-out-endpoint.md)
-    * [xlink-staking](developers/contracts/stacks/xlink-staking.md)
+    * [BTC Peg-In Endpoints](developers/contracts/stacks/btc-peg-in-endpoint.md)
+    * [BTC Peg-Out Endpoints](developers/contracts/stacks/btc-peg-out-endpoint.md)
+    * [Meta Peg-In Endpoints](developers/contracts/stacks/meta-peg-in-endpoint.md)
+    * [Meta Peg-Out Endpoints](developers/contracts/stacks/meta-peg-out-endpoint.md)
+    * [Cross Peg-In Endpoints](developers/contracts/stacks/cross-peg-in-endpoint.md)
+    * [Cross Peg-Out Endpoints](developers/contracts/stacks/cross-peg-out-endpoint.md)
+    * [XLink Staking](developers/contracts/stacks/xlink-staking.md)
   * [Ethereum](developers/contracts/ethereum/README.md)
-    * [BridgeEndpoint](developers/contracts/ethereum/BridgeEndpoint.md)
+    * [Bridge Endpoint](developers/contracts/ethereum/BridgeEndpoint.md)
 
 <!-- 
 
