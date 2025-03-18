@@ -55,7 +55,7 @@ Custom timelock thresholds for different tokens.
 | -------- | ------ |
 | Variable | `mapping(bytes32 => OrderPackage)` |
 
-Stores unwrap transctions that need to be finalized. It stores a mapping of `OrderPackage` structs, which contain a flag indicating whether the unwrap has been completed.
+Stores unwrap transactions that need to be finalized. It stores a mapping of `OrderPackage` structs, which contain a flag indicating whether the unwrap has been completed.
 
 ### `swapExecutor`
 ###### _(only present in BridgeEndpointWithSwap)_
@@ -149,7 +149,7 @@ bytes calldata payload
 
 #### `transferToUnwrap`
 
-This function is called by a relayer after `sendMessageWithToken` is executed, with the purpose of sending tokens to a recipient. Relayers will listen for the corresponding `SendMessageWithTokenEvent` on the source chain and call `transferToUnwrap` providing the token, recipient and amount, a salt (unique transaction identifier, usually the source chain transaction hash), and an array of validator signatures (proofs). The contract validates the transaction and generates a EIP-712 hash,which acts as a unique identifier for each swap.
+This function is called by a relayer after `sendMessageWithToken` is executed, with the purpose of sending tokens to a recipient. Relayers will listen for the corresponding `SendMessageWithTokenEvent` on the source chain and call `transferToUnwrap` providing the token, recipient and amount, a salt (a unique transaction identifier, usually the source chain transaction hash), and an array of validator signatures (proofs). The contract validates the transaction and generates a EIP-712 hash, which acts as a unique identifier for each swap.
 
 ##### Parameters
 ```solidity
