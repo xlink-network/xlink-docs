@@ -2,7 +2,7 @@
 - Location: `xlink/packages/contracts/bridge-solidity/contracts`
 - Deployed contracts: [BridgeEndpoint](0x84254dA34abE4678017A5Bf78506B48490ce4547), [BridgeEndpointWithSwap](0x84254dA34abE4678017A5Bf78506B48490ce4547).
 
-This technical document provides a detailed overview of the Bridge Endpoint in the Ethereum blockchain. The Bridge Endpoint facilitates communication between two blockchain networks by acting as the entry and exit point for assets moving along the Cross Chain Bridge. It passes messages between chains in the form of events, trigers contract calls, processes token transfers and validates and executes the unwrapping of tokens. The Bridge Endpoint functionalitiy is implemented across two contracts, `BridgeEndpoint` and `BridgeEndpointWithSwap`. `BridgeEndpointWithSwap` extends `BridgeEndpoint` and implements the necessary functionality to source liquidity from external aggregators.
+This technical document provides a detailed overview of the Bridge Endpoint in the Ethereum blockchain. The Bridge Endpoint facilitates communication between two blockchain networks by acting as the entry and exit point for assets moving along the Cross Chain Bridge. It passes messages between chains in the form of events, triggers contract calls, processes token transfers and validates and executes the unwrapping of tokens. The Bridge Endpoint functionality is implemented across two contracts, `BridgeEndpoint` and `BridgeEndpointWithSwap`. `BridgeEndpointWithSwap` extends `BridgeEndpoint` and implements the necessary functionality to source liquidity from external aggregators.
 
 This functionality is implemented and distributed across the following contracts:
 
@@ -17,7 +17,7 @@ This functionality is implemented and distributed across the following contracts
 | -------- | ------ |
 | Variable | `BridgeRegistry` |
 
-Holds a reference to the `BridgeRegistry` contract, which manages approved tokens, relayers, and validators.
+Stores a reference to the `BridgeRegistry` contract, which manages approved tokens, relayers, and validators.
 
 ### `pegInAddress`
 
@@ -33,7 +33,7 @@ The address where tokens are deposited before bridging.
 | -------- | ------ |
 | Variable | `ITimeLock` |
 
-Manages locked transactions that require a delay before execution. Tokens exceeding the timelock threshold are not immediately sent to the user. Instead, the timeLock contract holds them until the delay expires. After the delay, the timeLock contract releases the tokens.
+Manages locked transactions that require a delay before execution. Tokens exceeding the timelock threshold are not immediately sent to the user. Instead, the timeLock contract holds them until the waiting period expires and then releases the tokens.
 
 ### `timeLockThreshold`
 
@@ -41,7 +41,7 @@ Manages locked transactions that require a delay before execution. Tokens exceed
 | -------- | ------ |
 | Variable | `uint256` |
 
-The minimum token amount that triggers a timelock. By default, the value is set to 0.
+The minimum token amount that triggers a timelock. By default, the value is set to `0`.
 
 ### `timeLockThresholdByToken`
 | Data     | Type   |
@@ -55,7 +55,7 @@ Custom timelock thresholds for different tokens.
 | -------- | ------ |
 | Variable | `mapping(bytes32 => OrderPackage)` |
 
-Stores information about unwrap transactions.
+Stores unwrap transctions that need to be finalized. It stores a mapping of `OrderPackage` structs, which contain a flag indicating whether the unwrap has been completed.
 
 ### `swapExecutor`
 ###### _(only present in BridgeEndpointWithSwap)_
@@ -73,7 +73,7 @@ Holds a reference to SwapExecutor, which is the contract that executes swaps.
 | -------- | ------ |
 | Variable | `mapping(bytes32 => SwapOrderPackage)` |
 
-A mapping to track swap orders.
+A mapping to track swap orders. `bytes32` is a unique hash of the swap parameters, as calculated by `transferToSwap`.
 
 ## Data Types
 
@@ -105,7 +105,7 @@ struct SignaturePackage {
 #### `SwapOrderPackage`
 ###### _(only present in BridgeEndpointWithSwap)_
 
-A struct storing swap details.
+A struct that stores details of a swap transaction.
 
 ```solidity
 struct SwapOrderPackage {
@@ -122,16 +122,16 @@ struct SwapOrderPackage {
 
 ## Modifiers
 
-- `onlyApprovedToken(token)`: Ensures the token is approved in the registry.
-- `onlyApprovedRelayer()`: Ensures the caller is an approved relayer.
-- `notWatchlist(recipient)`: Prevents transactions to watchlisted addresses.
-- `nonReentrant`: Protects against reentrancy attacks.
-- `onlyAllowlisted`: Ensures only allowed addresses can execute certain functions.
+- `onlyApprovedToken(token)`: ensures the token is approved in the registry.
+- `onlyApprovedRelayer()`: ensures the caller is an approved relayer.
+- `notWatchlist(recipient)`: prevents transactions to watchlisted addresses.
+- `nonReentrant`: protects against reentrancy attacks.
+- `onlyAllowlisted`: ensures only allowed addresses can execute certain functions.
 
 ## Features
 
 #### `sendMessageWithToken`
-This function transfers a token across chains, deducts a fee, and emits an event. This is the function that is called when the user executes a transaction. The user deposits tokens on the bridge contract in the source chain. The contract checks that the token is approved (since sendMessageWithToken has the onlyApprovedToken modifier). This function calls `_transfer`, which performs validations. Finally, it emits a `SendMessageWithTokenEvent` containing the sender's address, the token and amount sent, the deducted fee and the encoded paylaod (destination details). Afterwards, off-chain validators sign the transaction.
+This function transfers a token across chains, deducts a fee, and emits an event. The user deposits tokens on the bridge contract in the source chain. The contract checks that the token is approved (since `sendMessageWithToken` has the `onlyApprovedToken` modifier). This function calls `_transfer`, which performs validations. Finally, it emits a `SendMessageWithTokenEvent` containing the transaction details. Afterwards, off-chain validators sign the transaction.
 
 ##### Parameters
 ```solidity
@@ -140,7 +140,7 @@ address token, uint256 amount, bytes calldata payload
 
 #### `sendMessage`
 
-Emits an event with a message and ETH value.
+Emits an event with a message.
 
 ##### Parameters
 ```solidity
@@ -149,7 +149,7 @@ bytes calldata payload
 
 #### `transferToUnwrap`
 
-This function is called by a relayer once that `sendMessageWithToken` is called, with the purpose of sending tokens to a recipient. Relayers will listen for the corresponding `SendMessageWithTokenEvent` on the source chain. A relayer calls `transferToUnwrap` providing the token, recipient and amount, a salt (unique transaction identifier, usually the source chain transaction hash), and an array of validator signatures (proofs). The contract validates the transaction and generates a EIP-712 hash.
+This function is called by a relayer after `sendMessageWithToken` is executed, with the purpose of sending tokens to a recipient. Relayers will listen for the corresponding `SendMessageWithTokenEvent` on the source chain and call `transferToUnwrap` providing the token, recipient and amount, a salt (unique transaction identifier, usually the source chain transaction hash), and an array of validator signatures (proofs). The contract validates the transaction and generates a EIP-712 hash,which acts as a unique identifier for each swap.
 
 ##### Parameters
 ```solidity
@@ -162,7 +162,7 @@ SignaturePackage[] calldata proofs
 
 #### `finalizeUnwrap`
 
-Completes an unwrap transaction and releases tokens to the recipient. If the token transfer was delayed (timelocked), the unwrap is finalized manually. The function loops through each orderHash and calls _finalizeUnwrap(orderHash), which ensures the transaction is not already completed, transfers tokens from unwrapSent mapping to the recipient and marks the order as sent. Finally, it emits `FinalizeUnwrapEvent.`
+Completes an unwrap transaction and releases tokens to the recipient. If the token transfer was delayed (timelocked), the unwrap must be manually finalized. The function loops through each `orderHash` and calls `_finalizeUnwrap(orderHash)`, which verifies that the transaction has not already been completed, transfers tokens from `unwrapSent` mapping to the recipient and marks the order as sent. Finally, it emits `FinalizeUnwrapEvent.`
 
 ##### Parameters
 ```solidity
@@ -172,7 +172,7 @@ bytes32[] calldata orderHash
 #### `transferToSwap`
 ###### _(in contract BridgeEndpointWithSwap)_`
 
-This function executes a swap before bridging tokens. If the token is burnable, it mints it before swapping. It validates tokens and relayer permissions and generates a unique order hash for the swap. If the token is burnable, it then mints the token and calls `_executeSwap()` and emits `TransferToSwapEvent`. If it is not burnable, it saves swap details in the `swapSent` mapping and emits `SwapOrderCreated` so the swap can be finalized later.
+This function executes a swap before bridging tokens. If the token is burnable, the contract mints the required amount before swapping, calls `_executeSwap` to perform the swap and emits a `TransferToSwapEvent` recording the details. If it is not burnable, it saves swap details in the `swapSent` mapping and emits `SwapOrderCreated` so the swap can be finalized later. In either case, the function will validate token and relayer permissions and generate a unique EIP-712 hash to identify the swap.
 
 ##### Parameters
 ```solidity
@@ -190,7 +190,7 @@ SignaturePackage[] calldata proofs
 
 #### `finalizeSwap`
 ###### _(in contract BridgeEndpointWithSwap)_`
-This function is used when a token is not burnable, leading transferToSwap to store the swap order instead of executing it immediately. It ensures input arrays are valid, and it loops through each orderHash and calls `_finalizeSwap()`.
+This function is used when a token is not burnable, leading `transferToSwap` to store the swap order instead of executing it immediately. It ensures input arrays are valid, and it loops through each `orderHash` and calls `_finalizeSwap()`.
 
 ##### Parameters
 ```solidity
@@ -249,11 +249,11 @@ Resumes contract operations after a pause, allowing bridging and transfers again
 
 #### `onAllowList`
 
-Returns true if the provided address is on the allowlist, which means it has permission to use the contract’s functions.
+Returns `true` if the provided address is on the allowlist, which means it has permission to use the contract’s functions.
 
 #### `offAllowList`
 
-Returns true if the provided address is not on the allowlist. 
+Returns `true` if the provided address is not on the allowlist. 
 
 ##### Parameters
 ```solidity
@@ -292,7 +292,7 @@ Completes an unwrap transaction by transferring tokens to the recipient.
 #### `_finalizeSwap`
 ###### _(in contract BridgeEndpointWithSwap)_`
 
-This function executes a stored swap order. It is called by `finalizeSwap` to retrieve a stored swap  order and to execute the swap. It checks if the order exists and has not been executed, transfers `amountIn` tokens from the sender to the `BridgeEndpointWithSwap` contract and calls `_executeSwap` to perform the swap. Finally, it marks the order as sent and emits a `SwapOrderFinalized` event.
+This function is called by `finalizeSwap` to retrieve a stored swap  order and to execute the swap. It checks if the order exists and has not been executed, transfers `amountIn` tokens from the sender to the `BridgeEndpointWithSwap` contract and calls `_executeSwap` to perform the swap. Finally, it marks the order as sent and emits a `SwapOrderFinalized` event.
 
 ##### Parameters
 ```solidity
@@ -302,7 +302,7 @@ bytes32 orderHash, bytes memory swapPayload
 #### `_executeSwap`
 ###### _(in contract BridgeEndpointWithSwap)_`
 
-This function uses `swapExecutor` to execute the swap logic. It approves `swapExecutor` to spend `tokenIn`, calls `swapExecutor.executeSwap()` to attempt the swap. If the swap succeeds, it either burns the swapped tokens or prepares them for transfer. To transfer the tokens, `tokenOut` is sent to `pegInAddress` for bridging and a `SendMessageWithTokenEvent` is emitted. If the swap fails, the error is logged via `SwapExecutorError`, approvals are revoked and a `SendMessageWithTokenEvent` with `bridgePayloadFailure` is emitted. In either case, the function will burn `tokenIn` tokens if applicable. 
+This function approves `swapExecutor` to spend `tokenIn` and calls its `executeSwap()` function to attempt the swap. If the swap succeeds, it either burns the swapped tokens or prepares them for transfer. To transfer the tokens, `tokenOut` is sent to `pegInAddress` for bridging and a `SendMessageWithTokenEvent` is emitted. If the swap fails, the error is logged via `SwapExecutorError`, approvals are revoked and a `SendMessageWithTokenEvent` with `bridgePayloadFailure` is emitted. In either case, the function will burn `tokenIn` tokens if applicable. 
 
 ##### Parameters
 ```solidity
@@ -449,7 +449,7 @@ bool success
 
 ## Contract Calls (Interactions)
 
-- `BridgeRegistry`: The BridgeRegistry acts as the central registry for approved tokens, relayers and validators. This contract is called to process orders and to manage validator roles and fees.
-- `ITimeLock`: Provides the implementation for timelocked transactions. 
-- `IBurnable`: Handles the wrapping/unwrapping process in a bridge by burning tokens on one chain and minting them on another.
-- `SwapExecutor`: This contract is called by `BridgeEndpointWithSwap` to execute swaps with external liquidity aggregators during bridging.
+- `BridgeRegistry`: this contract is called to process orders and to manage validator roles and fees. It acts as the central registry for approved tokens, relayers and validators. 
+- `ITimeLock`: provides the implementation for timelocked transactions. 
+- `IBurnable`: handles the wrapping/unwrapping process in a bridge by burning tokens on one chain and minting them on another.
+- `SwapExecutor`: this contract is called by `BridgeEndpointWithSwap` to execute swaps with external liquidity aggregators during bridging.
