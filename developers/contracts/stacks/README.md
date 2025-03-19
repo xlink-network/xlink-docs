@@ -24,7 +24,7 @@ The XLink ecosystem offers three main features that are implemented along differ
 
 ![This is a simplified representation on the BTC Bridge main goal.](../../.gitbook/assets/glue-docs/btc-bridge.png)
 
-\*To see more information on this contract see the [auxiliary contracts section](#auxiliary-contracts).
+\*To see more information on these contracts see the [auxiliary contracts section](#auxiliary-contracts).
 
 #### BTC Peg-In Endpoint
 
