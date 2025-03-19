@@ -14,7 +14,7 @@ The XLink ecosystem offers two main features in its Ethereum implementation. The
 
 ### EVM Chain Bridge
 
-![This is a simplified representation on the EVM Chain Bridge main goal.](../../../.gitbook/assets/glue-docs/bridge-endpoint.png)
+![This is a simplified representation on the EVM Chain Bridge's main goal.](../../../.gitbook/assets/glue-docs/bridge-endpoint.png)
 
 \*To see more information on these contracts see the [auxiliary contracts section](#auxiliary-contracts).</small>
 
