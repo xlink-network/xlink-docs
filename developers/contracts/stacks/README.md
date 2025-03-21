@@ -1,6 +1,6 @@
 # Technical Documentation for Smart Contracts on Stacks
 
-This document outlines the main functionalities of the XLink bridge as deployed on the Stacks blockchain. These Clarity contracts facilitate the bridging process between Bitcoin and Stacks, wrapping BTC and BRC-20 compliant tokens into aBTC. They also bridge tokens from Stacks to EVM-compatible blockchains. Aside from bridging, XLink uses the Stacks blockchain to allow users to add token swaps to the bridging processes and to participate in certain ecosystem decisions through its Governance System. The purpose of this section is to give the reader a high-level overview of the different modules that constitute the XLink ecosystem and how some of the contracts interact.
+This document outlines the main functionalities of the XLink bridge as deployed on the Stacks blockchain. These Clarity contracts facilitate the bridging process between Bitcoin and Stacks, wrapping BTC into aBTC and transferring BRC-20 compliant tokens. They also allow the bridging of tokens from Stacks to EVM-compatible blockchains. XLink also offers users the possibility to add token swaps to the bridging process and to participate in certain ecosystem decisions through its Governance System. The purpose of this section is to give the reader a high-level overview of the different modules that constitute the XLink ecosystem and how some of the contracts interact.
 
 ## Smart Contracts on Stacks
 
