@@ -33,6 +33,7 @@
   * [cross-peg-in-endpoint](developers/contracts/cross-peg-in-endpoint.md)
   * [cross-peg-out-endpoint](developers/contracts/cross-peg-out-endpoint.md)
   * [xlink-staking](developers/contracts/xlink-staking.md)
+  * [BridgeEndpoint](developers/contracts/BridgeEndpoint.md)
 
 <!-- 
 
