@@ -25,7 +25,7 @@ Stores a reference to the `BridgeRegistry` contract, which manages approved toke
 | -------- | ------ |
 | Variable | `address` |
 
-The address in which tokens will be stored before they are bridged out of the EVM-compatible blockchain. The user calls [`sendMessageWithToken`](#sendmessagewithtoken), which deducts a fee and transfers the remaining non-burnable tokens to `pegInAddress`.
+The address in which non-burnable tokens from peg-out orders are stored before they are bridged out of the EVM-compatible blockchain. The user calls [`sendMessageWithToken`](#sendmessagewithtoken), which deducts a fee and transfers the remaining non-burnable tokens to `pegInAddress`. This address also provides the funds for non-burnable peg-in orders.
 
 ### `timeLock`
 
@@ -268,7 +268,7 @@ Returns `true` if the provided address is on the allowlist, which means it has p
 
 #### `_transfer`
 
-This internal function is responsible for processing token transfers when a user sends tokens into the bridge. It is called from [`sendMessageWithToken`](#sendmessagewithtoken) and performs validations, calculates and deducts fees, and sends the correct amount of tokens to the receiver. This function ensures the transfer amount is within allowed limits and that it is large enough to cover the minimum fee. If the token is burnable, it burns the amount minus the fee. Otherwise, it transfers the same amount to the `pegInAddress`. In either case, the fee is sent to the `BridgeRegistry` contract.
+This internal function is responsible for processing token transfers when a user sends tokens into the bridge. It is called from [`sendMessageWithToken`](#sendmessagewithtoken) and performs validations, calculates and deducts fees, and sends the correct amount of tokens to the `pegInAddress`. This function ensures the transfer amount is within allowed limits and that it is large enough to cover the minimum fee. If the token is burnable, it burns the amount minus the fee. Otherwise, it transfers the same amount to the `pegInAddress`. In either case, the fee is sent to the `BridgeRegistry` contract.
 
 ##### Parameters
 ```solidity
