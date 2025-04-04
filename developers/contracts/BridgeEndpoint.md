@@ -2,9 +2,9 @@
 - Location: `xlink/packages/contracts/bridge-solidity/contracts`
 - Deployed contracts: See [Ethereum Contract Addresses](https://docs.xlink.network/xlink-network/readme/ethereum-contract-addresses).
 
-This technical document provides a detailed overview of the Bridge Endpoint in EVM-compatible blockchains. The Bridge Endpoint facilitates communication between two blockchain networks by acting as the entry and exit point for assets moving along the Cross Chain Bridge. It passes messages between chains in the form of events, triggers contract calls, processes token transfers and validates and executes the unwrapping of tokens. The Bridge Endpoint functionality is implemented across two contracts, `BridgeEndpoint` and `BridgeEndpointWithSwap`. `BridgeEndpointWithSwap` extends `BridgeEndpoint` and implements the necessary functionality to source liquidity from external aggregators.
+This technical document provides a detailed overview of the Bridge Endpoint in EVM-compatible blockchains. The Bridge Endpoint facilitates communication between two blockchain networks by acting as the entry and exit point for assets moving along the Cross Chain Bridge. It passes messages between chains in the form of events, triggers contract calls, processes token transfers and validates and executes the unwrapping of tokens. `BridgeEndpointWithSwap` extends `BridgeEndpoint` and implements the necessary features to source liquidity from external aggregators.
 
-This functionality is implemented and distributed across the following contracts:
+This Bridge Endpoint functionality is implemented and distributed across the following contracts:
 
 - `BridgeEndpoint`: the base contract that facilitates bridging operations.
 - `BridgeEndpointWithSwap`: extends `BridgeEndpoint` and integrates swaps during a bridge transfer.
@@ -25,7 +25,7 @@ Stores a reference to the `BridgeRegistry` contract, which manages approved toke
 | -------- | ------ |
 | Variable | `address` |
 
-The address from which non-burnable tokens are transferred during peg-in operations.
+The address in which tokens will be stored before they are bridged out of the EVM-compatible blockchain. The user calls [`sendMessageWithToken`](#sendmessagewithtoken), which deducts a fee and transfers the remaining non-burnable tokens to `pegInAddress`.
 
 ### `timeLock`
 
@@ -33,7 +33,7 @@ The address from which non-burnable tokens are transferred during peg-in operati
 | -------- | ------ |
 | Variable | `ITimeLock` |
 
-Manages locked transactions that require a delay before execution. Tokens amounts that exceed the threshold are not immediately sent to the user. Instead, the `timeLock` contract holds them until the waiting period expires and then releases the tokens, completing the transfer.
+Manages locked transactions that require a delay before execution. Tokens amounts that exceed the threshold are not immediately sent to the user. Instead, the `timeLock` contract holds them until the waiting period expires. At that point, the `timeLock` owner can fulfill the order, completing the cross-chain transfer.
 
 ### `timeLockThreshold`
 
@@ -132,7 +132,7 @@ struct SwapOrderPackage {
 
 #### `sendMessageWithToken`
 
-This function is called to initiate the peg-out process from an EVM-compatible blockchain onto other chains, such as Stacks or Solana. The user deposits tokens in the bridge contract, which are burned or locked, depending on the token. The contract checks that the token is approved, since [`sendMessageWithToken`](#sendmessagewithtoken) has the `onlyApprovedToken` modifier. The function calls [`_transfer`](#_transfer), which performs validations. Finally, the function emits a [`SendMessageWithTokenEvent`](#sendmessagewithtokenevent) containing the transaction details, which will be reviewed by validators. Once they verify that the tokens were deposited in the `BridgeEndpoint` contract, the validators will sign the order and relayers will submit it in the destination chain.
+This function is called to initiate the peg-out process from an EVM-compatible blockchain onto other chains, such as Stacks or Bitcoin. The user deposits tokens in the bridge contract, which are burned or locked, depending on the token. The contract checks that the token is approved, since [`sendMessageWithToken`](#sendmessagewithtoken) has the `onlyApprovedToken` modifier. The function calls [`_transfer`](#_transfer), which performs validations. Finally, the function emits a [`SendMessageWithTokenEvent`](#sendmessagewithtokenevent) containing the transaction details, which will be reviewed by validators. Once they verify that the tokens were deposited in the `BridgeEndpoint` contract, the validators will sign the order and relayers will submit it in the destination chain.   
 
 ##### Parameters
 ```solidity
@@ -152,7 +152,7 @@ bytes calldata payload
 
 #### `transferToUnwrap`
 
-This function is called by a relayer when a user initiates a token transfer from another blockchain. The originating order may come from an EVM chain (via [`sendMessageWithToken`](#sendmessagewithtoken)), or from a non-EVM chain like Stacks or Solana. Relayers listen for the corresponding event on the source chain and call [`transferToUnwrap`](#transfertounwrap) on the destination chain, supplying the recipient, token, amount, a salt (usually the source chain order hash), and an array of validator signatures (proofs). The contract verifies these proofs and generates an EIP-712-compliant hash, which acts as a unique identifier for each transfer.
+This function is called by a relayer when a user initiates a token transfer from another blockchain. The originating order may come from an EVM chain (via [`sendMessageWithToken`](#sendmessagewithtoken)), or from a non-EVM chain like Stacks, Bitcoin or Solana. Relayers listen for the corresponding event on the source chain and call [`transferToUnwrap`](#transfertounwrap) on the destination chain, supplying the recipient, token, amount, a salt (usually the source chain transaction), and an array of validator signatures (proofs). The contract verifies these proofs and generates an EIP-712-compliant hash, which acts as a unique identifier for each order.
 
 ##### Parameters
 ```solidity
@@ -164,7 +164,8 @@ SignaturePackage[] calldata proofs
 ```
 
 #### `finalizeUnwrap`
-This function completes a pending unwrap order for non-burnable tokens. It is called by a relayer once the timeLock period expires and the recipient can receive their locked tokens. It loops through each `orderHash` and calls [`_finalizeUnwrap()`](#_finalizeunwrap), which verifies that the order has not already been completed and transfers the token and amount stored in [`unwrapSent`](#unwrapsent) to the recipient. The order is then marked as completed, and the [`FinalizeUnwrapEvent`](#finalizeunwrapevent) is emitted.
+
+This function completes a pending unwrap order for non-burnable tokens. It is called by a hot wallet address once the timeLock period expires, which transfers the tokens to the recipients and finalizes peg-in orders. It loops through each `orderHash` and calls [`_finalizeUnwrap()`](#_finalizeunwrap), which verifies that the order has not already been completed and transfers the token and amount stored in [`unwrapSent`](#unwrapsent) to the recipient. The order is then marked as completed, and the [`FinalizeUnwrapEvent`](#finalizeunwrapevent) is emitted.
 
 ##### Parameters
 ```solidity
@@ -267,7 +268,7 @@ Returns `true` if the provided address is on the allowlist, which means it has p
 
 #### `_transfer`
 
-This internal function is responsible for processing token transfers when a user sends tokens into the bridge. It is called from [`sendMessageWithToken`](#sendmessagewithtoken) and performs validations, calculates and deducts fees, and sends the remaining amount to the receiver. This function ensures the transfer amount is within allowed limits and that it is large enough to cover the minimum fee. If the token is burnable, if burns the amount minus the fee, which is sent to the `BridgeRegistry` contract.
+This internal function is responsible for processing token transfers when a user sends tokens into the bridge. It is called from [`sendMessageWithToken`](#sendmessagewithtoken) and performs validations, calculates and deducts fees, and sends the correct amount of tokens to the receiver. This function ensures the transfer amount is within allowed limits and that it is large enough to cover the minimum fee. If the token is burnable, it burns the amount minus the fee. Otherwise, it transfers the same amount to the `pegInAddress`. In either case, the fee is sent to the `BridgeRegistry` contract.
 
 ##### Parameters
 ```solidity
