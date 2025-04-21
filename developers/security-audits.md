@@ -10,5 +10,7 @@ Brotocol is audited by CoinFabrik, covering both the contracts and the backends.
 * [2024-11 Brotocol Staking Manager](https://cdn.xlink.network/pdf/XLINK_Staking_Audit_2024_11_final.pdf)
 * [2024-11 Brotocol Peg-out Endpoints](https://cdn.xlink.network/pdf/XLINK_Peg-out_Endpoints_Audit%2011-2024.pdf)
 * [2024-11 Brotocol Peg-in Endpoints](https://cdn.xlink.network/pdf/XLINK_Peg-in_Endpoints_Audit_11-2024.pdf)
+* [2025-3 Endpoint Update](https://cdn.brotocol.xyz/pdf/XLink_Endpoits_Update_Audit_2025-03.pdf)
+* [2025-4 EVM Endpoints](https://cdn.brotocol.xyz/pdf/XLink_EVM_Endpoint_Audit_2025-04.pdf)
 
 The smart contracts are also subject to our [bug bounty](https://immunefi.com/bounty/alex/) programme on Immunefi.
