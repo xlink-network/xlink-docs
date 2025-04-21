@@ -1,45 +1,51 @@
 ---
-cover: .gitbook/assets/DocCoverXlink.png
+cover: .gitbook/assets/gbbanner.png
 coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# What is XLink
+# What is Brotocol?
 
-XLink is a cutting-edge, bi-directional cross-chain bridge that enables seamless asset transfers between Bitcoin and its Layer 2 networks (L2s) as well as other blockchain ecosystems. By abstracting the complexity of blockchain layers from the user experience, XLink allows users to move assets like Bitcoin effortlessly between different chains while maintaining security and full asset control.
+Brotocol Bridge is a MPC-based hybrid bi-directional bridge that acts as a 'connector' between Bitcoin and other blockchains, enabling seamless asset transfers and swaps between Bitcoin and its Layer 2 networks (L2s) as well as other blockchain ecosystems.&#x20;
 
-[**🌁 Connect to XLink and Start Bridging Now!**](https://app.xlink.network)
+**Brotocol currently offers two key features:**
+
+* [BroBridge](features/broswap/)
+* [BroSwap](features/broswap/)
 
 ## Key Features
 
-- **Bi-Directional Asset Transfers**: Easily transfer assets between Bitcoin and L2s, as well as non-Bitcoin chains.
-- **Secure and Decentralized**: Utilizes multisigs and decentralized validators to secure all transfers.
-- **User-Friendly Interface**: Designed to provide a smooth experience for both novice and experienced users.
-- **Cross-Chain Interoperability**: Supports multiple blockchains including Bitcoin, Stacks, and EVM-compatible chains.
+* **Bi-Directional Asset Transfers**: Easily transfer assets between Bitcoin and L2s, as well as non-Bitcoin chains.
+* **Secure and Decentralized**: Utilizes multisigs and decentralized validators to secure all transfers.
+* **User-Friendly Interface**: Designed to provide a smooth experience for both novice and experienced users.
+* **Cross-Chain Interoperability**: Supports multiple blockchains including Bitcoin, Stacks, and EVM-compatible chains.
 
-XLink plays a crucial role in projects building on Bitcoin, offering a 'native-like' DeFi experience by enabling users to interact with smart contracts on L2s using native BTC or other Bitcoin L1 assets.
+Brotocol plays a crucial role in projects building on Bitcoin, offering a 'native-like' DeFi experience by enabling users to interact with smart contracts on L2s using native BTC or other Bitcoin L1 assets.
 
-## Documentation
+## Types of blockchain bridges
 
-XLink's functionality is detailed across various sections in our documentation. Here's an overview of the key files and structure:
+Not all bridges work the same way, and understanding the differences can help you determine which one best suits your needs:
 
-- **Overview**
-  - [Introduction](overview/introduction.md): Learn the basics of how XLink operates and its role in cross-chain transfers.
-  - [How XLink Works](overview/how-xlink-works.md): Overview of the mechanics behind the XLink bridge.
-  - [Supported Blockchains & Tokens](overview/supported-blockchains-and-tokens.md): Explore the ecosystems XLink integrates with.
-  
-- **Getting Started**
-  - [Prerequisites](getting-started/prerequisites.md): Essential requirements to begin using the XLink bridge.
-  - [Quickstart: The Bridge](getting-started/the-bridge.md): Step-by-step guide to initiate asset transfers.
-  - [Quickstart: Campaigns](getting-started/campaigns.md): A detailed guide on how to participate in XLink campaigns and earn rewards.
-  - [Guides](getting-started/guides/README.md): Practical walkthroughs, including [How to Connect Your Wallet](getting-started/guides/how-to-connect-your-wallet.md) and [How to Swap non-bridgeable Tokens](getting-started/guides/how-to-swap-non-bridgeable-tokens.md).
+* `Trust-based Bridges`: These are operated by a centralized entity, requiring users to trust that entity to manage and safeguard their assets. While these bridges can offer faster and more straightforward operations, they introduce a single point of failure, as the security of the entire system depends on the integrity of the operator.
+* `Decentralized Bridges`: These rely on smart contracts and a distributed group of validators to ensure smooth and secure operations without needing a central authority. Although they avoid centralization issues, they can sometimes be slower or more costly due to the additional security checks involved.
+* `Hybrid Bridges`: Hybrid bridges combine elements of both trusted and decentralized models, using centralized intermediaries alongside decentralized smart contracts or consensus systems. This approach aims to balance efficiency and security, providing a flexible solution for cross-chain asset transfers.
+* `Two-way Bridges`: Bi-directional bridges enable the transfer of assets in both directions between two blockchains, making it easy to move your tokens in either direction.
+* `One-way Bridges`: As the name suggests, these bridges allow the transfer of assets from one blockchain to another but do not support transfers in the opposite direction. They’re useful in cases where you only need to transfer tokens once, such as when moving assets to a chain where they will remain and be used.
 
-- **Integrations**
-  - [Bitcoin](integrations/understanding-the-bitcoin-bridge.md): Delve into how XLink integrates with Bitcoin.
-  - [Bitcoin L2s](integrations/bitcoin-l2s.md): Understand how XLink works with various L2 solutions.
-  - [Non-Bitcoin Chains](integrations/non-bitcoin-chains.md): Overview of support for non-Bitcoin blockchains.
-
-- **Security**
-  - [Security Audits](security-audits.md): Learn about XLink’s robust security measures and audit reports.
+Brotocol's type is **`Two-way Bridges` .**&#x20;
 
 ## Support
 
