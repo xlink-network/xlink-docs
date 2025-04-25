@@ -1,1 +1,6 @@
-root: ./
+root: ./docs/ 
+# All other options that specify paths will be relative to this root folder.
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
