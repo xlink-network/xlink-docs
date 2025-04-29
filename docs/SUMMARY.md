@@ -31,22 +31,4 @@
 ## Resources
 
 - [Official Links](media-kits/official-links.md)
-- [Security Audits](developers/security-audits.md)
-
-## Developers
-
-- [BroSDK](https://github.com/Brotocol-xyz/bro-sdk)
-- [Smart Contracts](developers/contracts/README.md)
-  - [btc peg-in endpoint](developers/contracts/btc-peg-in-endpoint.md)
-  - [btc-peg-out-endpoint](developers/contracts/btc-peg-out-endpoint.md)
-  - [meta peg-in endpoint](developers/contracts/meta-peg-in-endpoint.md)
-  - [meta peg-out endpoint](developers/contracts/meta-peg-out-endpoint.md)
-  - [cross-peg-in-endpoint](developers/contracts/cross-peg-in-endpoint.md)
-  - [cross-peg-out-endpoint](developers/contracts/cross-peg-out-endpoint.md)
-  - [brotocol-staking](developers/contracts/xlink-staking.md)
-  - [BridgeEndpoint](developers/contracts/BridgeEndpoint.md)
-- [Add a New Chain](developers/add-a-new-chain.md)
-- [Supported Blockchains and Tokens](developers/supported-blockchains-and-tokens.md)
-- [Integrations](developers/integrations/README.md)
-  - [Bitcoin](developers/integrations/understanding-the-bitcoin-bridge.md)
-  - [Bitcoin L2s or EVMs](developers/integrations/bitcoin-l2s.md)
+- [Security Audits](https://coinfabrik.gitbook.io/brotocol-devs/security-audits)
