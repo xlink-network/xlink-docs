@@ -26,9 +26,9 @@ With L1s and L2s multiplying, Brotocol makes cross-chain bridging simple, afford
 
 ### What is Brotocol?
 
-Brotocol [BroBridge](../../features/brobridge/) is a **MPC-based hybrid bi-directional bridge** that acts as a '**connector**' between Bitcoin and other blockchains, enabling anyone to move between chains beyond the limitation of just EVM-based bridges.
+Brotocol [BroBridge](../features/brobridge/README.md) is a **MPC-based hybrid bi-directional bridge** that acts as a '**connector**' between Bitcoin and other blockchains, enabling anyone to move between chains beyond the limitation of just EVM-based bridges.
 
-### **Why Brotocol?**
+### Why Brotocol?
 
 <figure><img src="../../.gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
 
