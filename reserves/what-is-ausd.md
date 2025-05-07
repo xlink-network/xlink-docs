@@ -12,7 +12,7 @@ With the upcoming launch of BroSwap, Brotocol introduces aUSD, a fully-backed sy
 
 aUSD is a synthetic stablecoin issued by Brotocol with a 1:1 backing from established stablecoins USDT and USDC.&#x20;
 
-This innovative asset exists across multiple chains, including Bitcoin (as the BRC20 token "AUSD$"), providing users with a consistent and reliable USD-pegged asset regardless of which blockchain they're using.
+This innovative asset exists across multiple chains, including Bitcoin (as the Runes token "USD•BY•BROTOCOL" and the BRC20 token "AUSD$"), providing users with a consistent and reliable USD-pegged asset regardless of which blockchain they're using.
 
 The core value proposition of aUSD lies in its ability to create immediate stablecoin liquidity on Bitcoin without waiting for major stablecoin issuers to deploy natively.&#x20;
 
@@ -36,19 +36,17 @@ These reserves are secured through multiple layers of protection:
 3. **Cross-Chain Integrity**: When aUSD moves between chains, the token is burned on the source chain and minted on the destination chain, maintaining consistent total supply
 4. **Decentralized Validation**: Bonbori, Brotocol's validator network, ensures secure cross-chain operations
 
-On Bitcoin, aUSD exists as "AUSD$", a BRC20 token deployed using the self-mint mechanism. While the BRC20 standard theoretically supports dynamic minting and burning, operational challenges have led Brotocol to pre-mint AUSD$ tokens, with the majority held in secure cold storage at ChainUp and smaller amounts in warm and hot wallets to facilitate smooth cross-chain operations.
-
 ### aUSD as the Foundation for BroSwap's Launch
 
 When BroSwap launches, aUSD will serve as the critical base asset that enables immediate trading between Bitcoin and stablecoins without requiring Bitcoin users to leave their native environment. This approach delivers several key benefits:
 
 #### 1. Immediate BTC/USD Liquidity
 
-Rather than waiting for stablecoin issuers to deploy natively on Bitcoin, aUSD provides day-one access to deep stablecoin liquidity. From launch, Bitcoin users will be able to trade BTC to and from AUSD$ directly from their Bitcoin wallets, with BroSwap's architecture connecting to established liquidity pools across multiple chains.
+Rather than waiting for stablecoin issuers to deploy natively on Bitcoin, aUSD provides day-one access to deep stablecoin liquidity. From launch, Bitcoin users will be able to trade BTC to and from aUSD directly from their Bitcoin wallets, with BroSwap's architecture connecting to established liquidity pools across multiple chains.
 
 #### 2. Seamless Cross-Chain Connectivity
 
-aUSD serves as the connectivity asset that enables fungible movement between stablecoin ecosystems. When a user swaps BTC for AUSD$ on BroSwap, the system can utilize liquidity from any of the supported reserve assets (USDT on Ethereum, USDC on Base, etc.) while abstracting away the complexity from the user.
+aUSD serves as the connectivity asset that enables fungible movement between stablecoin ecosystems. When a user swaps BTC for aUSD on BroSwap, the system can utilize liquidity from any of the supported reserve assets (USDT on Ethereum, USDC on Base, etc.) while abstracting away the complexity from the user.
 
 #### 3. Foundation for the Bitcoin DeFi Ecosystem
 
@@ -67,7 +65,7 @@ When USDT launches on Bitcoin, Brotocol will immediately integrate it as an aUSD
 
 1. **Immediate Utility**: Bitcoin USDT will instantly connect to Brotocol's cross-chain infrastructure
 2. **Enhanced Liquidity**: USDT on Bitcoin will benefit from connection to existing liquidity pools
-3. **Seamless User Experience**: Users can choose between AUSD$ and native USDT based on their preferences
+3. **Seamless User Experience**: Users can choose between aUSD and native USDT based on their preferences
 4. **Gradual Transition**: As USDT on Bitcoin gains adoption, users can naturally shift between the assets
 
 In the longer term, BroSwap plans to add direct BTC/USDT trading pairs, giving users the option to trade with either synthetic (aUSD) or native (USDT) stablecoins according to their preferences. This flexibility ensures that Bitcoin users maintain choice while benefiting from the deepest possible liquidity.
