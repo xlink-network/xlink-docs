@@ -12,7 +12,7 @@ With the upcoming launch of BroSwap, Brotocol introduces aUSD, a fully-backed sy
 
 aUSD is a synthetic stablecoin issued by Brotocol with a 1:1 backing from established stablecoins USDT and USDC.&#x20;
 
-This innovative asset exists across multiple chains, including Bitcoin (as the Runes token "USD•BY•BROTOCOL" and the BRC20 token "AUSD$"), providing users with a consistent and reliable USD-pegged asset regardless of which blockchain they're using.
+This innovative asset exists across multiple chains, including Bitcoin (as the [Runes](https://www.oklink.com/bitcoin/token/runes/895623-492) token "USD•BY•BROTOCOL" and the [BRC20](https://www.oklink.com/bitcoin/token/brc20/80977467) token "AUSD$"), providing users with a consistent and reliable USD-pegged asset regardless of which blockchain they're using.
 
 The core value proposition of aUSD lies in its ability to create immediate stablecoin liquidity on Bitcoin without waiting for major stablecoin issuers to deploy natively.&#x20;
 
