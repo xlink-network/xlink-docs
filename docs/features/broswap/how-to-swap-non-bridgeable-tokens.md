@@ -1,4 +1,4 @@
-# How to swap Non-bridgeable Tokens?
+# How to Swap Non-Bridgeable Tokens
 
 In some cases, certain tokens may not be supported by the Brotocol bridge due to compatibility limitations. If you are attempting to bridge a token that is not compatible with the Brotocol bridge, it is recommended to use **ALEX Swap** to exchange it for a bridgeable token.&#x20;
 

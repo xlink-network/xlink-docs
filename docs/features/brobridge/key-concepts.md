@@ -1,4 +1,6 @@
-# How Brotocol Bridge Works?
+# Key Concepts
+
+## How Brotocol Bridge Works?
 
 The Brotocol Bridge is a hybrid bi-directional bridge that acts as a '**connector**' between Bitcoin and other blockchains.&#x20;
 

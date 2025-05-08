@@ -13,20 +13,23 @@
 
 ## Getting Started
 
-<!-- * [Getting Started](./getting-started/README.md) -->
+<!-- - [Getting Started](./getting-started/README.md) -->
 
-- [How to Connect your Wallet](./getting-started/how-to-connect-your-wallet.md)
-- [Supported Wallets](./getting-started/supported-wallets.md)
+- [How to Connect Your Wallet](./getting-started/how-to-connect-your-wallet.md)
+  - [Supported Wallets](./getting-started/supported-wallets.md)
+- [Active Notifications](./getting-started/active-notifications.md)
 
-## Features
+## What Can You Do
 
 - [BroSwap](./features/broswap/README.md)
-  - [DEX Aggregation](./features/broswap/dex-aggregation.md)
-  - [How to swap Non-bridgeable Tokens?](./features/broswap/how-to-swap-non-bridgeable-tokens.md)
+  - [Key Concepts](./features/broswap/key-concepts.md)
+  - [How to Swap](./features/broswap/how-to-swap.md)
+  - [How to Swap Non-Bridgeable Tokens](./features/broswap/how-to-swap-non-bridgeable-tokens.md)
 - [BroBridge](./features/brobridge/README.md)
-  - [How Brotocol Bridge Works?](./features/brobridge/how-xlink-works.md)
-- [Explorer](./features/explorer/README.md)
-  - [Active Notifications](./features/explorer/active-notifications.md)
+  - [Key Concepts](./features/brobridge/key-concepts.md)
+  - [How to Bridge Assets](./features/brobridge/how-to-bridge.md)
+
+<!-- - [Explorer](./features/explorer/README.md) -->
 
 ## Resources
 

@@ -1,4 +1,6 @@
-# DEX Aggregation
+# Key Concepts
+
+## DEX Aggregation
 
 <figure><img src="../../.gitbook/assets/aggregate.png" alt=""><figcaption></figcaption></figure>
 

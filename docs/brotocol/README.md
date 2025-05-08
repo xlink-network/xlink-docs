@@ -1,6 +1,6 @@
 ---
 description: 'Brotocol: Bridge Better, Bro—Best Rates, Seamless Security!'
-cover: ../../.gitbook/assets/gbbanner.png
+cover: ../.gitbook/assets/gbbanner.png
 coverY: 0
 layout:
   cover:
@@ -22,7 +22,7 @@ layout:
 
 With L1s and L2s multiplying, Brotocol makes cross-chain bridging simple, affordable, and secure—no matter your preferred blockchain. Get the **best rates** with Brotocol Bridge!
 
-<figure><img src="../../.gitbook/assets/Bro_L1_L2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Bro_L1_L2.png" alt=""><figcaption></figcaption></figure>
 
 ### What is Brotocol?
 
@@ -30,7 +30,7 @@ Brotocol [BroBridge](../features/brobridge/README.md) is a **MPC-based hybrid bi
 
 ### Why Brotocol?
 
-<figure><img src="../../.gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
 
 Bridging shouldn’t suck—high fees and sketchy paths are out. Brotocol’s your **crypto bro**, offering:
 
@@ -43,13 +43,13 @@ Bridging shouldn’t suck—high fees and sketchy paths are out. Brotocol’s yo
 
 If you are bridging 1 $BTC—how much do you keep, let’s see the table below:
 
-<figure><img src="../../.gitbook/assets/3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/3.png" alt=""><figcaption></figcaption></figure>
 
 _**🔴:** No direct bridge but requires the use of CEX deposit/withdrawal and does not include withdrawal fees_
 
 Beyond the savings, Brotocol has the most BTC-friendly route possible!
 
-<figure><img src="../../.gitbook/assets/m.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/m.png" alt=""><figcaption></figcaption></figure>
 
 ### How does Brotocol Work?
 
@@ -64,7 +64,7 @@ When you want to move assets (like Bitcoin) from one network to another, Brotoco
 
 ### Brotocol by the Numbers!
 
-<figure><img src="../../.gitbook/assets/5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/5.png" alt=""><figcaption></figcaption></figure>
 
 **Here are Brotocol numbers by the numbers (As of 25th March):**
 
@@ -78,7 +78,7 @@ When you want to move assets (like Bitcoin) from one network to another, Brotoco
 
 ### Bridge Challenges Today
 
-<figure><img src="../../.gitbook/assets/6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/6.png" alt=""><figcaption></figcaption></figure>
 
 * **Limited Network Support:** Most centralized exchanges (CEXs) don’t support depositing $WBTC on Arbitrum or other low-TVL EVM chains, reducing liquidity and options.
 * **High and Unpredictable Costs:** Moving $BTC across EVM and non-EVM chains is expensive and inconsistent due to fees (bridging, swapping, withdrawals) and liquidity issues.
@@ -86,7 +86,7 @@ When you want to move assets (like Bitcoin) from one network to another, Brotoco
 * **Lack of Bridge Options:** Popular bridges (e.g., Wormhole, Stargate) rarely offer consistent paths between chains like Arbitrum, BNB, or Ethereum for $BTC variants.
 * **Poor User Experience:** Different $BTC versions vary in support, cost, and ease of movement, creating a confusing and inefficient onboarding process that limits chain adoption.
 
-<figure><img src="../../.gitbook/assets/7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/7.png" alt=""><figcaption></figcaption></figure>
 
 Let’s take Arbitrum’s $WBTC as a quick example.
 
@@ -101,6 +101,6 @@ Demand for EVM BTC is huge—Brotocol makes it flow.
 
 To check Brotocol’s Proof of Reserve, you can visit here: [https://brotocol.xyz/bridge/reserve](https://brotocol.xyz/bridge/reserve)
 
-<figure><img src="../../.gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
 
 All Brotocol audits are available here: [**Brotocol Audit Reports**](../../developers/security-audits.md)
