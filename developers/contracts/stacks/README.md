@@ -1,6 +1,6 @@
 # Technical Documentation for Smart Contracts on Stacks
 
-This document outlines the main functionalities of the XLink bridge as deployed on the Stacks blockchain. These Clarity contracts facilitate the bridging process between Bitcoin and Stacks, wrapping BTC into aBTC and transferring BRC-20 compliant tokens. They also allow the bridging of tokens from Stacks to EVM-compatible blockchains. XLink also offers users the possibility to add token swaps to the bridging process and to participate in certain ecosystem decisions through its Governance System. The purpose of this section is to give the reader a high-level overview of the different modules that constitute the XLink ecosystem and how some of the contracts interact.
+This document outlines the main functionalities of the XLink bridge as deployed on the Stacks blockchain. These Clarity contracts facilitate the bridging process between Bitcoin and Stacks, wrapping BTC into aBTC and transferring BRC-20 and Runes compliant tokens. They also allow the bridging of tokens from Stacks to EVM-compatible blockchains. XLink also offers users the possibility to add token swaps to the bridging process and to participate in certain ecosystem decisions through its Governance System. The purpose of this section is to give the reader a high-level overview of the different modules and contract interactions on the XLink ecosystem on Stacks.
 
 ## Smart Contracts on Stacks
 
@@ -14,11 +14,11 @@ This document outlines the main functionalities of the XLink bridge as deployed 
 
 ## Main Features
 
-The XLink ecosystem offers three main features that are implemented along different contracts. These are:
+The XLink ecosystem offers three main features that are implemented across different contracts. These are:
 
-- The **bridging of BTC**: this feature allows the transfer of BTC from the Bitcoin blockchain into the Stacks chain, where it will be represented as bridged BTC (aBTC) and the other way around.
-- The **bridging of BRC-20 assets**: this feature allows the transfer of assets that comply with the BRC-20 standard from the Bitcoin chain into the Stacks chain and vice versa.
-- The **bridging of EVM-like blockchain's assets**: this feature allows the transfer of assets back and forth between Stacks and several different blockchains that function based on the Ethereum Virtual Machine.
+- The **bridging of BTC**: this feature allows the transfer of BTC from the Bitcoin blockchain into the Stacks chain and viceversa. BTC bridged to Stacks will be represented as aBTC (bridged BTC).
+- The **bridging of BRC-20 and Runes-compliant assets**: this feature allows the transfer of assets that comply with the BRC-20 standard from the Bitcoin chain into the Stacks chain and vice versa.
+- The **bridging of EVM-like blockchain's assets**: this feature enables the transfer of assets between Stacks and multiple blockchains that operate on the Ethereum Virtual Machine (EVM).
 
 ### BTC Bridge (Bitcoin's BTC <-> Stacks' aBTC)
 
