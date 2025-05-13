@@ -34,4 +34,4 @@
 ## Resources
 
 - [Official Links](./official-links.md)
-- [Security Audits](https://coinfabrik.gitbook.io/brotocol-devs/security-audits)
+- [Security Audits](https://docs.brotocol.xyz/developers/security-audits)
