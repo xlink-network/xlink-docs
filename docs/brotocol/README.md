@@ -2,23 +2,9 @@
 description: 'Brotocol: Bridge Better, Bro—Best Rates, Seamless Security!'
 cover: ../.gitbook/assets/gbbanner.png
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
-# ✨ Brotocol 101
+# What is Brotocol?
 
 With L1s and L2s multiplying, Brotocol makes cross-chain bridging simple, affordable, and secure—no matter your preferred blockchain. Get the **best rates** with Brotocol Bridge!
 
@@ -26,7 +12,7 @@ With L1s and L2s multiplying, Brotocol makes cross-chain bridging simple, afford
 
 ### What is Brotocol?
 
-Brotocol [BroBridge](../features/brobridge/README.md) is a **MPC-based hybrid bi-directional bridge** that acts as a '**connector**' between Bitcoin and other blockchains, enabling anyone to move between chains beyond the limitation of just EVM-based bridges.
+Brotocol [BroBridge](../features/brobridge/) is a **MPC-based hybrid bi-directional bridge** that acts as a '**connector**' between Bitcoin and other blockchains, enabling anyone to move between chains beyond the limitation of just EVM-based bridges.
 
 ### Why Brotocol?
 
@@ -37,7 +23,7 @@ Bridging shouldn’t suck—high fees and sketchy paths are out. Brotocol’s yo
 * **Lowest Fees:** Just **0.1%** to bridge native Bitcoin to EVM chains.
 * **Most Bridge Paths:** Supports **18+ networks**, including non-EVM.
 * **Rock-Solid Security:** MPC-based for stress-free transfers.
-* **Seamless Swaps Across Chains:** Allowing users to swap to any assets from native Bitcoin to EVM tokens back and forth.&#x20;
+* **Seamless Swaps Across Chains:** Allowing users to swap to any assets from native Bitcoin to EVM tokens back and forth.
 
 ### Brotocol’s Rate is Unbeatable!
 
@@ -101,6 +87,6 @@ Demand for EVM BTC is huge—Brotocol makes it flow.
 
 To check Brotocol’s Proof of Reserve, you can visit here: [https://brotocol.xyz/bridge/reserve](https://brotocol.xyz/bridge/reserve)
 
-<figure><img src="../.gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/8 (1).png" alt=""><figcaption></figcaption></figure>
 
 All Brotocol audits are available here: [**Brotocol Audit Reports**](../../developers/security-audits.md)

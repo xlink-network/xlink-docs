@@ -1,6 +1,6 @@
 # What is Bonbori?
 
-<figure><img src="../../.gitbook/assets/bonbori.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/bonbori.png" alt=""><figcaption></figcaption></figure>
 
 Bonbori is a cross-chain messaging and consensus layer designed specifically for Bitcoin's off-chain computation ecosystem. The system:
 

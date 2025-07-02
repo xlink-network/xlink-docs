@@ -1,6 +1,6 @@
 # Reserves
 
-<figure><img src="../.gitbook/assets/Bro_Rate-1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
 
 Click here to access or monitor the reserves real-time at the [**Brotocol Reserve**](https://app.xlink.network/bridge/reserve).
 

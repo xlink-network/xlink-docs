@@ -1,25 +1,11 @@
 ---
 cover: .gitbook/assets/gbbanner.png
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
-# What is Brotocol?
+# Introduction
 
-Brotocol Bridge is a MPC-based hybrid bi-directional bridge that acts as a 'connector' between Bitcoin and other blockchains, enabling seamless asset transfers and swaps between Bitcoin and its Layer 2 networks (L2s) as well as other blockchain ecosystems.&#x20;
+Brotocol Bridge is a MPC-based hybrid bi-directional bridge that acts as a 'connector' between Bitcoin and other blockchains, enabling seamless asset transfers and swaps between Bitcoin and its Layer 2 networks (L2s) as well as other blockchain ecosystems.
 
 **Brotocol currently offers two key features:**
 

@@ -1,6 +1,6 @@
 # Bonbori Consensus Model
 
-<figure><img src="../../.gitbook/assets/consesus.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/consesus.png" alt=""><figcaption></figcaption></figure>
 
 Bonbori uses '**Flexible Threshold-based Consensus Model**' which empowers Bitcoin builders with a customizable consensus framework that balances security needs with practical considerations:
 
